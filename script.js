@@ -9,43 +9,37 @@ function showProject() {
   console.log(number);
   $(section).addClass('show');
   $('.single.'+number).addClass('show');
-  
-    
-    // $(single).addClass('show');
 
-    // $(project).each(function(n) {
-    //   if (n >= pageSize * (page - 1) && n < pageSize * page)
-    //     $(this).removeClass('showing').addClass('adding');
-    //     let right = $('.showing').attr('class').split(' ')[1];
-    //     console.log(right);
-    // });        
+  $('.prev').click(previousProject);
+  $('.next').click(nextProject);
 
+  let total = $(single).length;
+  console.log(total);
 
-
-
-  $('.prev').click(prevPage);
-  $('.next').click(nextPage);
-
-  var page = 1;
-
-  function prevPage() {
-    // debugger;
-    if (page === 1) {
-      page = Math.floor($('.full .single').length/pageSize);
-    } else {
-      page--;
-    }
-    console.log(page);
-    showPage(page);
+  function nextProject() {
+    let current = $('.single.show');
+      if($('.single.show').next().length != 0) {
+        $(current).removeClass('show').next().addClass('show'); 
+        console.log('yes');
+      } else {
+        $(current).removeClass('show');
+        $('.single:first').addClass('show');
+        console.log('no');
+      }
+      return false;
   }
 
-  function nextPage() {
-    if (page == Math.floor($('.full .single').length/pageSize)) {
-      page = 1;
-    } else {
-      page++;
-    }
-    showPage(page);
+  function previousProject() {
+    let current = $('.single.show');
+      if($('.single.show').prev().length != 0) {
+        $(current).removeClass('show').prev().addClass('show'); 
+        console.log('yes');
+      } else {
+        $(current).removeClass('show');
+        $('.single:last').addClass('show');
+        console.log('no');
+      }
+      return false;
   }
 }
 
