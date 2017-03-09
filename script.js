@@ -1,3 +1,4 @@
+
 function showProject() {
   
   let section = $('.section.full');
@@ -10,37 +11,32 @@ function showProject() {
   $(section).addClass('show');
   $('.single.'+number).addClass('show');
 
-  $('.prev').click(previousProject);
+  $('.prev').click(prevClick);
   $('.next').click(nextProject);
-
-  let total = $(single).length;
-  console.log(total);
 
   function nextProject() {
     let current = $('.single.show');
-      if($('.single.show').next().length != 0) {
+      if($(current).next().length != 0) {
         $(current).removeClass('show').next().addClass('show'); 
-        console.log('yes');
       } else {
         $(current).removeClass('show');
         $('.single:first').addClass('show');
-        console.log('no');
       }
       return false;
   }
 
-  function previousProject() {
+   function prevClick() {
     let current = $('.single.show');
-      if($('.single.show').prev().length != 0) {
-        $(current).removeClass('show').prev().addClass('show'); 
-        console.log('yes');
+      if($(current).prev('.single').length != 0) {
+        $(current).removeClass('show').prev('.single').addClass('show'); 
       } else {
         $(current).removeClass('show');
         $('.single:last').addClass('show');
-        console.log('no');
       }
       return false;
   }
+
+
 }
 
 function previewProjects() {
@@ -101,7 +97,6 @@ $(function(){
   });
 
   previewProjects();
-  // pagination();
 });
 
 
