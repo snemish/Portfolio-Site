@@ -370,23 +370,23 @@ body {
               content: "⟶";
               padding-left: 20px;
               vertical-align: top; }
-        #container .wrapper .section.full .single.showing {
-          display: block; }
-        #container .wrapper .section.full .single.adding {
+        #container .wrapper .section.full .single {
           display: none; }
-        #container .wrapper .section.full .single .description {
-          position: absolute;
-          float: left;
-          display: block;
-          margin-right: 3.31356%;
-          width: 38.01186%;
-          margin-top: 25vh;
-          color: #112C8A;
-          display: none; }
-          #container .wrapper .section.full .single .description:last-child {
-            margin-right: 0; }
-          #container .wrapper .section.full .single .description.show {
+          #container .wrapper .section.full .single.show {
             display: block; }
+          #container .wrapper .section.full .single .description {
+            position: absolute;
+            float: left;
+            display: block;
+            margin-right: 3.31356%;
+            width: 38.01186%;
+            margin-top: 25vh;
+            color: #112C8A;
+            display: none; }
+            #container .wrapper .section.full .single .description:last-child {
+              margin-right: 0; }
+            #container .wrapper .section.full .single .description.show {
+              display: block; }
   #container .navigation {
     height: 100vh;
     width: 100vw !important;

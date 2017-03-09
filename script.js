@@ -1,24 +1,27 @@
-function pagination() {
+function showProject() {
   
-  let section = $('.section .full');
-  let project = $('.full .single');
-  // let text = project.text();
+  let section = $('.section.full');
+  let single = $('.full .single');
+  let selected = $('.menu .current');
 
-  pageSize = 2;
-
-  showPage = function(page) {
-
-    let project = $('.full .single');
+  let number = $(selected).attr('class').split(' ')[1];
+  
+  console.log(number);
+  $(section).addClass('show');
+  $('.single.'+number).addClass('show');
+  
     
-    $(project).addClass('showing');
+    // $(single).addClass('show');
 
-    $(project).each(function(n) {
-      if (n >= pageSize * (page - 1) && n < pageSize * page)
-        $(this).removeClass('showing').addClass('adding');
-    });        
-  }
+    // $(project).each(function(n) {
+    //   if (n >= pageSize * (page - 1) && n < pageSize * page)
+    //     $(this).removeClass('showing').addClass('adding');
+    //     let right = $('.showing').attr('class').split(' ')[1];
+    //     console.log(right);
+    // });        
 
-  showPage(1);
+
+
 
   $('.prev').click(prevPage);
   $('.next').click(nextPage);
@@ -47,9 +50,8 @@ function pagination() {
 }
 
 function previewProjects() {
-  pagination();
   let menu = $('.project a');
-  let project = $('.menu .project')
+  let project = $('.menu .project');
 
   $(menu).mouseenter(function(){
     $('.project').removeClass('show');
@@ -62,7 +64,10 @@ function previewProjects() {
 
   $(menu).click(function(){
     $('.projects').addClass('hide');
-    $('.full').addClass('show');
+    $(this).parent(project).addClass('current');
+    let match = $(this).parent(project).attr('class').split(' ')[1];
+    // console.log(match);
+    showProject();
   });
 }
 
