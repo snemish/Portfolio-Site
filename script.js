@@ -1,17 +1,29 @@
 
 function showProject() {
+
+  slideshow();
   
   let section = $('.section.full');
   let single = $('.full .single');
   let selected = $('.menu .current');
 
   let number = $(selected).attr('class').split(' ')[1];
-  
   console.log(number);
+
+  setTimeout(function(){
+    $('.slider .image:first').addClass('show');
+  }, 200);
+
   $(section).addClass('show');
   $('.single.'+number).addClass('show');
 
-  $('.prev').click(prevClick);
+  $('.prev').click(function() {
+    $('.slider .image').removeClass('show');
+      setTimeout(function(){
+        prevClick();
+      }, 1200);
+  });
+
   $('.next').click(nextProject);
 
   function nextProject() {
@@ -29,13 +41,44 @@ function showProject() {
     let current = $('.single.show');
       if($(current).prev('.single').length != 0) {
         $(current).removeClass('show').prev('.single').addClass('show'); 
+        setTimeout(function(){
+          $('.slider .image:first').addClass('show');
+        }, 200);
       } else {
         $(current).removeClass('show');
         $('.single:last').addClass('show');
+        setTimeout(function(){
+          $('.slider .image:first').addClass('show');
+        }, 200);
       }
       return false;
   }
+}
 
+function slideshow() {
+
+  let currentImage = 0;
+  let total = $('.single .slider .image').length;
+
+  $('.slider .right').click(function() {
+    $('.image.show').removeClass('show').next().addClass('show');
+      currentImage++;
+      if(currentImage>=total) {
+        currentImage = 0;
+        $('.image.show').removeClass('show');
+        $('.slider .image:first').addClass('show');
+      }  
+        
+      console.log(currentImage);
+  });
+
+  // function setFramePosition(pos){
+
+  //     // //calculate position
+  //     // let px = imageWidth*pos*-1;
+  //     // //set ul left position
+  //     $('.slider .image').addClass('show');
+  // }
 
 }
 
