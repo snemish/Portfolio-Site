@@ -1,66 +1,69 @@
+function showFirst() {
+  setTimeout(function(){
+  $('.single.show').find('.slider .image:first').addClass('show');
+  }, 200);
+}
 
 function showProject() {
-
-  slideshow();
   
   let section = $('.section.full');
   let single = $('.full .single');
-  let selected = $('.menu .current');
-
+  let selected = $('.current');
   let number = $(selected).attr('class').split(' ')[1];
-  console.log(number);
-
-  setTimeout(function(){
-    $('.slider .image:first').addClass('show');
-  }, 200);
+  
+  let active = $('.single.'+number);
 
   $(section).addClass('show');
-  $('.single.'+number).addClass('show');
+  $(active).addClass('show');
+  showFirst();
+  slideshow();
 
-  $('.prev').click(function() {
-    $('.slider .image').removeClass('show');
-      setTimeout(function(){
-        prevClick();
-      }, 1200);
-  });
-
-  $('.next').click(nextProject);
 
   function nextProject() {
     let current = $('.single.show');
       if($(current).next().length != 0) {
-        $(current).removeClass('show').next().addClass('show'); 
+        $('.slider .image').removeClass('show');
+        $(current).removeClass('show').next().addClass('show');
+        showFirst();
       } else {
         $(current).removeClass('show');
         $('.single:first').addClass('show');
+        showFirst();
       }
       return false;
   }
-
-   function prevClick() {
+   
+   function prevProject() {
     let current = $('.single.show');
       if($(current).prev('.single').length != 0) {
-        $(current).removeClass('show').prev('.single').addClass('show'); 
-        setTimeout(function(){
-          $('.slider .image:first').addClass('show');
-        }, 200);
+        $('.slider .image').removeClass('show');
+        $(current).removeClass('show').prev('.single').addClass('show');  
+        showFirst();
       } else {
         $(current).removeClass('show');
         $('.single:last').addClass('show');
-        setTimeout(function(){
-          $('.slider .image:first').addClass('show');
-        }, 200);
-      }
-      return false;
+        showFirst();
+        return false;
+    }
   }
+
+  $('.prev').click(function() {
+    prevProject();
+  });
+
+   $('.next').click(function() {
+    nextProject();
+  });
+
 }
 
+
 function slideshow() {
-
   let currentImage = 0;
-  let total = $('.single .slider .image').length;
+  let active = $('.single.show').find('.slider .image');
+  let total = $(active).length;
 
-  $('.slider .right').click(function() {
+  $('.right').click(function() {
     $('.image.show').removeClass('show').next().addClass('show');
       currentImage++;
       if(currentImage>=total) {
@@ -68,17 +71,9 @@ function slideshow() {
         $('.image.show').removeClass('show');
         $('.slider .image:first').addClass('show');
       }  
-        
-      console.log(currentImage);
   });
-
-  // function setFramePosition(pos){
-
-  //     // //calculate position
-  //     // let px = imageWidth*pos*-1;
-  //     // //set ul left position
-  //     $('.slider .image').addClass('show');
-  // }
+      console.log(total);
+      console.log(currentImage);
 
 }
 
@@ -99,7 +94,7 @@ function previewProjects() {
     $('.projects').addClass('hide');
     $(this).parent(project).addClass('current');
     let match = $(this).parent(project).attr('class').split(' ')[1];
-    // console.log(match);
+    console.log(match);
     showProject();
   });
 }
@@ -140,6 +135,7 @@ $(function(){
   });
 
   previewProjects();
+
 });
 
 
