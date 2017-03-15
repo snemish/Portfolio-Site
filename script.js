@@ -1,3 +1,4 @@
+
 function slideshow() {
   let currentImage = 0;
   $('.single').find('.slider').removeClass('active');
@@ -38,9 +39,7 @@ function slideshow() {
       console.log(total);
 }
 
-
 function showProject() {
-
   let section = $('.section.full');
   let selected = $('.current');
   let number = $(selected).attr('class').split(' ')[1];
@@ -85,9 +84,7 @@ function showProject() {
    $('.next').click(function() {
     nextProject();
   });
-
 }
-
 
 function previewProjects() {
   let menu = $('.project a');
@@ -103,12 +100,41 @@ function previewProjects() {
   });
 
   $(menu).click(function(){
-    $('.projects').addClass('hide');
     $(this).parent(project).addClass('current');
     let match = $(this).parent(project).attr('class').split(' ')[1];
     console.log(match);
-    showProject();
+    setTimeout(function(){
+      $('.projects').hide();
+      $('.background').removeClass('hide');
+    }, 200);
+    setTimeout(function() {
+      $('.background').addClass('hide');
+    },1500);
+    setTimeout(function() {
+      showProject();
+    },2000);
   });
+}
+
+function showHomepage() {
+  setTimeout(function(){
+    $('.background').addClass('hide');
+  }, 1000);
+
+  setTimeout(function(){
+    $('.name').addClass('animate');
+  }, 1300);
+
+  setTimeout(function(){
+    $('.information').addClass('animate');
+    $('.projects').show();
+  }, 1500);
+
+  setTimeout(function() {
+    $('.menu').addClass('show');
+    $('.text').addClass('show');
+    previewProjects();
+  },1700)
 }
 
 $(function(){
@@ -135,7 +161,11 @@ $(function(){
   });
 
   $('.hamburger').click(function() {
-    $('.navigation').toggleClass('show');
+    $('.about').addClass('show');
+    $('#container').toggleClass('blue');
+    $('.background').toggleClass('hide');
+    $('.projects').removeClass('show');
+    $('.full').removeClass('show');
   });
 
   $('.details').mouseenter(function() {
@@ -148,16 +178,11 @@ $(function(){
   
   $('.name').click(function(){
     $('.full').removeClass('show');
-    $('.projects').addClass('hide');
-    $('.about').addClass('show');
+    $('.projects').removeClass('show');
+    // $('.about').addClass('show');
   });
 
-  if($('.about').hasClass('show')) {
-    $('.main').addClass('blue');
-  } else {
-  }
-  // previewProjects();
-
+  showHomepage();
 });
 
 

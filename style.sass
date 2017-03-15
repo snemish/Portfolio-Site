@@ -12,17 +12,16 @@ $gutter: 2em
 
 @import 'neat/neat'
 
-// $font-stack: 'Poppins', sans-serif
 $font-stack: 'Inconsolata', monospace
 
 $blue: #0025F4
 $white: #FFFFFF
 $yellow: #F6D258
 $orange: #EF562D
-// $red: #FB3434
+$red: #FB3434
 
 // lighter scheme
-$red: #EFBCBB
+// $red: #EFBCBB
 
 body
 	font-family: $font-stack
@@ -49,12 +48,11 @@ body
 		+transform(translate(4px, -4px))
 	to
 		+transform(translate(0))
- 
-	
+
 
 // ---------- Glitch End ---------- //
 
-.main
+#container
 	position: absolute
 	height: 100%
 	overflow: hidden
@@ -63,13 +61,35 @@ body
 	background-color: $white
 	top: 0
 
-	&.blue 
+	.background 
 		background-color: $blue
+		position: absolute
+		height: 100%
+		width: 100%
+		+transform(translate3d(0, 0, 0))
+		+transition(transform 500ms cubic-bezier(0.77, 0, 0.175, 1))
+		&.hide
+			+transform(translate3d(0, 100%, 0)) 
+
+	&.blue 
+		p
+			color: $white
+
+		.wrapper	
+			.name 
+				.glitch 
+					color: $white 
 
 	p
 		font-family: $font-stack
 		font-size: 14px
 		color: $blue
+
+	h2 
+		font-family: $font-stack
+		font-size: 20px 
+		color: $blue 
+		font-weight: 700
 	
 	.wrapper
 		height: 100%
@@ -86,6 +106,9 @@ body
 			-webkit-margin-before: 5vh
 			-webkit-margin-after: 4vh
 			z-index: 500
+			opacity: 0
+			+transform(translate3d(0, -10vh, 0))
+			+transition(all 0.5s ease)
 
 			.glitch
 				height: 100px
@@ -97,14 +120,22 @@ body
 				color: $blue
 				position: absolute
 
+			&.animate
+				+transform(translate3d(0, 0, 0))
+				opacity: 1
+
 		.information
 			position: relative
 			+shift(1)
 			+span-columns(11 of 12)
 			z-index: 9999 !important
+			opacity: 0
+			+transform(translate3d(0, -10vh, 0))
+			+transition(all 0.5s ease)
 
-			&.hide
-				opacity: 0
+			&.animate
+				+transform(translate3d(0, 0, 0))
+				opacity: 1
 
 			.blurb
 				+span-columns(2 of 12)
@@ -158,60 +189,55 @@ body
 			.behance
 				+background-image(url('img/behance.png'))  
 
-
 		.section
 			position: absolute
 			+shift(1)
 			+span-columns(11 of 12)
 			z-index: 9999 !important
-			top: 30vh
-			height: 60vh
+			top: 26vh
+			height: 64vh
 			overflow: hidden	
-			
-			.text
-				position: relative
-				z-index: 9999 !important
-				top: 4vh
-			
-				h2
-					+span-columns(2 of 12)
-					font-family: $font-stack
-					color: $blue
-					font-size: 20px
-					line-height: 40px
-					margin-bottom: 0
-					margin-left: 0
 
 			&.about
 				display: none
 
 				h2
-					color: white
-
-				p 
+					+span-columns(2 of 12)
 					color: $white
 
 				.biography				
 					+span-columns(4 of 12)
-					position: absolute
-					margin-top: 25vh
-				
+					// +shift(2)
+
+					p 
+						color: $white
+					
 				&.show 
 					display: block
 
 			&.projects
 				display: none
-				opacity: 1
-				+transition(opacity 0.5s ease)
 
-				&.hide 
+				.text, .menu
+					+transform(translate3d(0, -10vh, 0))
+					+transition(all 1s ease)
 					opacity: 0
+
+					&.show 
+						+transform(translate3d(0, 0, 0))
+						opacity: 1
+
+				.text
+					+span-columns(2 of 12)
+					margin-top: 8vh 
+					z-index: 900
 				
 				.menu
 					height: 100%
 					position: absolute
 					+span-columns(10 of 12)
 					+shift(1)
+					top: 0
 
 					.project
 						height: 30px
@@ -222,7 +248,7 @@ body
 						.menu-item
 							+span-columns(2 of 10)
 							position: relative
-							z-index: 9999 !important
+							z-index: 800 !important
 							font-size: 16px
 							font-weight: 700
 							color: $blue
@@ -230,7 +256,7 @@ body
 							margin-top: 0
 							display: block
 							cursor: url('img/dot.png'), default
-							cursor: -webkit-image-set(url('img/dot.png') 1x, url('img/dot.png') 2x), auto
+							cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
 
 							&.date
 								+shift(1)
@@ -255,32 +281,38 @@ body
 								background-repeat: no-repeat
 								opacity: 0
 								top: 0
-								z-index: 200
-								+linear-gradient($red, $white)
+								z-index: 100
+								// +linear-gradient($red, $white)
 								+transition(all 0.2s ease-in)
 						
 						&.one
 							margin-top: 8vh
+							.image
+								+linear-gradient($red, $white)
 
 						&.two 
 							.image
-								// +background-image(url('layer/img/layer-5.jpg'))
+								// +linear-gradient($red, $white)
+								+background-image(url('layer/img/layer-5.jpg'))
 						
 						&.three 
 							.image
-								// +background-image(url('paper/img/second-thumbnail.png'))
+								// +linear-gradient($yellow, $white)
+								+background-image(url('paper/img/second-thumbnail.png'))
 						
 						&.four 
 							.image
-								// +background-image(url('together/img/purple-game.png'))
+								+background-image(url('together/img/purple-game.png'))
 
 						&.five
 							.image
-								// +background-image(url('haunt/img/maori-history-main.png'))
+								// +linear-gradient($red, $white)
+								+background-image(url('haunt/img/maori-history-main.png'))
 
 						&.six
 							.image
-								// +background-image(url('daily/img/dino.png'))
+								// +linear-gradient($yellow, $white)
+								+background-image(url('daily/img/dino.png'))
 
 
 						&.show 
@@ -400,52 +432,16 @@ body
 							&.show
 								width: 100%
 
-	.navigation
-		height: 100vh
-		width: 100vw !important
-		// z-index: 400
+	.hamburger
 		position: absolute
-		overflow: hidden
-		+transform(translate3d(0, 100%, 0))
-		+transition(transform, 0.5s, ease-in)
-		background-color: $red
-		
-		&.show
-			+transform(translate3d(0, 0, 0))
-
-		.wrapper
-			height: 100%
-			width: 96vw
-			// position: absolute
-			left: 50%
-			+transform(translate3d(-50%, 0, 0))
-			position: relative
-
-			a 
-				font-size: 60px
-				font-weight: 700
-				padding-top: 34vh
-				+span-columns(2 of 12)
-				color: $blue
-
-				&.page-about
-					+shift(3)
-
-				&.page-work
-					+shift(2)
-
-
-.hamburger
-	position: absolute
-	+span-columns(1 of 10)
-	+shift(1)
-	height: 30px
-	+background-image(url('img/menu.png'))
-	background-size: contain
-	background-repeat: no-repeat
-	top: 37vh
-	z-index: 9999
-	display: none
+		+span-columns(1 of 10)
+		height: 30px
+		+background-image(url('img/menu.png'))
+		background-size: contain
+		background-repeat: no-repeat
+		top: 25vh
+		z-index: 9999
+	// display: none
 
 
 
