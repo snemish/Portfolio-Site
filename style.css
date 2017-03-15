@@ -13,7 +13,7 @@ body {
   padding: 0;
   overflow: hidden;
   cursor: url("img/dot-outline.png"), default;
-  cursor: -webkit-image-set(url("img/dot-outline.png") 1x, url("img/dot-outline.png") 2x), auto; }
+  cursor: -webkit-image-set(url("img/dot-outline.png") 2x, url("img/dot-outline.png") 2x), auto; }
 
 @-webkit-keyframes glitch {
   0% {
@@ -78,7 +78,7 @@ body {
     -ms-transform: translate(0);
     -o-transform: translate(0);
     transform: translate(0); } }
-#container {
+.main {
   position: absolute;
   height: 100%;
   overflow: hidden;
@@ -88,15 +88,17 @@ body {
   width: 100%;
   background-color: #FFFFFF;
   top: 0; }
-  #container::after {
+  .main::after {
     clear: both;
     content: "";
     display: block; }
-  #container p {
+  .main.blue {
+    background-color: #0025F4; }
+  .main p {
     font-family: "Inconsolata", monospace;
     font-size: 14px;
     color: #0025F4; }
-  #container .wrapper {
+  .main .wrapper {
     height: 100%;
     width: 96vw;
     position: absolute;
@@ -106,7 +108,7 @@ body {
     -ms-transform: translate3d(-50%, 0, 0);
     -o-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0); }
-    #container .wrapper .name {
+    .main .wrapper .name {
       float: left;
       display: block;
       margin-right: 2.74614%;
@@ -117,9 +119,9 @@ body {
       -webkit-margin-before: 5vh;
       -webkit-margin-after: 4vh;
       z-index: 500; }
-      #container .wrapper .name:last-child {
+      .main .wrapper .name:last-child {
         margin-right: 0; }
-      #container .wrapper .name .glitch {
+      .main .wrapper .name .glitch {
         height: 100px;
         font-size: 50px;
         font-family: "Inconsolata", monospace;
@@ -128,7 +130,7 @@ body {
         margin: 0;
         color: #0025F4;
         position: absolute; }
-    #container .wrapper .information {
+    .main .wrapper .information {
       position: relative;
       margin-left: 8.56218%;
       float: left;
@@ -136,20 +138,20 @@ body {
       margin-right: 2.74614%;
       width: 91.43782%;
       z-index: 9999 !important; }
-      #container .wrapper .information:last-child {
+      .main .wrapper .information:last-child {
         margin-right: 0; }
-      #container .wrapper .information.hide {
+      .main .wrapper .information.hide {
         opacity: 0; }
-      #container .wrapper .information .blurb {
+      .main .wrapper .information .blurb {
         float: left;
         display: block;
         margin-right: 2.74614%;
         width: 14.37822%;
         overflow: hidden;
         text-align: left; }
-        #container .wrapper .information .blurb:last-child {
+        .main .wrapper .information .blurb:last-child {
           margin-right: 0; }
-    #container .wrapper .bottom {
+    .main .wrapper .bottom {
       height: 60px;
       position: absolute;
       bottom: 0;
@@ -158,20 +160,20 @@ body {
       margin-right: 2.74614%;
       width: 91.43782%;
       margin-left: 8.56218%; }
-      #container .wrapper .bottom:last-child {
+      .main .wrapper .bottom:last-child {
         margin-right: 0; }
-      #container .wrapper .bottom .blurb {
+      .main .wrapper .bottom .blurb {
         float: left;
         display: block;
         margin-right: 2.74614%;
         width: 14.37822%;
         margin-left: 17.12436%; }
-        #container .wrapper .bottom .blurb:last-child {
+        .main .wrapper .bottom .blurb:last-child {
           margin-right: 0; }
-      #container .wrapper .bottom a {
+      .main .wrapper .bottom a {
         font-size: 14px;
         color: #0025F4; }
-    #container .wrapper .social {
+    .main .wrapper .social {
       opacity: 0;
       display: flex;
       display: -moz-box;
@@ -180,26 +182,26 @@ body {
       display: -webkit-flex;
       -webkit-flex-flow: row wrap;
       justify-content: space-around; }
-      #container .wrapper .social .insta, #container .wrapper .social .twitter, #container .wrapper .social .linked, #container .wrapper .social .behance {
+      .main .wrapper .social .insta, .main .wrapper .social .twitter, .main .wrapper .social .linked, .main .wrapper .social .behance {
         display: inline-block;
         height: 20px;
         width: 20px;
         background-size: contain;
         background-position: 50%;
         background-repeat: no-repeat; }
-      #container .wrapper .social .insta {
+      .main .wrapper .social .insta {
         background-image: url("img/instagram.png");
         background-image: url("img/instagram.png"); }
-      #container .wrapper .social .twitter {
+      .main .wrapper .social .twitter {
         background-image: url("img/twitter.png");
         background-image: url("img/twitter.png"); }
-      #container .wrapper .social .linked {
+      .main .wrapper .social .linked {
         background-image: url("img/linkedin.png");
         background-image: url("img/linkedin.png"); }
-      #container .wrapper .social .behance {
+      .main .wrapper .social .behance {
         background-image: url("img/behance.png");
         background-image: url("img/behance.png"); }
-    #container .wrapper .section {
+    .main .wrapper .section {
       position: absolute;
       margin-left: 8.56218%;
       float: left;
@@ -210,13 +212,13 @@ body {
       top: 30vh;
       height: 60vh;
       overflow: hidden; }
-      #container .wrapper .section:last-child {
+      .main .wrapper .section:last-child {
         margin-right: 0; }
-      #container .wrapper .section .text {
+      .main .wrapper .section .text {
         position: relative;
         z-index: 9999 !important;
         top: 4vh; }
-        #container .wrapper .section .text h2 {
+        .main .wrapper .section .text h2 {
           float: left;
           display: block;
           margin-right: 2.74614%;
@@ -227,27 +229,34 @@ body {
           line-height: 40px;
           margin-bottom: 0;
           margin-left: 0; }
-          #container .wrapper .section .text h2:last-child {
+          .main .wrapper .section .text h2:last-child {
             margin-right: 0; }
-      #container .wrapper .section.about {
+      .main .wrapper .section.about {
         display: none; }
-        #container .wrapper .section.about .biography {
+        .main .wrapper .section.about h2 {
+          color: white; }
+        .main .wrapper .section.about p {
+          color: #FFFFFF; }
+        .main .wrapper .section.about .biography {
           float: left;
           display: block;
           margin-right: 2.74614%;
-          width: 48.62693%;
+          width: 31.50258%;
           position: absolute;
           margin-top: 25vh; }
-          #container .wrapper .section.about .biography:last-child {
+          .main .wrapper .section.about .biography:last-child {
             margin-right: 0; }
-      #container .wrapper .section.projects {
+        .main .wrapper .section.about.show {
+          display: block; }
+      .main .wrapper .section.projects {
+        display: none;
         opacity: 1;
         -webkit-transition: opacity 0.5s ease;
         -moz-transition: opacity 0.5s ease;
         transition: opacity 0.5s ease; }
-        #container .wrapper .section.projects.hide {
+        .main .wrapper .section.projects.hide {
           opacity: 0; }
-        #container .wrapper .section.projects .menu {
+        .main .wrapper .section.projects .menu {
           height: 100%;
           position: absolute;
           float: left;
@@ -255,14 +264,14 @@ body {
           margin-right: 2.74614%;
           width: 82.87564%;
           margin-left: 8.56218%; }
-          #container .wrapper .section.projects .menu:last-child {
+          .main .wrapper .section.projects .menu:last-child {
             margin-right: 0; }
-          #container .wrapper .section.projects .menu .project {
+          .main .wrapper .section.projects .menu .project {
             height: 30px;
             width: 100%;
             overflow: hidden;
             z-index: 100; }
-            #container .wrapper .section.projects .menu .project .menu-item {
+            .main .wrapper .section.projects .menu .project .menu-item {
               float: left;
               display: block;
               margin-right: 3.31356%;
@@ -277,16 +286,16 @@ body {
               display: block;
               cursor: url("img/dot.png"), default;
               cursor: -webkit-image-set(url("img/dot.png") 1x, url("img/dot.png") 2x), auto; }
-              #container .wrapper .section.projects .menu .project .menu-item:last-child {
+              .main .wrapper .section.projects .menu .project .menu-item:last-child {
                 margin-right: 0; }
-              #container .wrapper .section.projects .menu .project .menu-item.date {
+              .main .wrapper .section.projects .menu .project .menu-item.date {
                 margin-left: 10.33136%;
                 opacity: 0; }
-              #container .wrapper .section.projects .menu .project .menu-item.role {
+              .main .wrapper .section.projects .menu .project .menu-item.role {
                 opacity: 0; }
-              #container .wrapper .section.projects .menu .project .menu-item.name {
+              .main .wrapper .section.projects .menu .project .menu-item.name {
                 margin-left: 25.68653%; }
-            #container .wrapper .section.projects .menu .project.one .image, #container .wrapper .section.projects .menu .project.two .image, #container .wrapper .section.projects .menu .project.three .image, #container .wrapper .section.projects .menu .project.four .image, #container .wrapper .section.projects .menu .project.five .image, #container .wrapper .section.projects .menu .project.six .image {
+            .main .wrapper .section.projects .menu .project.one .image, .main .wrapper .section.projects .menu .project.two .image, .main .wrapper .section.projects .menu .project.three .image, .main .wrapper .section.projects .menu .project.four .image, .main .wrapper .section.projects .menu .project.five .image, .main .wrapper .section.projects .menu .project.six .image {
               position: absolute;
               height: 100%;
               float: left;
@@ -305,92 +314,119 @@ body {
               -webkit-transition: all 0.2s ease-in;
               -moz-transition: all 0.2s ease-in;
               transition: all 0.2s ease-in; }
-              #container .wrapper .section.projects .menu .project.one .image:last-child, #container .wrapper .section.projects .menu .project.two .image:last-child, #container .wrapper .section.projects .menu .project.three .image:last-child, #container .wrapper .section.projects .menu .project.four .image:last-child, #container .wrapper .section.projects .menu .project.five .image:last-child, #container .wrapper .section.projects .menu .project.six .image:last-child {
+              .main .wrapper .section.projects .menu .project.one .image:last-child, .main .wrapper .section.projects .menu .project.two .image:last-child, .main .wrapper .section.projects .menu .project.three .image:last-child, .main .wrapper .section.projects .menu .project.four .image:last-child, .main .wrapper .section.projects .menu .project.five .image:last-child, .main .wrapper .section.projects .menu .project.six .image:last-child {
                 margin-right: 0; }
-            #container .wrapper .section.projects .menu .project.one {
+            .main .wrapper .section.projects .menu .project.one {
               margin-top: 8vh; }
-            #container .wrapper .section.projects .menu .project.show .image {
+            .main .wrapper .section.projects .menu .project.show .image {
               opacity: 1; }
-            #container .wrapper .section.projects .menu .project.show .menu-item:after {
+            .main .wrapper .section.projects .menu .project.show .date {
               opacity: 1; }
-      #container .wrapper .section.full {
+            .main .wrapper .section.projects .menu .project.show .role {
+              opacity: 1; }
+            .main .wrapper .section.projects .menu .project.show .menu-item:after {
+              opacity: 1; }
+      .main .wrapper .section.full {
         display: none; }
-        #container .wrapper .section.full.show {
-          display: block;
-          float: left;
-          display: block;
-          margin-right: 2.74614%;
-          width: 82.87564%; }
-          #container .wrapper .section.full.show:last-child {
-            margin-right: 0; }
-        #container .wrapper .section.full .menu {
+        .main .wrapper .section.full.show {
+          display: block; }
+        .main .wrapper .section.full .menu {
           position: absolute;
           width: inherit;
           height: 50px;
-          margin-top: 56vh;
-          margin-left: 17.12436%;
+          margin-top: 7vh;
+          float: left;
+          display: block;
+          margin-right: 3.31356%;
+          width: 17.34915%;
+          margin-left: 72.31949%;
           z-index: 9999 !important; }
-          #container .wrapper .section.full .menu .menu-item {
-            float: left;
-            display: block;
-            margin-right: 3.31356%;
-            width: 17.34915%;
+          .main .wrapper .section.full .menu:last-child {
+            margin-right: 0; }
+          .main .wrapper .section.full .menu .menu-item {
             position: relative; }
-            #container .wrapper .section.full .menu .menu-item:last-child {
-              margin-right: 0; }
-            #container .wrapper .section.full .menu .menu-item p {
+            .main .wrapper .section.full .menu .menu-item p {
               color: #0025F4;
               font-size: 16px;
-              font-weight: 700; }
-            #container .wrapper .section.full .menu .menu-item.details:after {
-              content: "☺"; }
-            #container .wrapper .section.full .menu .menu-item.next:after {
-              content: "⟶"; }
-            #container .wrapper .section.full .menu .menu-item.prev:after {
-              content: "⟶"; }
-        #container .wrapper .section.full .single {
+              font-weight: 700;
+              display: inline;
+              padding-bottom: 10px; }
+            .main .wrapper .section.full .menu .menu-item.details {
+              padding-bottom: 4vh; }
+              .main .wrapper .section.full .menu .menu-item.details:after {
+                content: "☺";
+                vertical-align: top;
+                color: #0025F4; }
+            .main .wrapper .section.full .menu .menu-item.next:after {
+              content: "⟶";
+              vertical-align: top;
+              color: #0025F4; }
+            .main .wrapper .section.full .menu .menu-item.prev:after {
+              content: "⟶";
+              vertical-align: top;
+              color: #0025F4; }
+        .main .wrapper .section.full .single {
           display: none;
-          height: 70vh;
-          width: inherit;
+          height: 100%;
           position: absolute; }
-          #container .wrapper .section.full .single.show {
-            display: block; }
-          #container .wrapper .section.full .single .text {
-            z-index: 9999;
-            position: absolute;
-            margin-left: 20.66271%;
+          .main .wrapper .section.full .single.show {
+            display: block;
             float: left;
             display: block;
-            margin-right: 3.31356%;
-            width: 38.01186%; }
-            #container .wrapper .section.full .single .text:last-child {
+            margin-right: 2.74614%;
+            width: 82.87564%; }
+            .main .wrapper .section.full .single.show:last-child {
               margin-right: 0; }
-            #container .wrapper .section.full .single .text h2 {
-              position: absolute; }
-            #container .wrapper .section.full .single .text .description {
+          .main .wrapper .section.full .single .text {
+            position: relative;
+            z-index: 9999 !important;
+            top: 4vh; }
+            .main .wrapper .section.full .single .text h2 {
+              float: left;
+              display: block;
+              margin-right: 3.31356%;
+              width: 38.01186%;
+              font-family: "Inconsolata", monospace;
               color: #0025F4;
-              display: none; }
-              #container .wrapper .section.full .single .text .description.show {
-                display: block; }
-          #container .wrapper .section.full .single .slider {
+              font-size: 20px;
+              line-height: 40px;
+              margin-bottom: 0;
+              margin-left: 0; }
+              .main .wrapper .section.full .single .text h2:last-child {
+                margin-right: 0; }
+            .main .wrapper .section.full .single .text .description {
+              color: #0025F4;
+              position: absolute;
+              display: none;
+              top: 3vh; }
+              .main .wrapper .section.full .single .text .description.show {
+                display: block;
+                margin-left: 20.66271%;
+                float: left;
+                display: block;
+                margin-right: 3.31356%;
+                width: 38.01186%; }
+                .main .wrapper .section.full .single .text .description.show:last-child {
+                  margin-right: 0; }
+          .main .wrapper .section.full .single .slider {
             float: left;
             display: block;
             margin-right: 3.31356%;
-            width: 89.66864%;
+            width: 79.33729%;
             margin-left: 10.33136%;
             height: 100%;
             position: absolute; }
-            #container .wrapper .section.full .single .slider:last-child {
+            .main .wrapper .section.full .single .slider:last-child {
               margin-right: 0; }
-            #container .wrapper .section.full .single .slider .right, #container .wrapper .section.full .single .slider .left {
+            .main .wrapper .section.full .single .slider .right, .main .wrapper .section.full .single .slider .left {
               height: 80%;
               width: 50%;
               float: right;
               z-index: 200;
               position: relative; }
-            #container .wrapper .section.full .single .slider .image {
+            .main .wrapper .section.full .single .slider .image {
               position: absolute;
-              height: 80%;
+              height: 100%;
               background-size: cover;
               background-position: 50%, 50%;
               background-repeat: no-repeat;
@@ -398,9 +434,9 @@ body {
               -webkit-transition: width 1000ms cubic-bezier(0.77, 0, 0.175, 1);
               -moz-transition: width 1000ms cubic-bezier(0.77, 0, 0.175, 1);
               transition: width 1000ms cubic-bezier(0.77, 0, 0.175, 1); }
-              #container .wrapper .section.full .single .slider .image.show {
+              .main .wrapper .section.full .single .slider .image.show {
                 width: 100%; }
-  #container .navigation {
+  .main .navigation {
     height: 100vh;
     width: 100vw !important;
     position: absolute;
@@ -414,13 +450,13 @@ body {
     -moz-transition: -moz-transform, 0.5s, ease-in;
     transition: transform, 0.5s, ease-in;
     background-color: #EFBCBB; }
-    #container .navigation.show {
+    .main .navigation.show {
       -webkit-transform: translate3d(0, 0, 0);
       -moz-transform: translate3d(0, 0, 0);
       -ms-transform: translate3d(0, 0, 0);
       -o-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
-    #container .navigation .wrapper {
+    .main .navigation .wrapper {
       height: 100%;
       width: 96vw;
       left: 50%;
@@ -430,7 +466,7 @@ body {
       -o-transform: translate3d(-50%, 0, 0);
       transform: translate3d(-50%, 0, 0);
       position: relative; }
-      #container .navigation .wrapper a {
+      .main .navigation .wrapper a {
         font-size: 60px;
         font-weight: 700;
         padding-top: 34vh;
@@ -439,11 +475,11 @@ body {
         margin-right: 2.74614%;
         width: 14.37822%;
         color: #0025F4; }
-        #container .navigation .wrapper a:last-child {
+        .main .navigation .wrapper a:last-child {
           margin-right: 0; }
-        #container .navigation .wrapper a.page-about {
+        .main .navigation .wrapper a.page-about {
           margin-left: 25.68653%; }
-        #container .navigation .wrapper a.page-work {
+        .main .navigation .wrapper a.page-work {
           margin-left: 17.12436%; }
 
 .hamburger {

@@ -1,48 +1,79 @@
-function showFirst() {
-  setTimeout(function(){
-  $('.single.show').find('.slider .image:first').addClass('show');
-  }, 200);
+function slideshow() {
+  let currentImage = 0;
+  $('.single').find('.slider').removeClass('active');
+  $('.right').remove();  
+  $('.left').remove();   
+
+  if($('.single').hasClass('current')) {
+    $('.current').find('.slider').addClass('active');
+    $('<div class="right"></div><div class="left"></div>').appendTo('.slider.active');
+  } else {
+  }
+
+  let total = $('.active .image').length;
+  $('.active .image:first').addClass('show');
+
+  $('.right').click(function() {
+      currentImage++;
+    $('.active .image.show').removeClass('show').next('.image').addClass('show');
+      if(currentImage >= total) {
+        currentImage = 0;
+        $('.active .image.show').removeClass('show');
+        $('.active .image:first').addClass('show');
+      }  
+      console.log(currentImage);
+  });
+
+   $('.left').click(function() {
+      currentImage++;
+    $('.active .image.show').removeClass('show').prev('.image').addClass('show');
+      if(currentImage >= total) {
+        currentImage = 0;
+        $('.active .image.show').removeClass('show');
+        $('.active .image:last').addClass('show');
+      }  
+      console.log(currentImage);
+  });
+      
+      console.log(total);
 }
 
+
 function showProject() {
-  
+
   let section = $('.section.full');
-  let single = $('.full .single');
   let selected = $('.current');
   let number = $(selected).attr('class').split(' ')[1];
   
   let active = $('.single.'+number);
 
   $(section).addClass('show');
-  $(active).addClass('show');
-  showFirst();
+  $(active).addClass('show current');
   slideshow();
 
 
   function nextProject() {
-    let current = $('.single.show');
+    let current = $('.single.current');
       if($(current).next().length != 0) {
-        $('.slider .image').removeClass('show');
-        $(current).removeClass('show').next().addClass('show');
-        showFirst();
+        $(current).removeClass('show current').next().addClass('show current');
+        slideshow();
       } else {
-        $(current).removeClass('show');
-        $('.single:first').addClass('show');
-        showFirst();
+        $(current).removeClass('show current');
+        $('.single:first').addClass('show current');
+        slideshow();
       }
       return false;
   }
    
    function prevProject() {
-    let current = $('.single.show');
+    let current = $('.single.current');
       if($(current).prev('.single').length != 0) {
-        $('.slider .image').removeClass('show');
-        $(current).removeClass('show').prev('.single').addClass('show');  
-        showFirst();
+        $(current).removeClass('show current').prev('.single').addClass('show current');  
+        slideshow();
       } else {
-        $(current).removeClass('show');
-        $('.single:last').addClass('show');
-        showFirst();
+        $(current).removeClass('show current');
+        $('.single:last').addClass('show current');
+        slideshow();
         return false;
     }
   }
@@ -57,25 +88,6 @@ function showProject() {
 
 }
 
-
-function slideshow() {
-  let currentImage = 0;
-  let active = $('.single.show').find('.slider .image');
-  let total = $(active).length;
-
-  $('.right').click(function() {
-    $('.image.show').removeClass('show').next().addClass('show');
-      currentImage++;
-      if(currentImage>=total) {
-        currentImage = 0;
-        $('.image.show').removeClass('show');
-        $('.slider .image:first').addClass('show');
-      }  
-  });
-      console.log(total);
-      console.log(currentImage);
-
-}
 
 function previewProjects() {
   let menu = $('.project a');
@@ -98,7 +110,6 @@ function previewProjects() {
     showProject();
   });
 }
-
 
 $(function(){
   $.ajax({
@@ -130,11 +141,22 @@ $(function(){
   $('.details').mouseenter(function() {
     $('.description').addClass('show');
   });
+   
    $('.details').mouseleave(function() {
     $('.description').removeClass('show');
   });
+  
+  $('.name').click(function(){
+    $('.full').removeClass('show');
+    $('.projects').addClass('hide');
+    $('.about').addClass('show');
+  });
 
-  previewProjects();
+  if($('.about').hasClass('show')) {
+    $('.main').addClass('blue');
+  } else {
+  }
+  // previewProjects();
 
 });
 
