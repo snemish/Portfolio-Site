@@ -10,9 +10,14 @@ function slideshow() {
     $('<div class="right"></div><div class="left"></div>').appendTo('.slider.active');
   } else {
   }
-
   let total = $('.active .image').length;
-  $('.active .image:first').addClass('show');
+  
+  setTimeout(function(){
+    $('.active').addClass('animate');
+    $('.current').find('.text').addClass('animate');
+    $('.active .image:first').addClass('show');
+  },200);
+
 
   $('.right').click(function() {
       currentImage++;
@@ -48,8 +53,8 @@ function showProject() {
 
   $(section).addClass('show');
   $(active).addClass('show current');
-  slideshow();
 
+  slideshow();
 
   function nextProject() {
     let current = $('.single.current');
@@ -163,9 +168,10 @@ $(function(){
   $('.hamburger').click(function() {
     $('.about').addClass('show');
     $('#container').toggleClass('blue');
+    $('.line').toggleClass('blue');
     $('.background').toggleClass('hide');
     $('.projects').removeClass('show');
-    $('.full').removeClass('show');
+    $('.full').hide();
   });
 
   $('.details').mouseenter(function() {
