@@ -9,31 +9,38 @@ function slideshow() {
   
   if($('.single').hasClass('current')) {
     $('.current').find('.slider').addClass('active');
-    $('<div class="right"></div><div class="left"></div>').appendTo('.slider.active');
+    $('<div class="next-image"></div><div class="left"></div>').appendTo('.slider.active');
     $('<div class="slide">').appendTo('.slider.active');
   } else {
   }
   let total = $('.active .image').length;
+  $('.active .image').addClass('right');
 
   setTimeout(function(){
-    $('.active .image:first').addClass('show');
-    $('.active .slide').toggleClass('hide');
-  },30);
+    $('.active .slide').addClass('hide');
+  },100);
+
+  setTimeout(function(){
+    $('.active .image:first').addClass('middle').removeClass('right');
+  },300);
   
   setTimeout(function(){
     $('.menu').addClass('animate');
-    $('.current').find('.text').addClass('animate');
-  }, 600);
+  },600);
 
-  $('.right').click(function() {
+  $('.next-image').click(function() {
       currentImage++;
-      setTimeout(function(){
-      $('.active .image.show').removeClass('show').next('.image').addClass('show');
-      },1000);
+      $('.active .image.middle').removeClass('middle').addClass('left');
+      $('.active .image.left').next('.image').removeClass('right').addClass('middle');
+      setTimeout(function() {
+        $('.active .image.left').removeClass('left').addClass('right');
+      }, 800);
       if(currentImage >= total) {
         currentImage = 0;
-        $('.active .image.show').removeClass('show');
-        $('.active .image:first').addClass('show');
+          $('.active .image.middle').removeClass('middle').addClass('left');
+          $('.active .image:first').addClass('middle').removeClass('right');
+          $('.active .image.left').next('.image').removeClass('right').addClass('middle');
+
       }  
       console.log(currentImage);
   });
@@ -184,12 +191,16 @@ $(function(){
 
   $('.details').mouseenter(function() {
     $('.slide').removeClass('hide');
-    $('.description').addClass('show');
+    setTimeout(function(){
+      $('.text').addClass('animate');
+    }, 500);
   });
    
    $('.details').mouseleave(function() {
-    $('.slide').addClass('hide');
-    $('.description').removeClass('show');
+    $('.text').removeClass('animate');
+    setTimeout(function(){
+        $('.slide').addClass('hide');
+    }, 500);
   });
   
   $('.name').click(function(){

@@ -14,11 +14,12 @@ $gutter: 2em
 
 $font-stack: 'Inconsolata', monospace
 
-$blue: #0025F4
+// $blue: #0025F4
 $white: #FFFFFF
 $yellow: #F6D258
-$orange: #EF562D
+$orange: #FFDDD4
 $red: #fc4245
+$blue: #0057FF
 
 // lighter scheme
 // $red: #EFBCBB
@@ -109,7 +110,7 @@ $tablet-width: 1024px
 		+transform(translate3d(-50%, 0, 0))
 
 		.name
-			+span-columns(4 of 12)
+			+span-columns(6 of 12)
 			+shift(1)
 			height: 50px
 			overflow: hidden
@@ -237,7 +238,7 @@ $tablet-width: 1024px
 
 				.text
 					+span-columns(2 of 12)
-					margin-top: 8vh 
+					margin-top: 6vh 
 					z-index: 900
 				
 				.menu
@@ -341,12 +342,6 @@ $tablet-width: 1024px
 				&.show 
 					display: block
 
-				.base 
-					+span-columns(9 of 12)
-					+shift(1)
-					height: 100%
-					background-color: $blue
-
 				.menu
 					position: absolute
 					width: inherit
@@ -367,7 +362,7 @@ $tablet-width: 1024px
 						position: relative
 						
 						p
-							color: $red
+							color: $blue
 							font-size: 16px
 							font-weight: 700
 							display: inline
@@ -379,18 +374,21 @@ $tablet-width: 1024px
 								content: "\263A"
 								vertical-align: top
 								color: $blue
+								padding-left: 1vw
 
 						&.next
 							&:after
 								content: "\27F6"
 								vertical-align: top
 								color: $blue
+								padding-left: 1vw
 
 						&.prev
 							&:after
 								content: "\27F6"
 								vertical-align: top
 								color: $blue
+								padding-left: 1vw
 
 				.single
 					height: 100%
@@ -403,42 +401,44 @@ $tablet-width: 1024px
 						&.show
 							display: block
 
-					&.one 
-						.slider 
-							.slide 
-								background-color: $red
-
 					.text 					
 						position: relative
 						z-index: 9999 !important
 						top: 4vh
 						opacity: 0
-						+transform(translate3d(0, -10vh, 0))
 						+transition(all 0.5s ease)
+						+span-columns(6 of 10)
+						+shift(2)
 
 						&.animate
-							+transform(translate3d(0, 0, 0))
 							opacity: 1
 			
 						h2
-							+span-columns(4 of 10)
+							+span-columns(6 of 10)
 							font-family: $font-stack
-							color: $blue
-							font-size: 20px
+							color: $white
+							font-size: 16px
 							line-height: 40px
 							margin-bottom: 0
 							margin-left: 0
 
+						.menu-item 
+							+span-columns(6 of 10)
+							color: $white
+							font-size: 14px
+							float: left
+							position: relative
+
+						
 						.description	
 							color: $white
-							position: absolute
-							display: none
+							position: relative
 							top: 3vh
-							
-							&.show 
-								display: block
-								+shift(2)
-								+span-columns(4 of 10)
+							font-size: 14px
+							opacity: 1
+							position: relative
+							+span-columns(6 of 10)
+
 					
 					.slider
 						+span-columns(8 of 10)
@@ -446,8 +446,9 @@ $tablet-width: 1024px
 						height: 96%
 						position: absolute
 						opacity: 1
+						overflow: hidden
 
-						.right
+						.next-image
 							height: 100%
 							width: 100%
 							float: right
@@ -460,14 +461,11 @@ $tablet-width: 1024px
 							position: absolute
 							background-color: $blue
 							z-index: 400
-							opacity: 1
-							+transition(width 1000ms cubic-bezier(0.77, 0, 0.175, 1))
+							opacity: 0.95
+							+transition(width 600ms cubic-bezier(0.77, 0, 0.175, 1))
 
 							&.hide 
 								width: 0
-
-							&.half
-								width: 90%
 
 						.image
 							position: absolute
@@ -476,9 +474,20 @@ $tablet-width: 1024px
 							background-position: 50%, 50%
 							background-repeat: no-repeat
 							width: 100%
+							+transition(all 1000ms cubic-bezier(0.77, 0, 0.175, 1))
 							opacity: 0
-							&.show
+							&.right
+								+transform(translate3d(100%, 0, 0))
+								opacity: 0
+								
+							&.middle
+								+transform(translate3d(0, 0, 0))
 								opacity: 1
+
+							&.left 
+								+transform(translate3d(-100%, 0, 0))
+								opacity: 0
+
 
 
 	.hamburger
