@@ -300,27 +300,25 @@ $tablet-width: 1024px
 						&.two 
 							.image
 								// +linear-gradient($red, $white)
-								+background-image(url('layer/img/layer-5.jpg'))
+								+background-image(url('paper/img/second-thumbnail.png'))
 						
 						&.three 
 							.image
 								// +linear-gradient($yellow, $white)
-								+background-image(url('paper/img/second-thumbnail.png'))
+								+background-image(url('layer/img/layer-5.jpg'))
 						
 						&.four 
 							.image
-								+background-image(url('together/img/purple-game.png'))
 
 						&.five
 							.image
 								// +linear-gradient($red, $white)
-								+background-image(url('haunt/img/thumbnail.png'))
+								+background-image(url('haunt/img/maori-history-main.png'))
 
 						&.six
 							.image
 								// +linear-gradient($yellow, $white)
-								+background-image(url('daily/img/dino.png'))
-
+								+background-image(url('together/img/bottom.png'))
 
 						&.show 
 							.image 
@@ -403,12 +401,13 @@ $tablet-width: 1024px
 
 					.text 					
 						position: relative
-						z-index: 9999 !important
+						z-index: 600 !important
 						top: 4vh
 						opacity: 0
 						+transition(all 0.5s ease)
 						+span-columns(6 of 10)
 						+shift(2)
+						pointer-events: none
 
 						&.animate
 							opacity: 1
@@ -452,8 +451,8 @@ $tablet-width: 1024px
 							height: 100%
 							width: 100%
 							float: right
-							z-index: 200
-							position: relative
+							z-index: 600
+							position: absolute
 
 						.slide
 							height: 100%
@@ -474,7 +473,7 @@ $tablet-width: 1024px
 							background-position: 50%, 50%
 							background-repeat: no-repeat
 							width: 100%
-							+transition(all 1000ms cubic-bezier(0.77, 0, 0.175, 1))
+							+transition(all 500ms cubic-bezier(0.8, 0, 0.4, 1))
 							opacity: 0
 							&.right
 								+transform(translate3d(100%, 0, 0))
@@ -597,16 +596,15 @@ $tablet-width: 1024px
 							display: block
 
 						.text 					
-							position: relative
+							position: absolute
 							top: 0vh
-							opacity: 1
+							display: none
 							+span-columns(12 of 12)
 							+transform(translate3d(0, 0, 0))
 				
 							h2
 								width: 100%
 
-						
 						.slider
 							+span-columns(12 of 12)
 							+shift(0)
