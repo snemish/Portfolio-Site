@@ -1,0 +1,72 @@
+@charset "UTF-8";
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+body {
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ }
+
+#container {
+  position: absolute;
+  height: 100%;
+  overflow: hidden;
+  max-width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-color: #0057FF ;
+  top: 0; }
+  #container p {
+    font-family: "Inconsolata", monospace;
+    font-size: 14px;
+    color: #FFFFFF; }
+  #container h2 {
+    font-family: "Inconsolata", monospace;
+    font-size: 20px;
+    color: #0057FF;
+    font-weight: 700;
+    margin: 0; }
+  #container .wrapper {
+    height: auto;
+    width: 96vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    -ms-overflow-style: none; }
+    #container .wrapper .name {
+      position: relative;
+      width: 100%;
+      height: 60px;
+      overflow: hidden;
+      z-index: 500;
+      opacity: 1;
+    }
+      #container .wrapper .name .glitch {
+        font-size: 50px;
+        font-family: "Inconsolata", monospace;
+        color: #FFFFFF;
+        text-align: center;
+        display: block;
+       }
+    #container .wrapper .information {
+      position: relative;
+      width: 100%;
+      z-index: 9999 !important;
+      opacity: 1;}
+      #container .wrapper .information .blurb {
+        text-align: center;
+        width: 100%;
+        overflow: hidden; }
