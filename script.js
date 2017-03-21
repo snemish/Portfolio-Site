@@ -71,15 +71,17 @@ function slideshow() {
 function nextProject() {
   let current = $('.single.current');
     if($(current).next().length != 0) {
+      $(current).find('.text').removeClass('show animate');
       $(current).find('.slider').removeClass('active');
       $(current).find('.slider .image').removeClass('show');
       $(current).find('.next-image .slide').remove();
       $(current).removeClass('show current').next().addClass('show current');
       showProject();
     } else {
-      $(current).removeClass('show current');
+      $(current).find('.text').removeClass('show animate');
       $(current).find('.slider').removeClass('active');
       $(current).find('.next-image .slide').remove();
+      $(current).removeClass('show current');
       $('.single:first').addClass('show current');
       showProject();
     }
@@ -89,15 +91,17 @@ function nextProject() {
 function prevProject() {
   let current = $('.single.current');
     if($(current).prev('.single').length != 0) {
+      $(current).find('.text').removeClass('show animate');
       $(current).find('.slider .image').removeClass('show');
       $(current).find('.slider').removeClass('active');
       $(current).find('.next-image .slide').remove();
       $(current).removeClass('show current').prev('.single').addClass('show current');  
       showProject();
     } else {
-      $(current).removeClass('show current');
+      $(current).find('.text').removeClass('show animate');
       $(current).find('.slider').removeClass('active');
       $(current).find('.next-image .slide').remove();
+      $(current).removeClass('show current');
       $('.single:last').addClass('show current');
       showProject();
       return false;
@@ -156,6 +160,66 @@ function showHomepage() {
   },1700)
 }
 
+function showAbout() {
+  if($('.full').hasClass('show')) {
+    $('.slide').removeClass('hide');
+    $('.text').removeClass('animate');
+    
+    setTimeout(function(){
+      $('.menu').removeClass('animate');
+      $('#container').addClass('blue');
+      $('.line').addClass('blue');
+      $('.background').removeClass('hide'); 
+    },260);
+    setTimeout(function(){
+      $('.about').addClass('show');
+    },600);
+    setTimeout(function(){
+      $('.biography').addClass('show');
+      $('.about h2').addClass('show');
+    },700);
+
+  } else if($('.projects').hasClass('show')) {
+    setTimeout(function(){
+      $('#container').addClass('blue');
+      $('.line').addClass('blue');
+      $('.background').removeClass('hide'); 
+    },100);
+    setTimeout(function(){
+      $('.about').addClass('show');
+    },400);
+    setTimeout(function(){
+      $('.biography').addClass('show');
+      $('.about h2').addClass('show');
+    },500);
+  }
+}
+
+function hideAbout() {
+  $('.biography').removeClass('show');
+  $('.about h2').removeClass('show');
+  
+  setTimeout(function(){
+    $('#container').removeClass('blue');
+    $('.line').removeClass('blue');
+  },200);
+  
+  setTimeout(function(){
+    $('.background').addClass('hide'); 
+  },400);
+
+  setTimeout(function(){
+    $('.about').removeClass('show');
+  },500);
+
+  if($('.full').hasClass('show')) {  
+    setTimeout(function(){
+      $('.slide').addClass('hide');
+      $('.menu').addClass('animate');
+    },600);
+  }
+}
+
 $(function(){
   $.ajax({
       type : 'POST',
@@ -180,24 +244,43 @@ $(function(){
   });
 
   $('.hamburger').click(function() {
-    $('.about').toggleClass('show');
-    $('#container').toggleClass('blue');
-    $('.line').toggleClass('blue');
-    $('.background').toggleClass('hide');
-    $('.projects').toggleClass('show');
-    $('.full').removeClass('show');
+    if($('.about').hasClass('show')) {
+      setTimeout(function(){
+        hideAbout();
+      }, 30);
+      } else{
+        showAbout();
+      }
   });
-
+  
   $('.details').click(function() {
     $('.slide').toggleClass('hide');
-    $('.text').toggleClass('animate');
+    $('.current .text').toggleClass('animate');
+    $('.details').toggleClass('play');
   });
    
   $('.details').mouseleave(function() {
   });
   
   $('.name').click(function(){
-    $('.full').removeClass('show');
+    if($('.full').hasClass('show')){
+      $('.slide').removeClass('hide');
+      $('.text').removeClass('animate');
+      setTimeout(function(){
+        $('.background').removeClass('hide'); 
+      },200);
+      setTimeout(function(){
+        $('.menu').removeClass('animate');
+        $('.single').removeClass('show current');
+        $('.slider').removeClass('active');
+        $('.slider .image').removeClass('show');
+        $('.full').removeClass('show');
+        $('.projects').addClass('show');    
+      },500);
+      setTimeout(function(){
+        $('.background').addClass('hide'); 
+      },1200);
+    }
   });
 
   showHomepage();
@@ -229,8 +312,17 @@ $(function(){
           setTimeout(function() {
             showMobile();
           },1600);
-  
     });
+    $('.hamburger').click(function(){
+      if($('.full').hasClass('show')) {
+        $('.full').toggleClass('show');
+        setTimeout(function(){
+          $('.name').show();
+          $('.information').show();
+        },600); 
+      }
+    });
+
   }
 }
   $(window).resize(mobileFunction);

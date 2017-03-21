@@ -15,69 +15,6 @@ body {
   cursor: url("img/dot-outline.png"), default;
   cursor: -webkit-image-set(url("img/dot-outline.png") 2x, url("img/dot-outline.png") 2x), auto; }
 
-@-webkit-keyframes glitch {
-  0% {
-    -webkit-transform: translate(0); }
-  20% {
-    -webkit-transform: translate(-4px, 4px); }
-  40% {
-    -webkit-transform: translate(-4px, -4px); }
-  60% {
-    -webkit-transform: translate(4px, 4px); }
-  90% {
-    -webkit-transform: translate(4px, -4px); }
-  to {
-    -webkit-transform: translate(0); } }
-@-moz-keyframes glitch {
-  0% {
-    -moz-transform: translate(0); }
-  20% {
-    -moz-transform: translate(-4px, 4px); }
-  40% {
-    -moz-transform: translate(-4px, -4px); }
-  60% {
-    -moz-transform: translate(4px, 4px); }
-  90% {
-    -moz-transform: translate(4px, -4px); }
-  to {
-    -moz-transform: translate(0); } }
-@keyframes glitch {
-  0% {
-    -webkit-transform: translate(0);
-    -moz-transform: translate(0);
-    -ms-transform: translate(0);
-    -o-transform: translate(0);
-    transform: translate(0); }
-  20% {
-    -webkit-transform: translate(-4px, 4px);
-    -moz-transform: translate(-4px, 4px);
-    -ms-transform: translate(-4px, 4px);
-    -o-transform: translate(-4px, 4px);
-    transform: translate(-4px, 4px); }
-  40% {
-    -webkit-transform: translate(-4px, -4px);
-    -moz-transform: translate(-4px, -4px);
-    -ms-transform: translate(-4px, -4px);
-    -o-transform: translate(-4px, -4px);
-    transform: translate(-4px, -4px); }
-  60% {
-    -webkit-transform: translate(4px, 4px);
-    -moz-transform: translate(4px, 4px);
-    -ms-transform: translate(4px, 4px);
-    -o-transform: translate(4px, 4px);
-    transform: translate(4px, 4px); }
-  90% {
-    -webkit-transform: translate(4px, -4px);
-    -moz-transform: translate(4px, -4px);
-    -ms-transform: translate(4px, -4px);
-    -o-transform: translate(4px, -4px);
-    transform: translate(4px, -4px); }
-  to {
-    -webkit-transform: translate(0);
-    -moz-transform: translate(0);
-    -ms-transform: translate(0);
-    -o-transform: translate(0);
-    transform: translate(0); } }
 #container {
   position: absolute;
   height: 100%;
@@ -255,14 +192,33 @@ body {
       display: block;
       margin-right: 2.74614%;
       width: 91.43782%;
-      z-index: 9999 !important;
       top: 26vh;
       height: 64vh;
       overflow: hidden; }
       #container .wrapper .section:last-child {
         margin-right: 0; }
       #container .wrapper .section.about {
+        z-index: 9999;
         display: none; }
+        #container .wrapper .section.about.show {
+          display: block; }
+        #container .wrapper .section.about h2, #container .wrapper .section.about .biography {
+          -webkit-transform: translate3d(0, 10vh, 0);
+          -moz-transform: translate3d(0, 10vh, 0);
+          -ms-transform: translate3d(0, 10vh, 0);
+          -o-transform: translate3d(0, 10vh, 0);
+          transform: translate3d(0, 10vh, 0);
+          -webkit-transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          opacity: 0; }
+          #container .wrapper .section.about h2.show, #container .wrapper .section.about .biography.show {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
         #container .wrapper .section.about h2 {
           float: left;
           display: block;
@@ -301,7 +257,8 @@ body {
         #container .wrapper .section.about.show {
           display: block; }
       #container .wrapper .section.projects {
-        display: none; }
+        display: none;
+        z-index: 700; }
         #container .wrapper .section.projects.show {
           display: block; }
         #container .wrapper .section.projects .text, #container .wrapper .section.projects .menu {
@@ -344,7 +301,7 @@ body {
           #container .wrapper .section.projects .menu:last-child {
             margin-right: 0; }
           #container .wrapper .section.projects .menu .project {
-            height: 30px;
+            height: 40px;
             width: 100%;
             overflow: hidden;
             z-index: 100; }
@@ -393,8 +350,8 @@ body {
             #container .wrapper .section.projects .menu .project.one {
               margin-top: 8vh; }
               #container .wrapper .section.projects .menu .project.one .image {
-                background-image: url("bm/img/arts-mrec.png");
-                background-image: url("bm/img/arts-mrec.png"); }
+                background-image: url("bm/img/suicide-squad.png");
+                background-image: url("bm/img/suicide-squad.png"); }
             #container .wrapper .section.projects .menu .project.two .image {
               background-image: url("paper/img/second-thumbnail.png");
               background-image: url("paper/img/second-thumbnail.png"); }
@@ -402,8 +359,8 @@ body {
               background-image: url("layer/img/layer-5.jpg");
               background-image: url("layer/img/layer-5.jpg"); }
             #container .wrapper .section.projects .menu .project.four .image {
-              background-image: url("layer/img/layer-5.jpg");
-              background-image: url("layer/img/layer-5.jpg"); }
+              background-image: url("days/orange.png");
+              background-image: url("days/orange.png"); }
             #container .wrapper .section.projects .menu .project.five .image {
               background-image: url("haunt/img/maori-history-main.png");
               background-image: url("haunt/img/maori-history-main.png"); }
@@ -419,7 +376,8 @@ body {
             #container .wrapper .section.projects .menu .project.show .menu-item:after {
               opacity: 1; }
       #container .wrapper .section.full {
-        display: none; }
+        display: none;
+        z-index: 600; }
         #container .wrapper .section.full.show {
           display: block; }
         #container .wrapper .section.full .menu {
@@ -465,7 +423,28 @@ body {
                 content: "☺";
                 vertical-align: top;
                 color: #0057FF;
-                padding-left: 1vw; }
+                padding-left: 1vw;
+                display: inline-block;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+                -webkit-transform-origin: 0 50%;
+                -moz-transform-origin: 0 50%;
+                -ms-transform-origin: 0 50%;
+                -o-transform-origin: 0 50%;
+                transform-origin: 0 50%; }
+              #container .wrapper .section.full .menu .menu-item.details.play:after {
+                content: "☺";
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                transform: rotate(90deg); }
             #container .wrapper .section.full .menu .menu-item.next:after {
               content: "⟶";
               vertical-align: top;
@@ -564,7 +543,7 @@ body {
               position: absolute; }
             #container .wrapper .section.full .single .slider .slide {
               height: 100%;
-              width: 100%;
+              width: 101%;
               position: absolute;
               background-color: #0057FF;
               z-index: 400;
@@ -593,7 +572,7 @@ body {
     display: block;
     margin-right: 2.74614%;
     width: 5.81604%;
-    height: 40px;
+    height: 34px;
     background-size: contain;
     background-repeat: no-repeat;
     top: 17vh;
@@ -617,7 +596,45 @@ body {
         background-color: #FFFFFF; }
 
 @media(min-width: 1200px) and (max-width: 1600px);
-@media(min-width: 768px) and (max-width: 1198px);
+@media(min-width: 768px) and (max-width: 1198px) {
+  #container .wrapper .name {
+    float: left;
+    display: block;
+    margin-right: 2.74614%;
+    width: 48.62693%; }
+    #container .wrapper .name:last-child {
+      margin-right: 0; }
+  #container .wrapper .information .blurb {
+    float: left;
+    display: block;
+    margin-right: 2.74614%;
+    width: 14.37822%; }
+    #container .wrapper .information .blurb:last-child {
+      margin-right: 0; }
+  #container .wrapper .section.about h2 {
+    float: left;
+    display: block;
+    margin-right: 2.74614%;
+    width: 65.75129%; }
+    #container .wrapper .section.about h2:last-child {
+      margin-right: 0; }
+  #container .wrapper .section.about .biography {
+    float: left;
+    display: block;
+    margin-right: 2.74614%;
+    width: 65.75129%; }
+    #container .wrapper .section.about .biography:last-child {
+      margin-right: 0; }
+  #container .wrapper .section.projects .menu {
+    margin-left: 0%; }
+    #container .wrapper .section.projects .menu .project.one .image, #container .wrapper .section.projects .menu .project.two .image, #container .wrapper .section.projects .menu .project.three .image, #container .wrapper .section.projects .menu .project.four .image, #container .wrapper .section.projects .menu .project.five .image, #container .wrapper .section.projects .menu .project.six .image {
+      height: 80%;
+      float: left;
+      display: block;
+      margin-right: 2.74614%;
+      width: 82.87564%; }
+      #container .wrapper .section.projects .menu .project.one .image:last-child, #container .wrapper .section.projects .menu .project.two .image:last-child, #container .wrapper .section.projects .menu .project.three .image:last-child, #container .wrapper .section.projects .menu .project.four .image:last-child, #container .wrapper .section.projects .menu .project.five .image:last-child, #container .wrapper .section.projects .menu .project.six .image:last-child {
+        margin-right: 0; } }
 @media(min-width: 320px) and (max-width: 740px) {
   #container {
     overflow: hidden; }
@@ -842,10 +859,12 @@ body {
     #container .hamburger {
       margin-left: 5vw;
       height: 40px;
+      margin-top: 10px;
       float: left;
       display: block;
       margin-right: 2.74614%;
       width: 14.37822%;
+      position: relative;
       display: flex;
       display: -moz-box;
       display: -webkit-box;
