@@ -403,7 +403,7 @@ $tablet-width: 1024px
 							&:hover
 								text-decoration: underline
 
-						&.details
+						&.details, &.back
 							margin-bottom: 4vh
 							
 							&:after
@@ -435,6 +435,9 @@ $tablet-width: 1024px
 								content: "\27F6"
 								vertical-align: top
 								color: $blue
+
+						&.back
+							display: none
 
 				.single
 					height: 100%
@@ -796,17 +799,25 @@ $tablet-width: 1024px
 						overflow: visible
 
 					.menu 
-						position: absolute
+						position: realtive
 						+span-columns(12 of 12)
 						+shift(0)
 						margin-top: 5vh
 
 						.menu-item
 							+shift(0)
-							+span-columns(6 of 12)
+							+span-columns(3 of 12)
 
-							&.details 
+							&.details, &.prev
 								display: none
+
+							&.next
+								+shift(2)
+
+							&.back
+								display: block
+								margin-bottom: 0
+								+span-columns(6 of 12)
 
 
 					.single
@@ -815,8 +826,6 @@ $tablet-width: 1024px
 						+shift(0)
 						height: auto
 						overflow: scroll
-						-webkit-margin-before: 5vh
-						-webkit-margin-after: 5vh
 
 						&.one, &.two, &.three, &.four, &.five, &.six 
 							display: none
@@ -830,7 +839,7 @@ $tablet-width: 1024px
 								+transform(translate3d(0, 0, 0))
 								+shift(0)
 								-webkit-margin-after: 5vh
-								-webkit-margin-before: 5vh
+								-webkit-margin-before: 0
 					
 								h2
 									width: 100%

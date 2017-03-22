@@ -469,9 +469,9 @@ body {
               cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), auto; }
               #container .wrapper .section.full .menu .menu-item p:hover {
                 text-decoration: underline; }
-            #container .wrapper .section.full .menu .menu-item.details {
+            #container .wrapper .section.full .menu .menu-item.details, #container .wrapper .section.full .menu .menu-item.back {
               margin-bottom: 4vh; }
-              #container .wrapper .section.full .menu .menu-item.details:after {
+              #container .wrapper .section.full .menu .menu-item.details:after, #container .wrapper .section.full .menu .menu-item.back:after {
                 content: "☺";
                 vertical-align: baseline;
                 font-size: 20px;
@@ -491,7 +491,7 @@ body {
                 -o-transform-origin: center;
                 transform-origin: center;
                 height: 100%; }
-              #container .wrapper .section.full .menu .menu-item.details.play:after {
+              #container .wrapper .section.full .menu .menu-item.details.play:after, #container .wrapper .section.full .menu .menu-item.back.play:after {
                 content: "☺";
                 -webkit-transform: rotateZ(180deg);
                 -moz-transform: rotateZ(180deg);
@@ -508,6 +508,8 @@ body {
               content: "⟶";
               vertical-align: top;
               color: #0025F4; }
+            #container .wrapper .section.full .menu .menu-item.back {
+              display: none; }
         #container .wrapper .section.full .single {
           height: 100%;
           position: absolute;
@@ -960,7 +962,7 @@ body {
             height: 100%;
             overflow: visible; }
           #container .wrapper .section.full .menu {
-            position: absolute;
+            position: realtive;
             float: left;
             display: block;
             margin-right: 2.74614%;
@@ -974,11 +976,22 @@ body {
               float: left;
               display: block;
               margin-right: 2.74614%;
-              width: 48.62693%; }
+              width: 22.9404%; }
               #container .wrapper .section.full .menu .menu-item:last-child {
                 margin-right: 0; }
-              #container .wrapper .section.full .menu .menu-item.details {
+              #container .wrapper .section.full .menu .menu-item.details, #container .wrapper .section.full .menu .menu-item.prev {
                 display: none; }
+              #container .wrapper .section.full .menu .menu-item.next {
+                margin-left: 17.12436%; }
+              #container .wrapper .section.full .menu .menu-item.back {
+                display: block;
+                margin-bottom: 0;
+                float: left;
+                display: block;
+                margin-right: 2.74614%;
+                width: 48.62693%; }
+                #container .wrapper .section.full .menu .menu-item.back:last-child {
+                  margin-right: 0; }
           #container .wrapper .section.full .single {
             position: relative;
             float: left;
@@ -987,9 +1000,7 @@ body {
             width: 100%;
             margin-left: 0%;
             height: auto;
-            overflow: scroll;
-            -webkit-margin-before: 5vh;
-            -webkit-margin-after: 5vh; }
+            overflow: scroll; }
             #container .wrapper .section.full .single:last-child {
               margin-right: 0; }
             #container .wrapper .section.full .single.one, #container .wrapper .section.full .single.two, #container .wrapper .section.full .single.three, #container .wrapper .section.full .single.four, #container .wrapper .section.full .single.five, #container .wrapper .section.full .single.six {
@@ -1010,7 +1021,7 @@ body {
                 transform: translate3d(0, 0, 0);
                 margin-left: 0%;
                 -webkit-margin-after: 5vh;
-                -webkit-margin-before: 5vh; }
+                -webkit-margin-before: 0; }
                 #container .wrapper .section.full .single.one .text:last-child, #container .wrapper .section.full .single.two .text:last-child, #container .wrapper .section.full .single.three .text:last-child, #container .wrapper .section.full .single.four .text:last-child, #container .wrapper .section.full .single.five .text:last-child, #container .wrapper .section.full .single.six .text:last-child {
                   margin-right: 0; }
                 #container .wrapper .section.full .single.one .text h2, #container .wrapper .section.full .single.two .text h2, #container .wrapper .section.full .single.three .text h2, #container .wrapper .section.full .single.four .text h2, #container .wrapper .section.full .single.five .text h2, #container .wrapper .section.full .single.six .text h2 {
