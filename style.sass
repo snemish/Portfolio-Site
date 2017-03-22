@@ -14,12 +14,12 @@ $gutter: 2em
 
 $font-stack: 'Inconsolata', monospace
 
-// $blue: #0025F4
+$blue: #0025F4
 $white: #FFFFFF
 $yellow: #F6D258
 $orange: #FFDDD4
 $red: #fc4245
-$blue: #0057FF
+// $blue: #0057FF
 
 // lighter scheme
 // $red: #EFBCBB
@@ -138,10 +138,37 @@ $tablet-width: 1024px
 				text-align: left
 
 
+			.hamburger
+				position: relative
+				+span-columns(1 of 12)
+				+shift(1)
+				height: 34px
+				z-index: 9999 !important
+				margin-top: 18px
+				display: flex !important
+				display: -moz-box !important
+				display: -webkit-box !important
+				display: -ms-flexbox !important
+				display: -webkit-flex !important
+				-webkit-flex-flow: row wrap !important
+				justify-content: space-around !important
+				cursor: url('img/dot-outline.png'), default
+				cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
+
+
+				.line 
+					background-color: $blue
+					height: 4px
+					width: 100%
+					position: relative
+
+					&.blue
+						background-color: $white
+
+
 		.section
 			position: absolute
-			+shift(1)
-			+span-columns(11 of 12)
+			+span-columns(12 of 12)
 			top: 26vh
 			height: 66vh
 			overflow: hidden	
@@ -149,11 +176,13 @@ $tablet-width: 1024px
 			&.about
 				z-index: 9999
 				display: none
+				+shift(1)
 
 				&.show 
 					display: block
+					+span-columns(11 of 12)
 
-				h2, .biography
+				h2, .biography, .contact
 					+transform(translate3d(0, 10vh, 0))
 					+transition(all 0.5s ease)
 					opacity: 0
@@ -168,6 +197,8 @@ $tablet-width: 1024px
 
 				.biography				
 					+span-columns(6 of 12)
+					+shift(2)
+
 					z-index: 800
 					p 
 						+span-columns(4 of 6)
@@ -194,6 +225,8 @@ $tablet-width: 1024px
 							height: 24px
 							text-decoration: underline
 							width: 100%
+							cursor: url('img/dot.png'), default
+							cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
 
 
 				.image
@@ -231,6 +264,7 @@ $tablet-width: 1024px
 					+span-columns(2 of 12)
 					margin-top: 12vh 
 					z-index: 900
+					+shift(1)
 					
 					h2 
 						font-size: 16px
@@ -239,7 +273,7 @@ $tablet-width: 1024px
 				.menu
 					height: 100%
 					position: absolute
-					+span-columns(10 of 12)
+					+span-columns(11 of 12)
 					+shift(1)
 					top: 0
 
@@ -250,7 +284,7 @@ $tablet-width: 1024px
 						z-index: 100
 
 						.menu-item
-							+span-columns(2 of 10)
+							+span-columns(2 of 12)
 							position: relative
 							z-index: 800 !important
 							font-size: 14px
@@ -268,7 +302,7 @@ $tablet-width: 1024px
 								color: $red
 
 							&.date
-								+shift(1)
+								+shift(2)
 								opacity: 0
 
 							&.role
@@ -282,7 +316,8 @@ $tablet-width: 1024px
 							.image
 								position: absolute
 								height: 100%
-								+span-columns(8 of 10)
+								+shift(1)
+								+span-columns(8 of 12)
 								background-size: cover
 								background-position: 50%, 50%
 								background-repeat: no-repeat
@@ -326,7 +361,6 @@ $tablet-width: 1024px
 								opacity: 1
 
 							.menu-item
-								color: $red
 								&:after
 									opacity: 1
 			
@@ -338,12 +372,12 @@ $tablet-width: 1024px
 					display: block
 
 				.menu
-					position: absolute
+					position: relative
 					width: inherit
 					height: 50px
 					margin-top: 12vh
-					+span-columns(2 of 10)
-					+shift(7)
+					+span-columns(11 of 12)
+					+shift(1)
 					z-index: 9999 !important
 					+transform(translate3d(0, -10vh, 0))
 					+transition(all 0.5s ease)
@@ -355,50 +389,58 @@ $tablet-width: 1024px
 
 					.menu-item
 						position: relative
-						
+						+span-columns(2 of 12)
+						+shift(9)
 						p
 							color: $blue
 							font-size: 14px
 							font-weight: 700
 							display: inline
-							padding-bottom: 10px
+							padding-right: 1vw
+							cursor: url('img/dot.png'), default
+							cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
+
+							&:hover
+								text-decoration: underline
 
 						&.details
 							margin-bottom: 4vh
-							&:before
+							
+							&:after
 								content: "\263A"
-								vertical-align: top
+								vertical-align: baseline
+								font-size: 20px
 								color: $blue
-								padding-left: 1vw
 								display: inline-block
 								+transition(all 0.5s ease)
 								+transform(rotate(0deg))
-								+transform-origin(0 50%)
+								+transform-origin(center)
+								height: 100%
 
 							&.play
-								&:before
+								&:after
 									content: "\263A"
-									+transform(rotate(-180deg))
+									+transform(rotateZ(180deg))
+									display: inline-block
 
 						&.next
-							&:before
+							&:after
 								content: "\27F6"
 								vertical-align: top
 								color: $blue
-								padding-left: 1vw
+								padding-bottom: 4vh
 
 						&.prev
-							&:before
+							&:after
 								content: "\27F6"
 								vertical-align: top
 								color: $blue
-								padding-left: 1vw
-								// position: absolute
 
 				.single
 					height: 100%
 					position: absolute
-					+span-columns(10 of 12)
+					+span-columns(11 of 12)
+					+shift(1)
 
 					&.one, &.two, &.three, &.four, &.five, &.six 
 						display: none
@@ -406,60 +448,64 @@ $tablet-width: 1024px
 						&.show
 							display: block
 
-					.text 					
-						position: relative
-						z-index: 600 !important
-						top: 4vh
-						opacity: 0
-						+transition(all 0.5s ease)
-						+span-columns(6 of 10)
-						+shift(2)
-						pointer-events: none
-
-						&.animate
-							opacity: 1
-			
-						h2
-							+span-columns(6 of 10)
-							font-family: $font-stack
-							color: $white
-							font-size: 16px
-							line-height: 40px
-							margin-bottom: 0
-							margin-left: 0
-
-						.menu-item 
-							+span-columns(4 of 10)
-							color: $white
-							font-size: 14px
-							float: left
+						.text 					
 							position: relative
+							z-index: 600 !important
+							top: 4vh
+							opacity: 0
+							+transition(all 0.5s ease)
+							+span-columns(11 of 12)
+							+shift(1)
+
+							&.animate
+								opacity: 1
+				
+							h2	
+								+span-columns(7 of 11)
+								+shift(1)
+								width: 100%
+								font-family: $font-stack
+								color: $white
+								font-size: 16px
+								line-height: 40px
+								margin-bottom: 0
+
+							.menu-item 
+								+span-columns(2 of 11)
+								+shift(1)
+								color: $white
+								font-size: 14px
+								position: relative
+
+								&.role
+									+span-columns(4 of 11)
+									+shift(0)
+							
+							.description	
+								color: $white
+								position: relative
+								top: 3vh
+								font-size: 14px
+								opacity: 1
+								position: relative
+								+span-columns(4 of 11)
+								+shift(1)
 
 						
-						.description	
-							color: $white
-							position: relative
-							top: 3vh
-							font-size: 14px
-							opacity: 1
-							position: relative
-							+span-columns(6 of 10)
-
-					
-					.slider
-						+span-columns(8 of 10)
-						+shift(1)
-						height: 96%
-						position: absolute
-						opacity: 1
-						overflow: hidden
-
-						.next-image
-							height: 100%
-							width: 100%
-							float: right
-							z-index: 600
+						.slider
+							+span-columns(8 of 12)
+							+shift(1)
+							height: 96%
 							position: absolute
+							opacity: 1
+							overflow: hidden
+
+							.next-image
+								height: 100%
+								width: 100%
+								float: right
+								z-index: 600
+								position: absolute
 
 						.slide
 							height: 100%
@@ -485,95 +531,121 @@ $tablet-width: 1024px
 							&.show
 								opacity: 1
 
-	.hamburger
-		position: relative
-		+span-columns(1 of 10)
-		+shift(7)
-		height: 34px
-		padding-left: 10px
-		background-size: contain
-		background-repeat: no-repeat
-		top: 15vh
-		z-index: 9999
-		// margin-left: 1vw
-		display: flex
-		display: -moz-box
-		display: -webkit-box
-		display: -ms-flexbox
-		display: -webkit-flex
-		-webkit-flex-flow: row wrap
-		justify-content: space-around
-		cursor: url('img/dot-outline.png'), default
-		cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
-
-
-		.line 
-			background-color: $blue
-			height: 4px
-			width: 80%
-			position: relative
-
-			&.blue
-				background-color: $white
-
-
-
-// ---------- Laptop ---------- //
-
-@media(min-width: 1200px) and (max-width: 1600px)
-
 
 // ---------- Tablet ---------- //
 	
 @media(min-width: 768px) and (max-width: 1198px)
-	.hamburger
-		top: 6vh! important
 
 	#container
-
 		.wrapper 
 			width: 94vw
 			.name
 				+shift(0)
-				+span-columns(3 of 12)
+				+span-columns(4 of 12)
 
 			.information
 				+shift(0)
+				+span-columns(12 of 12)
+				
 				.blurb
 					+span-columns(3 of 12)
+
+					&.listening-to
+						margin-right: 0
+				
+				.hamburger
+					position: absolute
+					+shift(0)
+					margin-top: 24vh
 
 			.section
 				+shift(0)
 				+span-columns(12 of 12)
 				
-				&.about				
+				&.about
+					&.show
+						+span-columns(12 of 12)
+						+shift(1)
+					
 					.biography				
 						+span-columns(5 of 12)
-						+shift
-						p
+						+shift(2)
+						margin-top: 10vh
+
+						p 
 							width: 100%
 
 					.contact
-						+span-columns(6 of 12)
-						+shift(0)
+						+span-columns(3 of 12)
+						+shift(1)
+						margin-top: 10vh
 
+						.social, .email
+							+span-columns(3 of 3)
+
+						.social 
+							.media
+								width: 50%
+								float: left
 
 				&.projects
+					.text 
+						display: none
 					.menu
 						+shift(0)
 						+span-columns(12 of 12)
 						.project
 							.menu-item
-								&.one, &.two, &.three, &.four, &.five, &.six 
-									.image
-										+span-columns(11 of 12)
-										+shift(1)
+								height: 40px
+							
+							&.one, &.two, &.three, &.four, &.five, &.six 
+								.image
+									+span-columns(11 of 12)
+									+shift(1)
+				&.full
+					overflow: visible
+					
+					.menu
+						+span-columns(3 of 12)
+						+shift(0)
+						top: 20vh
+						margin-top: 0
+
+						.menu-item
+							+span-columns(3 of 3)
+							+shift(0)							
+
+							&.details
+								+span-columns(3 of 3)
+							&.next, &.prev
+								height: 30px
+				
+					.single
+						+span-columns(12 of 12)
+						+shift(0)									
+
+						&.one, &.two, &.three, &.four, &.five, &.six 
+
+							.text 
+								+shift(2)					
+
+								.menu-item 
+									+span-columns(3 of 11)
+
+								.description	
+									+span-columns(6 of 12)
+
+							.slider
+								+span-columns(11 of 12)
+								+shift(1)
+							
 
 
 	
 // ---------- Phone ---------- //
 
 @media(min-width: 320px) and (max-width: 740px) 
+	
 	#container
 		overflow: hidden
 		
@@ -581,61 +653,74 @@ $tablet-width: 1024px
 			width: 90vw
 			height: 100%
 			overflow: scroll
+			overflow-y: scroll
+			-webkit-overflow-scrolling: touch
 
 			.name
 				+span-columns(6 of 12)
 				+shift(0)
 				height: 100px
 
+				.glitch
+					font-size: 40px
+
+				&.hide 
+					display: none
+
 			.information
-				+span-columns(5 of 12)
+				+span-columns(6 of 12)
 				+shift(0)
 				float: right
+				margin-right: 0
 				-webkit-margin-before: 5vh
 				-webkit-margin-after: 4vh
+
+				&.hide 
+					display: none
 				
 				.blurb
 					+span-columns(6 of 6)
 
+				.hamburger
+					position: absolute
+					width: 39%
+					+shift(0)
+					left: -50vw
+					margin-top: 17vh
+
 			.section
 				+shift(0)
 				+span-columns(12 of 12)
-				top: 42vh
+				top: 0
 				height: auto
+				position: relative
 				
 				&.about
-					
-					h2
-						+span-columns(12 of 12)
-						color: $white
+					+shift(0)
 
-					.biography				
+					.biography
+						+shift(0)				
 						+span-columns(12 of 12)
-						position: relative
 
-						p 
-							color: $white
-							width: 100%
+						p
+							width: 96%
 
 					.contact
 						+shift(0)
 						+span-columns(12 of 12)
 						
+						.social, .email
+							+span-columns(6 of 12)
+
 					&.show 
+						width: 100%
 						display: block
 
 				&.projects
 					height: auto
 					width: 100%
 					display: none
-					overflow: scroll
 
-					.text
-						margin-top: 0
-						float: right !important
-						+span-columns(5 of 12)
-
-					
 					.menu
 						height: 100%
 						position: relative
@@ -647,11 +732,13 @@ $tablet-width: 1024px
 							height: 400px
 							position: relative
 							+span-columns(12 of 12)
-							-webkit-margin-before: 4vh
-							-webkit-margin-after: 4vh
+							-webkit-margin-before: 2vh
+							-webkit-margin-after: 2vh
+							
 							.menu-item
-								+span-columns(10 of 12)
-								height: auto
+								position: relative
+								+span-columns(6 of 12)
+								height: 18px
 								float: left
 								pointer-events: none
 
@@ -664,14 +751,17 @@ $tablet-width: 1024px
 
 								&.name 
 									+shift(0)
-									// opacity: 0
 								
 
 							&.one, &.two, &.three, &.four, &.five, &.six 
 
+								&.one 
+									margin-top: 6vh
+
 								.image
 									position: relative
 									height: 80%
+									+shift(0)
 									+span-columns(12 of 12)
 									background-size: cover
 									background-position: 50%, 50%
@@ -702,14 +792,28 @@ $tablet-width: 1024px
 					&.show 
 						display: block
 						top: 0
+						height: 100%
+						overflow: visible
 
 					.menu 
-						display: none !important 
+						position: absolute
+						+span-columns(12 of 12)
+						+shift(0)
+						margin-top: 5vh
+
+						.menu-item
+							+shift(0)
+							+span-columns(6 of 12)
+
+							&.details 
+								display: none
+
 
 					.single
 						position: relative
 						+span-columns(12 of 12)
-						height: 100%
+						+shift(0)
+						height: auto
 						overflow: scroll
 						-webkit-margin-before: 5vh
 						-webkit-margin-after: 5vh
@@ -717,64 +821,51 @@ $tablet-width: 1024px
 						&.one, &.two, &.three, &.four, &.five, &.six 
 							display: none
 
-						.text 					
-							position: relative
-							top: 0vh
-							margin-top: 0
-							display: block
-							+span-columns(12 of 12)
-							+transform(translate3d(0, 0, 0))
-							+shift(0)
-							-webkit-margin-after: 5vh
-				
-							h2
-								width: 100%
-								color: $blue
-								+shift(0)
-
-							.menu-item
-								color: $blue
-
-							.description
-								+span-columns(12 of 12)
-								color: $blue
-
-
-						.slider
-							+span-columns(12 of 12)
-							+shift(0)
-							opacity: 1
-							position: relative
-							+transition(all 0.5s ease)
-							top: 0
-
-							.image
+							.text 					
 								position: relative
-								height: 300px
-								opacity: 0
-								-webkit-margin-before: 5vh
+								top: 0vh
+								margin-top: 0
+								display: block
+								+span-columns(12 of 12)
+								+transform(translate3d(0, 0, 0))
+								+shift(0)
 								-webkit-margin-after: 5vh
-								+transition(opacity 500ms cubic-bezier(0.77, 0, 0.175, 1))
+								-webkit-margin-before: 5vh
+					
+								h2
+									width: 100%
+									color: $blue
+									+shift(0)
 
-								&.show
-									opacity: 1
+								.menu-item
+									+shift(0)
+									color: $blue
+									+span-columns(12 of 12)
 
-		.hamburger
-			margin-left: 5vw
-			height: 40px
-			margin-top: 14vh
-			+span-columns(2 of 12)
-			position: relative
-			display: flex
-			display: -moz-box
-			display: -webkit-box
-			display: -ms-flexbox
-			display: -webkit-flex
-			-webkit-flex-flow: row wrap
-			justify-content: space-around
-				
-			.line
-				width: 100%
+								.description
+									+span-columns(12 of 12)
+									+shift(0)
+									color: $blue
+
+
+							.slider
+								+span-columns(12 of 12)
+								+shift(0)
+								opacity: 1
+								position: relative
+								+transition(all 0.5s ease)
+
+								.image
+									position: relative
+									height: 300px
+									opacity: 0
+									+shift(0)
+									-webkit-margin-before: 5vh
+									-webkit-margin-after: 5vh
+									+transition(opacity 500ms cubic-bezier(0.77, 0, 0.175, 1))
+
+									&.show
+										opacity: 1
 					
 
 // ---------- Phone Landscape ---------- //
