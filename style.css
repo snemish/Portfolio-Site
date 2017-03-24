@@ -423,7 +423,7 @@ body {
         z-index: 600; }
         #container .wrapper .section.full.show {
           display: block; }
-        #container .wrapper .section.full .menu {
+        #container .wrapper .section.full .navigation {
           position: relative;
           width: inherit;
           height: 50px;
@@ -443,25 +443,25 @@ body {
           -moz-transition: all 0.5s ease;
           transition: all 0.5s ease;
           opacity: 0; }
-          #container .wrapper .section.full .menu:last-child {
+          #container .wrapper .section.full .navigation:last-child {
             margin-right: 0; }
-          #container .wrapper .section.full .menu.animate {
+          #container .wrapper .section.full .navigation.animate {
             -webkit-transform: translate3d(0, 0, 0);
             -moz-transform: translate3d(0, 0, 0);
             -ms-transform: translate3d(0, 0, 0);
             -o-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
             opacity: 1; }
-          #container .wrapper .section.full .menu .menu-item {
+          #container .wrapper .section.full .navigation .menu-item {
             position: relative;
             float: left;
             display: block;
             margin-right: 2.74614%;
             width: 14.37822%;
             margin-left: 77.0596%; }
-            #container .wrapper .section.full .menu .menu-item:last-child {
+            #container .wrapper .section.full .navigation .menu-item:last-child {
               margin-right: 0; }
-            #container .wrapper .section.full .menu .menu-item p {
+            #container .wrapper .section.full .navigation .menu-item p {
               color: #0025F4;
               font-size: 14px;
               font-weight: 700;
@@ -469,11 +469,11 @@ body {
               padding-right: 1vw;
               cursor: url("img/dot.png"), pointer;
               cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), pointer; }
-              #container .wrapper .section.full .menu .menu-item p:hover {
+              #container .wrapper .section.full .navigation .menu-item p:hover {
                 text-decoration: underline; }
-            #container .wrapper .section.full .menu .menu-item.details, #container .wrapper .section.full .menu .menu-item.back {
+            #container .wrapper .section.full .navigation .menu-item.details, #container .wrapper .section.full .navigation .menu-item.back {
               margin-bottom: 4vh; }
-              #container .wrapper .section.full .menu .menu-item.details:after, #container .wrapper .section.full .menu .menu-item.back:after {
+              #container .wrapper .section.full .navigation .menu-item.details:after, #container .wrapper .section.full .navigation .menu-item.back:after {
                 content: "☺";
                 vertical-align: baseline;
                 font-size: 20px;
@@ -493,7 +493,7 @@ body {
                 -o-transform-origin: center;
                 transform-origin: center;
                 height: 100%; }
-              #container .wrapper .section.full .menu .menu-item.details.play:after, #container .wrapper .section.full .menu .menu-item.back.play:after {
+              #container .wrapper .section.full .navigation .menu-item.details.play:after, #container .wrapper .section.full .navigation .menu-item.back.play:after {
                 content: "☺";
                 -webkit-transform: rotateZ(180deg);
                 -moz-transform: rotateZ(180deg);
@@ -501,16 +501,16 @@ body {
                 -o-transform: rotateZ(180deg);
                 transform: rotateZ(180deg);
                 display: inline-block; }
-            #container .wrapper .section.full .menu .menu-item.next:after {
+            #container .wrapper .section.full .navigation .menu-item.next:after {
               content: "⟶";
               vertical-align: top;
               color: #0025F4;
               padding-bottom: 4vh; }
-            #container .wrapper .section.full .menu .menu-item.prev:after {
+            #container .wrapper .section.full .navigation .menu-item.prev:after {
               content: "⟶";
               vertical-align: top;
               color: #0025F4; }
-            #container .wrapper .section.full .menu .menu-item.back {
+            #container .wrapper .section.full .navigation .menu-item.back {
               display: none; }
         #container .wrapper .section.full .single {
           height: 100%;
@@ -734,7 +734,7 @@ body {
             margin-right: 0; }
       #container .wrapper .section.full {
         overflow: visible; }
-        #container .wrapper .section.full .menu {
+        #container .wrapper .section.full .navigation {
           float: left;
           display: block;
           margin-right: 2.74614%;
@@ -742,24 +742,24 @@ body {
           margin-left: 0%;
           top: 20vh;
           margin-top: 0; }
-          #container .wrapper .section.full .menu:last-child {
+          #container .wrapper .section.full .navigation:last-child {
             margin-right: 0; }
-          #container .wrapper .section.full .menu .menu-item {
+          #container .wrapper .section.full .navigation .menu-item {
             float: left;
             display: block;
             margin-right: 11.97074%;
             width: 100%;
             margin-left: 0%; }
-            #container .wrapper .section.full .menu .menu-item:last-child {
+            #container .wrapper .section.full .navigation .menu-item:last-child {
               margin-right: 0; }
-            #container .wrapper .section.full .menu .menu-item.details {
+            #container .wrapper .section.full .navigation .menu-item.details {
               float: left;
               display: block;
               margin-right: 11.97074%;
               width: 100%; }
-              #container .wrapper .section.full .menu .menu-item.details:last-child {
+              #container .wrapper .section.full .navigation .menu-item.details:last-child {
                 margin-right: 0; }
-            #container .wrapper .section.full .menu .menu-item.next, #container .wrapper .section.full .menu .menu-item.prev {
+            #container .wrapper .section.full .navigation .menu-item.next, #container .wrapper .section.full .navigation .menu-item.prev {
               height: 30px; }
         #container .wrapper .section.full .single {
           float: left;
@@ -963,7 +963,7 @@ body {
             top: 0;
             height: 100%;
             overflow: visible; }
-          #container .wrapper .section.full .menu {
+          #container .wrapper .section.full .navigation {
             position: realtive;
             float: left;
             display: block;
@@ -971,28 +971,28 @@ body {
             width: 100%;
             margin-left: 0%;
             margin-top: 5vh; }
-            #container .wrapper .section.full .menu:last-child {
+            #container .wrapper .section.full .navigation:last-child {
               margin-right: 0; }
-            #container .wrapper .section.full .menu .menu-item {
+            #container .wrapper .section.full .navigation .menu-item {
               margin-left: 0%;
               float: left;
               display: block;
               margin-right: 2.74614%;
               width: 22.9404%; }
-              #container .wrapper .section.full .menu .menu-item:last-child {
+              #container .wrapper .section.full .navigation .menu-item:last-child {
                 margin-right: 0; }
-              #container .wrapper .section.full .menu .menu-item.details, #container .wrapper .section.full .menu .menu-item.prev {
+              #container .wrapper .section.full .navigation .menu-item.details, #container .wrapper .section.full .navigation .menu-item.prev {
                 display: none; }
-              #container .wrapper .section.full .menu .menu-item.next {
+              #container .wrapper .section.full .navigation .menu-item.next {
                 margin-left: 17.12436%; }
-              #container .wrapper .section.full .menu .menu-item.back {
+              #container .wrapper .section.full .navigation .menu-item.back {
                 display: block;
                 margin-bottom: 0;
                 float: left;
                 display: block;
                 margin-right: 2.74614%;
                 width: 48.62693%; }
-                #container .wrapper .section.full .menu .menu-item.back:last-child {
+                #container .wrapper .section.full .navigation .menu-item.back:last-child {
                   margin-right: 0; }
           #container .wrapper .section.full .single {
             position: relative;
