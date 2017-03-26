@@ -608,6 +608,8 @@ body {
                 float: right;
                 z-index: 600;
                 position: absolute; }
+                #container .wrapper .section.full .single.one .slider .next-image.hide, #container .wrapper .section.full .single.two .slider .next-image.hide, #container .wrapper .section.full .single.three .slider .next-image.hide, #container .wrapper .section.full .single.four .slider .next-image.hide, #container .wrapper .section.full .single.five .slider .next-image.hide, #container .wrapper .section.full .single.six .slider .next-image.hide {
+                  pointer-events: none; }
               #container .wrapper .section.full .single.one .slider .slide, #container .wrapper .section.full .single.two .slider .slide, #container .wrapper .section.full .single.three .slider .slide, #container .wrapper .section.full .single.four .slider .slide, #container .wrapper .section.full .single.five .slider .slide, #container .wrapper .section.full .single.six .slider .slide {
                 height: 100%;
                 width: 101%;
