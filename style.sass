@@ -31,7 +31,8 @@ body
 	margin: 0
 	padding: 0
 	overflow: hidden
-	cursor: url('img/dot-outline.png') 2x, default
+	font-size:  62.5%
+	cursor: url('img/dot-outline.png') 1x, default
 	cursor: -webkit-image-set(url('img/dot-outline.png') 2x, url('img/dot-outline.png') 2x), auto
 
 
@@ -89,10 +90,6 @@ $tablet-width: 1024px
 		position: absolute
 		left: 50%
 		+transform(translate3d(-50%, 0, 0))
-		-ms-overflow-style: none
-		overflow: -moz-scrollbars-none
-		&::-webkit-scrollbar
-			width: 0!important
 
 		.name
 			+span-columns(2 of 12)
@@ -154,7 +151,7 @@ $tablet-width: 1024px
 				-webkit-flex-flow: row wrap !important
 				flex-flow: row wrap !important
 				justify-content: space-around !important
-				cursor: url('img/dot-outline.png'), default
+				cursor: url('img/dot.png'), default
 				cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
 
 
@@ -389,6 +386,9 @@ $tablet-width: 1024px
 						+transform(translate3d(0, 0, 0))
 						opacity: 1
 
+					&.show
+						opacity: 1
+
 					.menu-item
 						position: relative
 						+span-columns(2 of 12)
@@ -511,6 +511,9 @@ $tablet-width: 1024px
 								float: right
 								z-index: 600
 								position: absolute
+								cursor: url('img/eye.png'), default
+								cursor: -webkit-image-set(url('img/eye.png') 3x, url('img/eye.png') 3x), auto
+
 								
 								&.hide 
 									pointer-events: none
@@ -663,6 +666,10 @@ $tablet-width: 1024px
 			overflow: scroll
 			overflow-y: scroll
 			-webkit-overflow-scrolling: touch
+			-ms-overflow-style: none
+			overflow: -moz-scrollbars-none
+			&::-webkit-scrollbar
+				width: 0!important
 
 			.name
 				+span-columns(6 of 12)

@@ -7,6 +7,7 @@ function setupProject() {
 
   $(section).addClass('show');
   $(active).addClass('show current');
+
   let mobile = window.matchMedia('(max-width: 740px)');
   
   if (mobile.matches) {
@@ -16,25 +17,13 @@ function setupProject() {
       showProject();
       console.log('yo');
     }
+  $('.project').removeClass('current');
 }
-
-// function setupMobile() {
-//     let section = $('.section.full');
-//     let selected = $('.current');
-//     let number = $(selected).attr('class').split(' ')[1];
-    
-//     let active = $('.single.'+number);
-
-//     $(section).addClass('show');
-//     $(active).addClass('show current');
-//     showMobile();
-// }
 
 function showMobile() {
     $('.projects, .about').removeClass('show');
     $('.name').addClass('hide');
     $('.information').addClass('hide');
-    $('.navigation').removeClass('animate');
   if($('.single').hasClass('current')) {
     $('.current').find('.slider').addClass('active');
     if($('.active .next-image').length === 0) {
@@ -73,20 +62,22 @@ function showProject() {
 }
 
 function slideshow() {
-  let currentImage = 0;  
-  let total = $('.active .image').length;
-  let nextButton = $('.active .next-image');
-  $(nextButton).click(function() {
-      currentImage++;
-      $('.active .image.show').removeClass('show').next('.image').addClass('show');
-      if(currentImage >= total) {
-        currentImage = 0;
-          $('.active .image.show').removeClass('show');
-          $('.active .image:first').addClass('show');
-      }  
-      console.log(currentImage);
-  });
-      console.log(total);
+  if($('.slider').hasClass('active')) {
+    let currentImage = 0;  
+    let total = $('.active .image').length;
+    let nextButton = $('.active .next-image');
+    $(nextButton).click(function() {
+        currentImage++;
+        $('.active .image.show').removeClass('show').next('.image').addClass('show');
+        if(currentImage >= total) {
+          currentImage = 0;
+            $('.active .image.show').removeClass('show');
+            $('.active .image:first').addClass('show');
+        }  
+        console.log(currentImage);
+    });
+        console.log(total);
+  }
 }
 
 function nextProject() {
@@ -160,30 +151,53 @@ function previewProjects() {
   let menu = $('.project a');
   let project = $('.menu .project');
 
-  $(menu).mouseenter(function(){
-    $('.project').removeClass('show');
-    $(this).parent(project).addClass('show');
-  });
+  let mobile = window.matchMedia('(max-width: 740px)');
+  
+  if (mobile.matches) {
+    let project = $('.menu .project');
+    $(project).click(function(){
+      $(this).addClass('current');
+      let match = $(this).attr('class').split(' ')[1];
+      console.log(match);
+      setTimeout(function(){
+        $('.projects').removeClass('show');
+        $('.name').addClass('hide');
+        $('.information').addClass('hide');
+        $('.background').removeClass('hide');
+      }, 200);
+      setTimeout(function() {
+        $('.background').addClass('hide');
+      },1500);
+      setTimeout(function() {
+        setupProject();
+      },1600);
+    });
+  } else {
+    $(menu).mouseenter(function(){
+      $('.project').removeClass('show');
+      $(this).parent(project).addClass('show');
+    });
 
-  $(menu).mouseleave(function(){
-    $('.project').removeClass('show');
-  });
+    $(menu).mouseleave(function(){
+      $('.project').removeClass('show');
+    });
 
-  $(menu).click(function(){
-    $(this).parent(project).addClass('current');
-    let match = $(this).parent(project).attr('class').split(' ')[1];
-    console.log(match);
-    setTimeout(function(){
-      $('.projects').removeClass('show');
-      $('.background').removeClass('hide');
-    }, 200);
-    setTimeout(function() {
-      $('.background').addClass('hide');
-    },1500);
-    setTimeout(function() {
-      setupProject();
-    },1600);
-  });
+    $(menu).click(function(){
+      $(this).parent(project).addClass('current');
+      let match = $(this).parent(project).attr('class').split(' ')[1];
+      console.log(match);
+      setTimeout(function(){
+        $('.projects').removeClass('show');
+        $('.background').removeClass('hide');
+      }, 200);
+      setTimeout(function() {
+        $('.background').addClass('hide');
+      },1500);
+      setTimeout(function() {
+        setupProject();
+      },1600);
+    });  
+  }
 }
 
 function showHomepage() {
@@ -282,8 +296,6 @@ function hideAbout() {
 }
 
 function resetProject() {
-  // $('.next-image').remove();
-  // $('.slide').remove();
   let current = $('.single.current');
   $(current).find('.text').removeClass('show animate');
   $(current).find('.slider .image').removeClass('show');
@@ -298,28 +310,8 @@ function resetProject() {
 
   function mobileFunction() {
     if (window.matchMedia('(max-width: 740px)').matches) {
-      let project = $('.menu .project');
-      $(project).click(function(){
-        $(this).addClass('current');
-        let match = $(this).attr('class').split(' ')[1];
-        console.log(match);
-        setTimeout(function(){
-          $('.projects').removeClass('show');
-          $('.name').addClass('hide');
-          $('.information').addClass('hide');
-          $('.background').removeClass('hide');
-          // $('.slide').remove();
-          // $('.next-image').remove();
-        }, 200);
-        setTimeout(function() {
-          $('.background').addClass('hide');
-        },1500);
-        setTimeout(function() {
-          setupProject();
-        },1600);
-    });
-
     $('.full .back').click(function() {
+      $('.project').removeClass('current');
       if($('.full').hasClass('show')){
         $('.text').removeClass('animate');
         setTimeout(function(){
@@ -355,11 +347,6 @@ function resetProject() {
     },100);
    }
   } else {
-    if($('.active .next-image').length === 0) {
-      $('<div class="slide"></div><div class="next-image"></div>').appendTo('.active');
-    } else {
-     console.log('nah its here');
-    }
     resetProject();
     setTimeout(function(){
       $('.slide').addClass('hide');
@@ -397,6 +384,7 @@ $(function(){
   });
   
   $('.name').click(function(){
+    $('.project').removeClass('current');
     if($('.full').hasClass('show')){
       $('.slide').removeClass('hide');
       $('.text').removeClass('animate');
@@ -407,6 +395,8 @@ $(function(){
         $('.navigation').removeClass('animate');
         $('.single').removeClass('show current');
         $('.slider').removeClass('active');
+        $('.next-image').remove();
+        $('.slide').remove();
         $('.slider .image').removeClass('show');
         $('.full').removeClass('show');
         $('.projects').addClass('show');    
@@ -433,7 +423,6 @@ $(function(){
     }
   });
 
-
   let mobile = window.matchMedia('(max-width: 740px)');
   $('.next').click(function(e) {
     e.preventDefault();
@@ -449,7 +438,7 @@ $(function(){
 
 $(window).resize(function(){
   clearTimeout(this.id);
-  this.id = setTimeout(mobileFunction, 200);
+  this.id = setTimeout(mobileFunction, 160);
 });
     mobileFunction();
 });

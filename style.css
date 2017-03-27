@@ -12,7 +12,8 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  cursor: url("img/dot-outline.png") 2x, default;
+  font-size: 62.5%;
+  cursor: url("img/dot-outline.png") 1x, default;
   cursor: -webkit-image-set(url("img/dot-outline.png") 2x, url("img/dot-outline.png") 2x), auto; }
 
 #container {
@@ -71,11 +72,7 @@ body {
     -moz-transform: translate3d(-50%, 0, 0);
     -ms-transform: translate3d(-50%, 0, 0);
     -o-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none; }
-    #container .wrapper::-webkit-scrollbar {
-      width: 0 !important; }
+    transform: translate3d(-50%, 0, 0); }
     #container .wrapper .name {
       float: left;
       display: block;
@@ -167,7 +164,7 @@ body {
         -webkit-flex-flow: row wrap !important;
         flex-flow: row wrap !important;
         justify-content: space-around !important;
-        cursor: url("img/dot-outline.png"), default;
+        cursor: url("img/dot.png"), default;
         cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), auto; }
         #container .wrapper .information .hamburger:last-child {
           margin-right: 0; }
@@ -452,6 +449,8 @@ body {
             -o-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
             opacity: 1; }
+          #container .wrapper .section.full .navigation.show {
+            opacity: 1; }
           #container .wrapper .section.full .navigation .menu-item {
             position: relative;
             float: left;
@@ -607,7 +606,9 @@ body {
                 width: 100%;
                 float: right;
                 z-index: 600;
-                position: absolute; }
+                position: absolute;
+                cursor: url("img/eye.png"), default;
+                cursor: -webkit-image-set(url("img/eye.png") 3x, url("img/eye.png") 3x), auto; }
                 #container .wrapper .section.full .single.one .slider .next-image.hide, #container .wrapper .section.full .single.two .slider .next-image.hide, #container .wrapper .section.full .single.three .slider .next-image.hide, #container .wrapper .section.full .single.four .slider .next-image.hide, #container .wrapper .section.full .single.five .slider .next-image.hide, #container .wrapper .section.full .single.six .slider .next-image.hide {
                   pointer-events: none; }
               #container .wrapper .section.full .single.one .slider .slide, #container .wrapper .section.full .single.two .slider .slide, #container .wrapper .section.full .single.three .slider .slide, #container .wrapper .section.full .single.four .slider .slide, #container .wrapper .section.full .single.five .slider .slide, #container .wrapper .section.full .single.six .slider .slide {
@@ -803,7 +804,11 @@ body {
       height: 100%;
       overflow: scroll;
       overflow-y: scroll;
-      -webkit-overflow-scrolling: touch; }
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      overflow: -moz-scrollbars-none; }
+      #container .wrapper::-webkit-scrollbar {
+        width: 0 !important; }
       #container .wrapper .name {
         float: left;
         display: block;
