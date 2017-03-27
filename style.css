@@ -55,12 +55,12 @@ body {
     color: #FFFFFF; }
   #container p {
     font-family: "Inconsolata", monospace;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 15px;
+    line-height: 18px;
     color: #0025F4; }
   #container h2 {
     font-family: "Inconsolata", monospace;
-    font-size: 20px;
+    font-size: 22px;
     color: #0025F4;
     font-weight: 700; }
   #container .wrapper {
@@ -240,6 +240,11 @@ body {
             color: #FFFFFF; }
             #container .wrapper .section.about .biography p:last-child {
               margin-right: 0; }
+          #container .wrapper .section.about .biography a {
+            color: #FFFFFF;
+            font-size: 15px;
+            cursor: url("img/dot.png"), default;
+            cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), auto; }
         #container .wrapper .section.about .contact {
           float: left;
           display: block;
@@ -264,7 +269,7 @@ body {
               color: #FFFFFF;
               position: relative;
               display: inline-block;
-              font-size: 14px;
+              font-size: 15px;
               height: 24px;
               text-decoration: underline;
               width: 100%;
@@ -339,7 +344,9 @@ body {
             height: 40px;
             width: 100%;
             overflow: hidden;
-            z-index: 100; }
+            z-index: 100;
+            cursor: url("img/dot.png"), default;
+            cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), auto; }
             #container .wrapper .section.projects .menu .project .menu-item {
               float: left;
               display: block;
@@ -390,23 +397,23 @@ body {
             #container .wrapper .section.projects .menu .project.one {
               margin-top: 12vh; }
               #container .wrapper .section.projects .menu .project.one .image {
-                background-image: url("bm/img/dan-murphys.png");
-                background-image: url("bm/img/dan-murphys.png"); }
+                background-image: url("bm/dan-murphys.png");
+                background-image: url("bm/dan-murphys.png"); }
             #container .wrapper .section.projects .menu .project.two .image {
-              background-image: url("paper/img/second-thumbnail.png");
-              background-image: url("paper/img/second-thumbnail.png"); }
+              background-image: url("paper/second-thumbnail.png");
+              background-image: url("paper/second-thumbnail.png"); }
             #container .wrapper .section.projects .menu .project.three .image {
-              background-image: url("layer/img/layer-5.jpg");
-              background-image: url("layer/img/layer-5.jpg"); }
+              background-image: url("layer/layer-5.jpg");
+              background-image: url("layer/layer-5.jpg"); }
             #container .wrapper .section.projects .menu .project.four .image {
               background-image: url("days/green.png");
               background-image: url("days/green.png"); }
             #container .wrapper .section.projects .menu .project.five .image {
-              background-image: url("haunt/img/maori-history-main.png");
-              background-image: url("haunt/img/maori-history-main.png"); }
+              background-image: url("haunt/maori-history-main.png");
+              background-image: url("haunt/maori-history-main.png"); }
             #container .wrapper .section.projects .menu .project.six .image {
-              background-image: url("together/img/bottom.png");
-              background-image: url("together/img/bottom.png"); }
+              background-image: url("together//bottom.png");
+              background-image: url("together//bottom.png"); }
             #container .wrapper .section.projects .menu .project.show .image {
               opacity: 1; }
             #container .wrapper .section.projects .menu .project.show .date {
@@ -607,8 +614,8 @@ body {
                 float: right;
                 z-index: 600;
                 position: absolute;
-                cursor: url("img/eye.png"), default;
-                cursor: -webkit-image-set(url("img/eye.png") 3x, url("img/eye.png") 3x), auto; }
+                cursor: url("img/arrow.png"), default;
+                cursor: -webkit-image-set(url("img/arrow.png") 1x, url("img/arrow.png") 1x), auto; }
                 #container .wrapper .section.full .single.one .slider .next-image.hide, #container .wrapper .section.full .single.two .slider .next-image.hide, #container .wrapper .section.full .single.three .slider .next-image.hide, #container .wrapper .section.full .single.four .slider .next-image.hide, #container .wrapper .section.full .single.five .slider .next-image.hide, #container .wrapper .section.full .single.six .slider .next-image.hide {
                   pointer-events: none; }
               #container .wrapper .section.full .single.one .slider .slide, #container .wrapper .section.full .single.two .slider .slide, #container .wrapper .section.full .single.three .slider .slide, #container .wrapper .section.full .single.four .slider .slide, #container .wrapper .section.full .single.five .slider .slide, #container .wrapper .section.full .single.six .slider .slide {
@@ -638,6 +645,8 @@ body {
                 opacity: 1; }
 
 @media(min-width: 740px) and (max-width: 1200px) {
+  #container p {
+    font-size: 14px; }
   #container .wrapper {
     width: 94vw; }
     #container .wrapper .name {

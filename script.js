@@ -147,58 +147,37 @@ function prevProject() {
   }
 }
 
-function previewProjects() {
-  let menu = $('.project a');
-  let project = $('.menu .project');
-
-  let mobile = window.matchMedia('(max-width: 740px)');
+// function previewProjects() {
+//   let menu = $('.project a');
+//   let project = $('.project .image');
   
-  if (mobile.matches) {
-    let project = $('.menu .project');
-    $(project).click(function(){
-      $(this).addClass('current');
-      let match = $(this).attr('class').split(' ')[1];
-      console.log(match);
-      setTimeout(function(){
-        $('.projects').removeClass('show');
-        $('.name').addClass('hide');
-        $('.information').addClass('hide');
-        $('.background').removeClass('hide');
-      }, 200);
-      setTimeout(function() {
-        $('.background').addClass('hide');
-      },1500);
-      setTimeout(function() {
-        setupProject();
-      },1600);
-    });
-  } else {
-    $(menu).mouseenter(function(){
-      $('.project').removeClass('show');
-      $(this).parent(project).addClass('show');
-    });
+//   $(menu).mouseenter(function(){
+//     $('.project').removeClass('show');
+//     $(this).parent(project).addClass('show');
+//   });
 
-    $(menu).mouseleave(function(){
-      $('.project').removeClass('show');
-    });
+//   $(menu).mouseleave(function(){
+//     $('.project').removeClass('show');
+//   });
 
-    $(menu).click(function(){
-      $(this).parent(project).addClass('current');
-      let match = $(this).parent(project).attr('class').split(' ')[1];
-      console.log(match);
-      setTimeout(function(){
-        $('.projects').removeClass('show');
-        $('.background').removeClass('hide');
-      }, 200);
-      setTimeout(function() {
-        $('.background').addClass('hide');
-      },1500);
-      setTimeout(function() {
-        setupProject();
-      },1600);
-    });  
-  }
-}
+//   $(menu).click(function(){
+//     $(this).parent(project).addClass('current');
+//     let match = $(this).parent(project).attr('class').split(' ')[1];
+//     console.log(match);
+//     setTimeout(function(){
+//       $('.projects').removeClass('show');
+//       $('.background').removeClass('hide');
+//     }, 200);
+//     setTimeout(function() {
+//       $('.background').addClass('hide');
+//     },1500);
+//     setTimeout(function() {
+//       setupProject();
+//     },1600);
+//     console.log('yo');
+//   }); 
+
+// }
 
 function showHomepage() {
   setTimeout(function(){
@@ -217,7 +196,7 @@ function showHomepage() {
   setTimeout(function() {
     $('.menu').addClass('show');
     $('.text').addClass('show');
-    previewProjects();
+    // previewProjects();
   },1700)
 }
 
@@ -310,6 +289,7 @@ function resetProject() {
 
   function mobileFunction() {
     if (window.matchMedia('(max-width: 740px)').matches) {
+
     $('.full .back').click(function() {
       $('.project').removeClass('current');
       if($('.full').hasClass('show')){
@@ -423,6 +403,55 @@ $(function(){
     }
   });
 
+  let menu = $('.project a');
+  let project = $('.project .image');
+  
+  $(menu).mouseenter(function(){
+    $('.project').removeClass('show');
+    $(this).parent(project).addClass('show');
+  });
+
+  $(menu).mouseleave(function(){
+    $('.project').removeClass('show');
+  });
+
+  $(menu).click(function(){
+    $(this).parent(project).addClass('current');
+    let match = $(this).parent(project).attr('class').split(' ')[1];
+    console.log(match);
+    setTimeout(function(){
+      $('.projects').removeClass('show');
+      $('.background').removeClass('hide');
+    }, 200);
+    setTimeout(function() {
+      $('.background').addClass('hide');
+    },1500);
+    setTimeout(function() {
+      setupProject();
+    },1600);
+    console.log('yo');
+  }); 
+
+
+  $(project).click(function(){
+    $(this).parent(project).addClass('current');
+    let match = $(this).parent(project).attr('class').split(' ')[1];
+    console.log(match);
+    setTimeout(function(){
+      $('.projects').removeClass('show');
+      $('.background').removeClass('hide');
+    }, 200);
+    setTimeout(function() {
+      $('.background').addClass('hide');
+      $('.name').addClass('hide');
+      $('.information').addClass('hide');
+    },1500);
+    setTimeout(function() {
+      setupProject();
+    },1600);
+    console.log('yo');
+  }); 
+
   let mobile = window.matchMedia('(max-width: 740px)');
   $('.next').click(function(e) {
     e.preventDefault();
@@ -442,5 +471,3 @@ $(window).resize(function(){
 });
     mobileFunction();
 });
-
-

@@ -74,15 +74,16 @@ $tablet-width: 1024px
 
 	p
 		font-family: $font-stack
-		font-size: 14px
-		line-height: 16px
+		font-size: 15px
+		line-height: 18px
 		color: $blue
 
 	h2 
 		font-family: $font-stack
-		font-size: 20px 
+		font-size: 22px 
 		color: $blue 
 		font-weight: 700
+
 	
 	.wrapper
 		height: 100%
@@ -164,7 +165,6 @@ $tablet-width: 1024px
 					&.blue
 						background-color: $white
 
-
 		.section
 			position: absolute
 			+span-columns(12 of 12)
@@ -199,9 +199,16 @@ $tablet-width: 1024px
 					+shift(2)
 
 					z-index: 800
+					
 					p 
 						+span-columns(4 of 6)
 						color: $white
+
+					a
+						color: $white
+						font-size: 15px
+						cursor: url('img/dot.png'), default
+						cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
 
 				.contact
 					+span-columns(4 of 12)
@@ -220,7 +227,7 @@ $tablet-width: 1024px
 							color: $white
 							position: relative
 							display: inline-block
-							font-size: 14px
+							font-size: 15px
 							height: 24px
 							text-decoration: underline
 							width: 100%
@@ -281,6 +288,9 @@ $tablet-width: 1024px
 						width: 100%
 						overflow: hidden
 						z-index: 100
+						cursor: url('img/dot.png'), default
+						cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
+
 
 						.menu-item
 							+span-columns(2 of 12)
@@ -328,14 +338,14 @@ $tablet-width: 1024px
 						&.one
 							margin-top: 12vh
 							.image
-								+background-image(url('bm/img/dan-murphys.png'))
+								+background-image(url('bm/dan-murphys.png'))
 						&.two 
 							.image
-								+background-image(url('paper/img/second-thumbnail.png'))
+								+background-image(url('paper/second-thumbnail.png'))
 						
 						&.three 
 							.image
-								+background-image(url('layer/img/layer-5.jpg'))
+								+background-image(url('layer/layer-5.jpg'))
 						
 						&.four 
 							.image
@@ -343,11 +353,11 @@ $tablet-width: 1024px
 
 						&.five
 							.image
-								+background-image(url('haunt/img/maori-history-main.png'))
+								+background-image(url('haunt/maori-history-main.png'))
 
 						&.six
 							.image
-								+background-image(url('together/img/bottom.png'))
+								+background-image(url('together/bottom.png'))
 
 						&.show 
 							.image 
@@ -511,8 +521,8 @@ $tablet-width: 1024px
 								float: right
 								z-index: 600
 								position: absolute
-								cursor: url('img/eye.png'), default
-								cursor: -webkit-image-set(url('img/eye.png') 3x, url('img/eye.png') 3x), auto
+								cursor: url('img/arrow.png'), default
+								cursor: -webkit-image-set(url('img/arrow.png') 1x, url('img/arrow.png') 1x), auto
 
 								
 								&.hide 
@@ -548,6 +558,9 @@ $tablet-width: 1024px
 @media(min-width: 740px) and (max-width: 1200px)
 
 	#container
+		p
+			font-size: 14px
+
 		.wrapper 
 			width: 94vw
 			.name
@@ -650,8 +663,6 @@ $tablet-width: 1024px
 								+span-columns(11 of 12)
 								+shift(1)
 							
-
-
 	
 // ---------- Phone ---------- //
 
