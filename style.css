@@ -245,6 +245,9 @@ body {
             font-size: 15px;
             cursor: url("img/dot.png"), default;
             cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), auto; }
+            #container .wrapper .section.about .biography a:hover {
+              text-decoration: underline;
+              color: #fc4245; }
         #container .wrapper .section.about .contact {
           float: left;
           display: block;
@@ -275,6 +278,9 @@ body {
               width: 100%;
               cursor: url("img/dot.png"), default;
               cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), auto; }
+              #container .wrapper .section.about .contact .social .media:hover, #container .wrapper .section.about .contact .email .media:hover {
+                text-decoration: underline;
+                color: #fc4245; }
         #container .wrapper .section.about .image {
           position: absolute;
           height: 100%;
@@ -471,7 +477,8 @@ body {
               cursor: url("img/dot.png"), pointer;
               cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), pointer; }
               #container .wrapper .section.full .navigation .menu-item p:hover {
-                text-decoration: underline; }
+                text-decoration: underline;
+                color: #fc4245; }
             #container .wrapper .section.full .navigation .menu-item.details, #container .wrapper .section.full .navigation .menu-item.back {
               margin-bottom: 4vh; }
               #container .wrapper .section.full .navigation .menu-item.details:after, #container .wrapper .section.full .navigation .menu-item.back:after {
@@ -503,12 +510,14 @@ body {
                 transform: rotateZ(180deg);
                 display: inline-block; }
             #container .wrapper .section.full .navigation .menu-item.next:after {
+              font-size: 20px;
               content: "⟶";
-              vertical-align: top;
+              vertical-align: middle;
               color: #0057FF; }
             #container .wrapper .section.full .navigation .menu-item.prev:after {
+              font-size: 20px;
               content: "⟶";
-              vertical-align: top;
+              vertical-align: middle;
               color: #0057FF; }
             #container .wrapper .section.full .navigation .menu-item.back {
               display: none; }
@@ -638,7 +647,7 @@ body {
               #container .wrapper .section.full .single.one .image.show, #container .wrapper .section.full .single.two .image.show, #container .wrapper .section.full .single.three .image.show, #container .wrapper .section.full .single.four .image.show, #container .wrapper .section.full .single.five .image.show, #container .wrapper .section.full .single.six .image.show {
                 opacity: 1; }
 
-@media(min-width: 740px) and (max-width: 1200px) {
+@media(min-width: 740px) and (max-width: 1360px) {
   #container p {
     font-size: 14px; }
   #container .wrapper {
@@ -651,6 +660,8 @@ body {
       width: 31.50258%; }
       #container .wrapper .name:last-child {
         margin-right: 0; }
+      #container .wrapper .name .glitch {
+        font-size: 36px; }
     #container .wrapper .information {
       margin-left: 0%;
       float: left;
@@ -822,7 +833,8 @@ body {
         #container .wrapper .name:last-child {
           margin-right: 0; }
         #container .wrapper .name .glitch {
-          font-size: 40px; }
+          font-size: 34px;
+          line-height: 36px; }
         #container .wrapper .name.hide {
           display: none; }
       #container .wrapper .information {
@@ -925,16 +937,12 @@ body {
                 display: block;
                 margin-right: 2.74614%;
                 width: 100%;
-                height: 18px;
+                height: 20px;
+                font-size: 18px;
                 float: left;
                 pointer-events: none; }
                 #container .wrapper .section.projects .menu .project .menu-item:last-child {
                   margin-right: 0; }
-                #container .wrapper .section.projects .menu .project .menu-item.date {
-                  margin-left: 0%;
-                  opacity: 1; }
-                #container .wrapper .section.projects .menu .project .menu-item.role {
-                  opacity: 1; }
                 #container .wrapper .section.projects .menu .project .menu-item.name {
                   margin-left: 0%; }
               #container .wrapper .section.projects .menu .project.one.one, #container .wrapper .section.projects .menu .project.two.one, #container .wrapper .section.projects .menu .project.three.one, #container .wrapper .section.projects .menu .project.four.one, #container .wrapper .section.projects .menu .project.five.one, #container .wrapper .section.projects .menu .project.six.one {
@@ -988,7 +996,9 @@ body {
               float: left;
               display: block;
               margin-right: 2.74614%;
-              width: 22.9404%; }
+              width: 22.9404%;
+              font-size: 18px;
+              height: 20; }
               #container .wrapper .section.full .navigation .menu-item:last-child {
                 margin-right: 0; }
               #container .wrapper .section.full .navigation .menu-item.details, #container .wrapper .section.full .navigation .menu-item.prev {
@@ -997,7 +1007,7 @@ body {
                 float: left;
                 display: block;
                 margin-right: 2.74614%;
-                width: 31.50258%;
+                width: 40.06475%;
                 margin-left: 8.56218%; }
                 #container .wrapper .section.full .navigation .menu-item.next:last-child {
                   margin-right: 0; }
@@ -1007,7 +1017,7 @@ body {
                 float: left;
                 display: block;
                 margin-right: 2.74614%;
-                width: 48.62693%; }
+                width: 31.50258%; }
                 #container .wrapper .section.full .navigation .menu-item.back:last-child {
                   margin-right: 0; }
           #container .wrapper .section.full .single {
