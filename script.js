@@ -84,20 +84,32 @@ function nextProject() {
   let current = $('.single.current');
     if($(current).next().length != 0) {
       $(current).find('.text').removeClass('show animate');
-      $(current).find('.slider').removeClass('active');
-      $(current).find('.slider .image').removeClass('show');
-      $(current).find('.slider .next-image').remove();
-      $(current).find('.slider .slide').remove();
-      $(current).removeClass('show current').next().addClass('show current');
-      showProject();
+      setTimeout(function(){
+        $(current).find('.slider .slide').removeClass('hide');
+        $('.menu-item.details').removeClass('play');
+      }, 300);
+      setTimeout(function(){
+        $(current).find('.slider').removeClass('active');
+        $(current).find('.slider .image').removeClass('show');
+        $(current).find('.slider .next-image').remove();
+        $(current).removeClass('show current').next().addClass('show current');
+        $(current).find('.slider .slide').remove();
+        showProject();
+      }, 900);
     } else {
       $(current).find('.text').removeClass('show animate');
-      $(current).find('.slider').removeClass('active');
-      $(current).removeClass('show current');
-      $(current).find('.slider .next-image').remove();
-      $(current).find('.slider .slide').remove();
-      $('.single:first').addClass('show current');
-      showProject();
+      setTimeout(function(){
+        $(current).find('.slider .slide').removeClass('hide');
+        $('.menu-item.details').removeClass('play');
+      }, 300);
+      setTimeout(function(){
+        $(current).find('.slider').removeClass('active');
+        $(current).removeClass('show current');
+        $(current).find('.slider .next-image').remove();
+        $(current).find('.slider .slide').remove();
+        $('.single:first').addClass('show current');
+        showProject();
+      }, 900);
     }
     return false;
 }
@@ -118,7 +130,6 @@ function nextMobile() {
       $(current).removeClass('show current');
       $(current).find('.slider .next-image').remove();
       $(current).find('.slider .slide').remove();
-
       $('.single:first').addClass('show current');
       showMobile();
     }
@@ -129,55 +140,35 @@ function prevProject() {
   let current = $('.single.current');
     if($(current).prev('.single').length != 0) {
       $(current).find('.text').removeClass('show animate');
-      $(current).find('.slider .image').removeClass('show');
-      $(current).find('.slider').removeClass('active');
-       $(current).find('.slider .next-image').remove();
-      $(current).find('.slider .slide').remove();
-      $(current).removeClass('show current').prev('.single').addClass('show current');  
-      showProject();
+      setTimeout(function(){
+        $(current).find('.slider .slide').removeClass('hide');
+        $('.menu-item.details').removeClass('play');
+      }, 300);
+       setTimeout(function(){
+        $(current).find('.slider .image').removeClass('show');
+        $(current).find('.slider').removeClass('active');
+        $(current).find('.slider .next-image').remove();
+        $(current).find('.slider .slide').remove();
+        $(current).removeClass('show current').prev('.single').addClass('show current');  
+        showProject();
+      }, 900);
     } else {
       $(current).find('.text').removeClass('show animate');
-      $(current).find('.slider').removeClass('active');
-      $(current).removeClass('show current');
-       $(current).find('.slider .next-image').remove();
-      $(current).find('.slider .slide').remove();
-      $('.single:last').addClass('show current');
-      showProject();
+      setTimeout(function(){
+        $(current).find('.slider .slide').removeClass('hide');
+        $('.menu-item.details').removeClass('play');
+      }, 300);
+      setTimeout(function(){
+        $(current).find('.slider').removeClass('active');
+        $(current).removeClass('show current');
+        $(current).find('.slider .next-image').remove();
+        $(current).find('.slider .slide').remove();
+        $('.single:last').addClass('show current');
+        showProject();
+      }, 900);
       return false;
   }
 }
-
-// function previewProjects() {
-//   let menu = $('.project a');
-//   let project = $('.project .image');
-  
-//   $(menu).mouseenter(function(){
-//     $('.project').removeClass('show');
-//     $(this).parent(project).addClass('show');
-//   });
-
-//   $(menu).mouseleave(function(){
-//     $('.project').removeClass('show');
-//   });
-
-//   $(menu).click(function(){
-//     $(this).parent(project).addClass('current');
-//     let match = $(this).parent(project).attr('class').split(' ')[1];
-//     console.log(match);
-//     setTimeout(function(){
-//       $('.projects').removeClass('show');
-//       $('.background').removeClass('hide');
-//     }, 200);
-//     setTimeout(function() {
-//       $('.background').addClass('hide');
-//     },1500);
-//     setTimeout(function() {
-//       setupProject();
-//     },1600);
-//     console.log('yo');
-//   }); 
-
-// }
 
 function showHomepage() {
   setTimeout(function(){
@@ -196,7 +187,6 @@ function showHomepage() {
   setTimeout(function() {
     $('.menu').addClass('show');
     $('.text').addClass('show');
-    // previewProjects();
   },1700)
 }
 
@@ -268,10 +258,8 @@ function hideAbout() {
     }
     if (mobile.matches) {
       $('.projects').addClass('show');
-    } else {
-
     }
-  },600);
+  },800);
 }
 
 function resetProject() {
@@ -296,7 +284,7 @@ function resetProject() {
         $('.text').removeClass('animate');
         setTimeout(function(){
           $('.background').removeClass('hide'); 
-        },200);
+        },300);
         setTimeout(function(){
           $('.navigation').removeClass('animate');
           $('.single').removeClass('show current');
@@ -392,7 +380,6 @@ $(function(){
       prevProject();
     });
 
-
   $('.hamburger').click(function() {
    if($('.about').hasClass('show')) {
     setTimeout(function(){
@@ -431,7 +418,6 @@ $(function(){
     },1600);
     console.log('yo');
   }); 
-
 
   $(project).click(function(){
     $(this).parent(project).addClass('current');

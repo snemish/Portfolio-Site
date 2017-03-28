@@ -14,12 +14,10 @@ $gutter: 2em
 
 $font-stack: 'Inconsolata', monospace
 
-$blue: #0025F4
+// $blue: #0025F4
 $white: #FFFFFF
-$yellow: #F6D258
-$orange: #FFDDD4
 $red: #fc4245
-// $blue: #0057FF
+$blue: #0057FF
 
 // lighter scheme
 // $red: #EFBCBB
@@ -90,6 +88,7 @@ $tablet-width: 1024px
 		width: 96vw
 		position: absolute
 		left: 50%
+		overflow: hidden
 		+transform(translate3d(-50%, 0, 0))
 
 		.name
@@ -97,7 +96,7 @@ $tablet-width: 1024px
 			+shift(1)
 			height: 50px
 			overflow: hidden
-			margin-top: 5vh
+			margin-top: 6vh
 			margin-bottom: 2vh
 			z-index: 500
 			opacity: 0
@@ -105,7 +104,6 @@ $tablet-width: 1024px
 			+transition(all 0.5s ease)
 
 			.glitch
-				height: 60px
 				font-size: 28px
 				font-family: $font-stack
 				line-height: 54px
@@ -155,7 +153,6 @@ $tablet-width: 1024px
 				cursor: url('img/dot.png'), default
 				cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
 
-
 				.line 
 					background-color: $blue
 					height: 4px
@@ -169,7 +166,7 @@ $tablet-width: 1024px
 			position: absolute
 			+span-columns(12 of 12)
 			top: 26vh
-			height: 66vh
+			height: 68vh
 			overflow: hidden	
 
 			&.about
@@ -233,7 +230,6 @@ $tablet-width: 1024px
 							width: 100%
 							cursor: url('img/dot.png'), default
 							cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), auto
-
 
 				.image
 					position: absolute
@@ -310,15 +306,8 @@ $tablet-width: 1024px
 								text-decoration: underline
 								color: $red
 
-							&.date
-								+shift(2)
-								opacity: 0
-
-							&.role
-								opacity: 0
-
 							&.name 
-								+shift(3)							
+								+shift(9)							
 
 						&.one, &.two, &.three, &.four, &.five, &.six 
 
@@ -440,7 +429,7 @@ $tablet-width: 1024px
 								content: "\27F6"
 								vertical-align: top
 								color: $blue
-								padding-bottom: 4vh
+								// padding-bottom: 4vh
 
 						&.prev
 							&:after
@@ -524,10 +513,8 @@ $tablet-width: 1024px
 								cursor: url('img/arrow.png'), default
 								cursor: -webkit-image-set(url('img/arrow.png') 1x, url('img/arrow.png') 1x), auto
 
-								
 								&.hide 
-									pointer-events: none
-			
+									pointer-events: none			
 
 							.slide
 								height: 100%
@@ -638,9 +625,9 @@ $tablet-width: 1024px
 						.menu-item
 							+span-columns(3 of 3)
 							+shift(0)							
-
 							&.details
 								+span-columns(3 of 3)
+
 							&.next, &.prev
 								height: 30px
 				
@@ -712,7 +699,7 @@ $tablet-width: 1024px
 					width: 39%
 					+shift(0)
 					left: -50vw
-					margin-top: 17vh
+					margin-top: 25vh
 
 			.section
 				+shift(0)
@@ -755,15 +742,15 @@ $tablet-width: 1024px
 						top: 0
 
 						.project
-							height: 400px
+							height: 350px
 							position: relative
 							+span-columns(12 of 12)
-							margin-top: 2vh
-							margin-bottom: 2vh
+							margin-top: 1vh
+							margin-bottom: 1vh
 							
 							.menu-item
 								position: relative
-								+span-columns(6 of 12)
+								+span-columns(12 of 12)
 								height: 18px
 								float: left
 								pointer-events: none
@@ -811,7 +798,6 @@ $tablet-width: 1024px
 									&:after
 										opacity: 1
 				
-
 				&.full
 					display: none
 
@@ -835,13 +821,13 @@ $tablet-width: 1024px
 								display: none
 
 							&.next
-								+shift(2)
+								+span-columns(4 of 12)
+								+shift(1)
 
 							&.back
 								display: block
 								margin-bottom: 0
 								+span-columns(6 of 12)
-
 
 					.single
 						position: relative
@@ -861,8 +847,7 @@ $tablet-width: 1024px
 								+span-columns(12 of 12)
 								+transform(translate3d(0, 0, 0))
 								+shift(0)
-								margin-bottom: 5vh
-								margin: 0
+								margin-bottom: 4vh
 					
 								h2
 									width: 100%
@@ -873,6 +858,10 @@ $tablet-width: 1024px
 									+shift(0)
 									color: $blue
 									+span-columns(12 of 12)
+									margin: 0
+
+									&.role 
+										+span-columns(12 of 12)
 
 								.description
 									+span-columns(12 of 12)
@@ -892,8 +881,9 @@ $tablet-width: 1024px
 									height: 300px
 									opacity: 0
 									+shift(0)
-									margin-top: 5vh
-									margin-bottom: 5vh
+									margin-top: 4vh
+									margin-bottom: 4vh
+									background-repeat: no-repeat
 									+transition(opacity 500ms cubic-bezier(0.77, 0, 0.175, 1))
 
 									&.show
