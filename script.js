@@ -12,10 +12,8 @@ function setupProject() {
   
   if (mobile.matches) {
       showMobile();
-      console.log("hmm");
     } else {
       showProject();
-      console.log('yo');
     }
   $('.project').removeClass('current');
 }
@@ -74,9 +72,9 @@ function slideshow() {
             $('.active .image.show').removeClass('show');
             $('.active .image:first').addClass('show');
         }  
-        console.log(currentImage);
+        // console.log(currentImage);
     });
-        console.log(total);
+        // console.log(total);
   }
 }
 
@@ -435,7 +433,7 @@ $(function(){
     setTimeout(function() {
       setupProject();
     },1600);
-    console.log('yo');
+    // console.log('yo');
   }); 
 
   let mobile = window.matchMedia('(max-width: 740px)');
