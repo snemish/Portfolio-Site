@@ -72,11 +72,7 @@ body {
     position: absolute;
     left: 50%;
     overflow: hidden;
-    -webkit-transform: translate3d(-50%, 0, 0);
-    -moz-transform: translate3d(-50%, 0, 0);
-    -ms-transform: translate3d(-50%, 0, 0);
-    -o-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0); }
+    margin-left: -48vw; }
     #container .wrapper .name {
       float: left;
       display: block;
@@ -284,6 +280,8 @@ body {
               #container .wrapper .section.about .contact .social .media:hover, #container .wrapper .section.about .contact .email .media:hover {
                 text-decoration: underline;
                 color: #fc4245; }
+          #container .wrapper .section.about .contact .email .description {
+            margin-top: 0; }
         #container .wrapper .section.about .image {
           position: absolute;
           height: 100%;
@@ -363,7 +361,7 @@ body {
               width: 14.37822%;
               position: relative;
               z-index: 800 !important;
-              font-size: 14px;
+              font-size: 15px;
               height: 32px;
               font-weight: 700;
               color: #0057FF;
@@ -473,7 +471,8 @@ body {
               margin-right: 0; }
             #container .wrapper .section.full .navigation .menu-item p {
               color: #0057FF;
-              font-size: 14px;
+              font-size: 15px;
+              line-height: 18px;
               font-weight: 700;
               display: inline;
               padding-right: 1vw;
@@ -576,7 +575,8 @@ body {
                 width: 15.72459%;
                 margin-left: 9.36393%;
                 color: #FFFFFF;
-                font-size: 14px;
+                font-size: 15px;
+                line-height: 18px;
                 position: relative; }
                 #container .wrapper .section.full .single.one .text .menu-item:last-child, #container .wrapper .section.full .single.two .text .menu-item:last-child, #container .wrapper .section.full .single.three .text .menu-item:last-child, #container .wrapper .section.full .single.four .text .menu-item:last-child, #container .wrapper .section.full .single.five .text .menu-item:last-child, #container .wrapper .section.full .single.six .text .menu-item:last-child {
                   margin-right: 0; }
@@ -592,7 +592,8 @@ body {
                 color: #FFFFFF;
                 position: relative;
                 top: 3vh;
-                font-size: 14px;
+                font-size: 15px;
+                line-height: 18px;
                 opacity: 1;
                 position: relative;
                 float: left;
@@ -652,9 +653,11 @@ body {
 
 @media(min-width: 1025px) and (max-width: 1360px) {
   #container p {
-    font-size: 14px; }
+    font-size: 15px; }
   #container .wrapper {
-    width: 94vw; }
+    width: 94vw;
+    left: 50%;
+    margin-left: -47vw; }
     #container .wrapper .name {
       margin-left: 0%;
       float: left;
@@ -766,6 +769,8 @@ body {
           margin-left: 8.56218%; }
           #container .wrapper .section.projects .menu .project.one .image:last-child, #container .wrapper .section.projects .menu .project.two .image:last-child, #container .wrapper .section.projects .menu .project.three .image:last-child, #container .wrapper .section.projects .menu .project.four .image:last-child, #container .wrapper .section.projects .menu .project.five .image:last-child, #container .wrapper .section.projects .menu .project.six .image:last-child {
             margin-right: 0; }
+        #container .wrapper .section.projects .menu .project.one {
+          margin-top: 10vh; }
       #container .wrapper .section.full {
         overflow: visible; }
         #container .wrapper .section.full .navigation {
@@ -832,6 +837,8 @@ body {
     overflow: hidden; }
     #container .wrapper {
       width: 92vw;
+      left: 50%;
+      margin-left: -46vw;
       height: 100%;
       overflow: scroll;
       overflow-y: scroll;
@@ -880,7 +887,7 @@ body {
           width: 30%;
           margin-left: 0%;
           left: -60vw;
-          margin-top: 25vh; }
+          margin-top: 18vh; }
       #container .wrapper .section {
         margin-left: 0%;
         float: left;

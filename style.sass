@@ -87,7 +87,7 @@ $tablet-width: 1200px
 		position: absolute
 		left: 50%
 		overflow: hidden
-		+transform(translate3d(-50%, 0, 0))
+		margin-left: -48vw
 
 		.name
 			+span-columns(2 of 12)
@@ -236,6 +236,9 @@ $tablet-width: 1200px
 							&:hover
 								text-decoration: underline
 								color: $red
+					.email 
+						.description
+							margin-top: 0
 
 				.image
 					position: absolute
@@ -298,7 +301,7 @@ $tablet-width: 1200px
 							+span-columns(2 of 12)
 							position: relative
 							z-index: 800 !important
-							font-size: 14px
+							font-size: 15px
 							height: 32px
 							font-weight: 700
 							color: $blue
@@ -400,7 +403,8 @@ $tablet-width: 1200px
 						+shift(9)
 						p
 							color: $blue
-							font-size: 14px
+							font-size: 15px
+							line-height: 18px
 							font-weight: 700
 							display: inline
 							padding-right: 1vw
@@ -486,7 +490,8 @@ $tablet-width: 1200px
 								+span-columns(2 of 11)
 								+shift(1)
 								color: $white
-								font-size: 14px
+								font-size: 15px
+								line-height: 18px
 								position: relative
 
 								&.role
@@ -497,13 +502,13 @@ $tablet-width: 1200px
 								color: $white
 								position: relative
 								top: 3vh
-								font-size: 14px
+								font-size: 15px
+								line-height: 18px
 								opacity: 1
 								position: relative
 								+span-columns(4 of 11)
 								+shift(1)
 
-						
 						.slider
 							+span-columns(8 of 12)
 							+shift(1)
@@ -554,10 +559,12 @@ $tablet-width: 1200px
 
 	#container
 		p
-			font-size: 14px
+			font-size: 15px
 
 		.wrapper 
 			width: 94vw
+			left: 50%
+			margin-left: -47vw
 			.name
 				+shift(0)
 				+span-columns(4 of 12)
@@ -631,6 +638,9 @@ $tablet-width: 1200px
 								.image
 									+span-columns(11 of 12)
 									+shift(1)
+
+							&.one 
+								margin-top: 10vh
 				&.full
 					overflow: visible
 					
@@ -676,6 +686,8 @@ $tablet-width: 1200px
 		
 		.wrapper 
 			width: 92vw
+			left: 50%
+			margin-left: -46vw
 			height: 100%
 			overflow: scroll
 			overflow-y: scroll
@@ -717,7 +729,7 @@ $tablet-width: 1200px
 					width: 30%
 					+shift(0)
 					left: -60vw
-					margin-top: 25vh
+					margin-top: 18vh
 
 			.section
 				+shift(0)
@@ -867,6 +879,7 @@ $tablet-width: 1200px
 								h2
 									width: 100%
 									color: $blue
+
 									+shift(0)
 
 								.menu-item
