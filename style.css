@@ -380,11 +380,10 @@ body {
             #container .wrapper .section.projects .menu .project.one .image, #container .wrapper .section.projects .menu .project.two .image, #container .wrapper .section.projects .menu .project.three .image, #container .wrapper .section.projects .menu .project.four .image, #container .wrapper .section.projects .menu .project.five .image, #container .wrapper .section.projects .menu .project.six .image {
               position: absolute;
               height: 100%;
-              margin-left: 8.56218%;
               float: left;
               display: block;
               margin-right: 2.74614%;
-              width: 65.75129%;
+              width: 74.31347%;
               background-size: cover;
               background-position: 50%, 50%;
               background-repeat: no-repeat;
@@ -478,12 +477,14 @@ body {
               padding-right: 1vw;
               cursor: pointer;
               cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), pointer; }
-              #container .wrapper .section.full .navigation .menu-item p:hover {
-                text-decoration: underline;
-                color: #fc4245; }
+            #container .wrapper .section.full .navigation .menu-item:hover p {
+              text-decoration: underline;
+              color: #fc4245; }
+            #container .wrapper .section.full .navigation .menu-item:hover::after {
+              color: #fc4245; }
             #container .wrapper .section.full .navigation .menu-item.details, #container .wrapper .section.full .navigation .menu-item.back {
               margin-bottom: 4vh; }
-              #container .wrapper .section.full .navigation .menu-item.details:after, #container .wrapper .section.full .navigation .menu-item.back:after {
+              #container .wrapper .section.full .navigation .menu-item.details::after, #container .wrapper .section.full .navigation .menu-item.back::after {
                 content: "☺";
                 vertical-align: baseline;
                 font-size: 20px;
@@ -503,7 +504,7 @@ body {
                 -o-transform-origin: center;
                 transform-origin: center;
                 height: 100%; }
-              #container .wrapper .section.full .navigation .menu-item.details.play:after, #container .wrapper .section.full .navigation .menu-item.back.play:after {
+              #container .wrapper .section.full .navigation .menu-item.details.play::after, #container .wrapper .section.full .navigation .menu-item.back.play::after {
                 content: "☺";
                 -webkit-transform: rotateZ(180deg);
                 -moz-transform: rotateZ(180deg);
@@ -511,12 +512,12 @@ body {
                 -o-transform: rotateZ(180deg);
                 transform: rotateZ(180deg);
                 display: inline-block; }
-            #container .wrapper .section.full .navigation .menu-item.next:after {
+            #container .wrapper .section.full .navigation .menu-item.next::after {
               font-size: 20px;
               content: "⟶";
               vertical-align: middle;
               color: #0057FF; }
-            #container .wrapper .section.full .navigation .menu-item.prev:after {
+            #container .wrapper .section.full .navigation .menu-item.prev::after {
               font-size: 20px;
               content: "⟶";
               vertical-align: middle;
@@ -607,8 +608,7 @@ body {
               float: left;
               display: block;
               margin-right: 2.74614%;
-              width: 65.75129%;
-              margin-left: 8.56218%;
+              width: 74.31347%;
               height: 96%;
               position: absolute;
               opacity: 1;
@@ -651,7 +651,7 @@ body {
               #container .wrapper .section.full .single.one .image.show, #container .wrapper .section.full .single.two .image.show, #container .wrapper .section.full .single.three .image.show, #container .wrapper .section.full .single.four .image.show, #container .wrapper .section.full .single.five .image.show, #container .wrapper .section.full .single.six .image.show {
                 opacity: 1; }
 
-@media(min-width: 1025px) and (max-width: 1360px) {
+@media(min-width: 1025px) and (max-width: 1400px) {
   #container p {
     font-size: 15px; }
   #container .wrapper {
@@ -687,8 +687,8 @@ body {
           margin-right: 0; }
       #container .wrapper .information .hamburger {
         position: absolute;
-        margin-left: 0%;
-        margin-top: 24vh; }
+        margin-left: 77.0596%;
+        margin-top: -7vh; }
     #container .wrapper .section {
       margin-left: 0%;
       float: left;
@@ -709,9 +709,9 @@ body {
         float: left;
         display: block;
         margin-right: 2.74614%;
-        width: 65.75129%;
+        width: 48.62693%;
         margin-left: 17.12436%;
-        margin-top: 10vh; }
+        margin-top: 6vh; }
         #container .wrapper .section.about .biography:last-child {
           margin-right: 0; }
         #container .wrapper .section.about .biography p {
@@ -736,11 +736,11 @@ body {
           float: left;
           display: block;
           margin-right: 4.17655%;
-          width: 60.93379%; }
+          width: 34.88966%; }
           #container .wrapper .section.about .contact .email:last-child {
             margin-right: 0; }
         #container .wrapper .section.about .contact .social .media {
-          height: 50px;
+          height: 36px;
           width: 50%;
           float: left; }
       #container .wrapper .section.projects .text {
@@ -765,8 +765,8 @@ body {
           float: left;
           display: block;
           margin-right: 2.74614%;
-          width: 91.43782%;
-          margin-left: 8.56218%; }
+          width: 74.31347%;
+          margin-left: 0%; }
           #container .wrapper .section.projects .menu .project.one .image:last-child, #container .wrapper .section.projects .menu .project.two .image:last-child, #container .wrapper .section.projects .menu .project.three .image:last-child, #container .wrapper .section.projects .menu .project.four .image:last-child, #container .wrapper .section.projects .menu .project.five .image:last-child, #container .wrapper .section.projects .menu .project.six .image:last-child {
             margin-right: 0; }
         #container .wrapper .section.projects .menu .project.one {
@@ -778,7 +778,7 @@ body {
           display: block;
           margin-right: 2.74614%;
           width: 22.9404%;
-          margin-left: 0%;
+          margin-left: 77.0596%;
           top: 20vh;
           margin-top: 0; }
           #container .wrapper .section.full .navigation:last-child {
@@ -809,27 +809,47 @@ body {
           #container .wrapper .section.full .single:last-child {
             margin-right: 0; }
           #container .wrapper .section.full .single.one .text, #container .wrapper .section.full .single.two .text, #container .wrapper .section.full .single.three .text, #container .wrapper .section.full .single.four .text, #container .wrapper .section.full .single.five .text, #container .wrapper .section.full .single.six .text {
-            margin-left: 17.12436%; }
-            #container .wrapper .section.full .single.one .text .menu-item, #container .wrapper .section.full .single.two .text .menu-item, #container .wrapper .section.full .single.three .text .menu-item, #container .wrapper .section.full .single.four .text .menu-item, #container .wrapper .section.full .single.five .text .menu-item, #container .wrapper .section.full .single.six .text .menu-item {
+            float: left;
+            display: block;
+            margin-right: 2.74614%;
+            width: 48.62693%;
+            margin-left: 25.68653%;
+            height: 80%; }
+            #container .wrapper .section.full .single.one .text:last-child, #container .wrapper .section.full .single.two .text:last-child, #container .wrapper .section.full .single.three .text:last-child, #container .wrapper .section.full .single.four .text:last-child, #container .wrapper .section.full .single.five .text:last-child, #container .wrapper .section.full .single.six .text:last-child {
+              margin-right: 0; }
+            #container .wrapper .section.full .single.one .text h2, #container .wrapper .section.full .single.two .text h2, #container .wrapper .section.full .single.three .text h2, #container .wrapper .section.full .single.four .text h2, #container .wrapper .section.full .single.five .text h2, #container .wrapper .section.full .single.six .text h2 {
+              margin-left: 0%; }
+            #container .wrapper .section.full .single.one .text .menu-item.date, #container .wrapper .section.full .single.two .text .menu-item.date, #container .wrapper .section.full .single.three .text .menu-item.date, #container .wrapper .section.full .single.four .text .menu-item.date, #container .wrapper .section.full .single.five .text .menu-item.date, #container .wrapper .section.full .single.six .text .menu-item.date {
               float: left;
               display: block;
-              margin-right: 3.00328%;
-              width: 25.08852%; }
-              #container .wrapper .section.full .single.one .text .menu-item:last-child, #container .wrapper .section.full .single.two .text .menu-item:last-child, #container .wrapper .section.full .single.three .text .menu-item:last-child, #container .wrapper .section.full .single.four .text .menu-item:last-child, #container .wrapper .section.full .single.five .text .menu-item:last-child, #container .wrapper .section.full .single.six .text .menu-item:last-child {
+              margin-right: 5.64736%;
+              width: 29.56843%;
+              margin-left: 0%; }
+              #container .wrapper .section.full .single.one .text .menu-item.date:last-child, #container .wrapper .section.full .single.two .text .menu-item.date:last-child, #container .wrapper .section.full .single.three .text .menu-item.date:last-child, #container .wrapper .section.full .single.four .text .menu-item.date:last-child, #container .wrapper .section.full .single.five .text .menu-item.date:last-child, #container .wrapper .section.full .single.six .text .menu-item.date:last-child {
+                margin-right: 0; }
+            #container .wrapper .section.full .single.one .text .menu-item.role, #container .wrapper .section.full .single.two .text .menu-item.role, #container .wrapper .section.full .single.three .text .menu-item.role, #container .wrapper .section.full .single.four .text .menu-item.role, #container .wrapper .section.full .single.five .text .menu-item.role, #container .wrapper .section.full .single.six .text .menu-item.role {
+              float: left;
+              display: block;
+              margin-right: 5.64736%;
+              width: 29.56843%;
+              margin-left: 17.60789%; }
+              #container .wrapper .section.full .single.one .text .menu-item.role:last-child, #container .wrapper .section.full .single.two .text .menu-item.role:last-child, #container .wrapper .section.full .single.three .text .menu-item.role:last-child, #container .wrapper .section.full .single.four .text .menu-item.role:last-child, #container .wrapper .section.full .single.five .text .menu-item.role:last-child, #container .wrapper .section.full .single.six .text .menu-item.role:last-child {
                 margin-right: 0; }
             #container .wrapper .section.full .single.one .text .description, #container .wrapper .section.full .single.two .text .description, #container .wrapper .section.full .single.three .text .description, #container .wrapper .section.full .single.four .text .description, #container .wrapper .section.full .single.five .text .description, #container .wrapper .section.full .single.six .text .description {
+              position: relative;
               float: left;
               display: block;
-              margin-right: 2.74614%;
-              width: 48.62693%; }
+              margin-right: 5.64736%;
+              width: 82.39211%;
+              margin-left: 0%; }
               #container .wrapper .section.full .single.one .text .description:last-child, #container .wrapper .section.full .single.two .text .description:last-child, #container .wrapper .section.full .single.three .text .description:last-child, #container .wrapper .section.full .single.four .text .description:last-child, #container .wrapper .section.full .single.five .text .description:last-child, #container .wrapper .section.full .single.six .text .description:last-child {
                 margin-right: 0; }
           #container .wrapper .section.full .single.one .slider, #container .wrapper .section.full .single.two .slider, #container .wrapper .section.full .single.three .slider, #container .wrapper .section.full .single.four .slider, #container .wrapper .section.full .single.five .slider, #container .wrapper .section.full .single.six .slider {
             float: left;
             display: block;
             margin-right: 2.74614%;
-            width: 91.43782%;
-            margin-left: 8.56218%; }
+            width: 74.31347%;
+            margin-left: 0%; }
             #container .wrapper .section.full .single.one .slider:last-child, #container .wrapper .section.full .single.two .slider:last-child, #container .wrapper .section.full .single.three .slider:last-child, #container .wrapper .section.full .single.four .slider:last-child, #container .wrapper .section.full .single.five .slider:last-child, #container .wrapper .section.full .single.six .slider:last-child {
               margin-right: 0; } }
 @media (max-width: 1024px) {

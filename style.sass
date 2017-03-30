@@ -323,8 +323,7 @@ $tablet-width: 1200px
 							.image
 								position: absolute
 								height: 100%
-								+shift(1)
-								+span-columns(8 of 12)
+								+span-columns(9 of 12)
 								background-size: cover
 								background-position: 50%, 50%
 								background-repeat: no-repeat
@@ -411,39 +410,46 @@ $tablet-width: 1200px
 							cursor: pointer
 							cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), pointer
 
-							&:hover
+						&:hover
+							p
 								text-decoration: underline
+								color: $red
+							
+							&::after 
 								color: $red
 
 						&.details, &.back
 							margin-bottom: 4vh
+
 							
-							&:after
+							&::after
 								content: "\263A"
 								vertical-align: baseline
 								font-size: 20px
-								color: $blue
+								color: #0057FF
 								display: inline-block
 								+transition(all 0.5s ease)
 								+transform(rotate(0deg))
 								+transform-origin(center)
 								height: 100%
 
+
+
 							&.play
-								&:after
+								&::after
 									content: "\263A"
 									+transform(rotateZ(180deg))
 									display: inline-block
 
 						&.next
-							&:after
+							&::after
 								font-size: 20px
 								content: "\27F6"
 								vertical-align: middle
 								color: $blue
 
 						&.prev
-							&:after
+							&::after
 								font-size: 20px
 								content: "\27F6"
 								vertical-align: middle
@@ -510,8 +516,8 @@ $tablet-width: 1200px
 								+shift(1)
 
 						.slider
-							+span-columns(8 of 12)
-							+shift(1)
+							+span-columns(9 of 12)
+							// +shift(1)
 							height: 96%
 							position: absolute
 							opacity: 1
@@ -555,7 +561,7 @@ $tablet-width: 1200px
 
 // ---------- Small Laptops ---------- //
 	
-@media(min-width: 1025px) and (max-width: 1360px)
+@media(min-width: 1025px) and (max-width: 1400px)
 
 	#container
 		p
@@ -584,8 +590,8 @@ $tablet-width: 1200px
 				
 				.hamburger
 					position: absolute
-					+shift(0)
-					margin-top: 24vh
+					+shift(9)
+					margin-top: -7vh
 
 			.section
 				+shift(0)
@@ -597,9 +603,9 @@ $tablet-width: 1200px
 						+shift(1)
 					
 					.biography				
-						+span-columns(8 of 12)
+						+span-columns(6 of 12)
 						+shift(2)
-						margin-top: 10vh
+						margin-top: 6vh
 
 						p 
 							width: 100%
@@ -613,12 +619,12 @@ $tablet-width: 1200px
 							+span-columns(3 of 8)
 
 						.email
-							+span-columns(5 of 8)
+							+span-columns(3 of 8)
 
 
 						.social 
 							.media
-								height: 50px
+								height: 36px
 								width: 50%
 								float: left
 
@@ -636,8 +642,8 @@ $tablet-width: 1200px
 							
 							&.one, &.two, &.three, &.four, &.five, &.six 
 								.image
-									+span-columns(11 of 12)
-									+shift(1)
+									+span-columns(9 of 12)
+									+shift(0)
 
 							&.one 
 								margin-top: 10vh
@@ -646,7 +652,7 @@ $tablet-width: 1200px
 					
 					.navigation
 						+span-columns(3 of 12)
-						+shift(0)
+						+shift(9)
 						top: 20vh
 						margin-top: 0
 
@@ -666,17 +672,31 @@ $tablet-width: 1200px
 						&.one, &.two, &.three, &.four, &.five, &.six 
 
 							.text 
-								+shift(2)					
+								+span-columns(6 of 12)
+								+shift(3)
+								height: 80%		
+
+								h2 
+									+shift(0)		
 
 								.menu-item 
-									+span-columns(3 of 11)
 
-								.description	
-									+span-columns(6 of 12)
+									&.date
+										+span-columns(2 of 6)
+										+shift(0)
+
+									&.role
+										+span-columns(2 of 6)
+										+shift(1)
+
+								.description
+									position: relative
+									+span-columns(5 of 6)
+									+shift(0)
 
 							.slider
-								+span-columns(11 of 12)
-								+shift(1)
+								+span-columns(9 of 12)
+								+shift(0)
 
 // ---------- Tablet ---------- //
 @media (max-width: 1024px)

@@ -27,7 +27,7 @@ function showMobile() {
     if($('.active .next-image').length === 0) {
       $('<div class="slide"></div><div class="next-image"></div>').appendTo('.active');
     } else {
-     console.log('nah its here');
+     console.log('its here');
     }
     setTimeout(function(){
       $('.active .image').addClass('show');
@@ -194,7 +194,6 @@ function showAbout() {
       $('.text').removeClass('animate');
     
     setTimeout(function(){
-      $('.navigation').removeClass('animate');
       $('#container').addClass('blue');
       $('.line').addClass('blue');
       $('.background').removeClass('hide'); 
@@ -231,6 +230,7 @@ function showAbout() {
 }
 
 function hideAbout() {
+
   let mobile = window.matchMedia('(max-width: 740px), (max-width: 1024px)');
   $('.biography').removeClass('show');
   $('.about h2').removeClass('show');
@@ -252,7 +252,6 @@ function hideAbout() {
   setTimeout(function(){
     if($('.full').hasClass('show')) {  
       $('.slide').addClass('hide');
-      $('.navigation').addClass('animate');
     }
 
     if(!$('.full').hasClass('show')){
@@ -332,9 +331,13 @@ function mobileFunction() {
 
   } else {
     resetProject();
-    setTimeout(function(){
-      $('.slide').removeClass('hide');
-    }, 60);
+    // $('.slide').addClass('hide');
+    
+    if($('full').hasClass('show')) {
+     if(!$('.about').hasClass('show')) {
+        $('.slide').removeClass('hide');
+      }
+    }
   }
 }
 
@@ -461,7 +464,7 @@ $(function(){
       nextMobile();
     } else {
       nextProject();
-      console.log('tappity tap')
+      console.log('tappity tap');
     }
   });
 
