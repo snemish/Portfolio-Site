@@ -8,7 +8,7 @@ function setupProject() {
   $(section).addClass('show');
   $(active).addClass('show current');
 
-  let mobile = window.matchMedia('(max-width: 740px)');
+  let mobile = window.matchMedia('(max-width: 740px), (max-width: 1024px)');
   
   if (mobile.matches) {
       showMobile();
@@ -213,7 +213,7 @@ function showAbout() {
       $('#container').addClass('blue');
       $('.line').addClass('blue');
       $('.background').removeClass('hide');
-      let mobile = window.matchMedia('(max-width: 740px)');
+      let mobile = window.matchMedia('(max-width: 740px), (max-width: 1024px)');
       if (mobile.matches) {
         $('.projects').removeClass('show');
       } else {
@@ -231,7 +231,7 @@ function showAbout() {
 }
 
 function hideAbout() {
-  let mobile = window.matchMedia('(max-width: 740px)');
+  let mobile = window.matchMedia('(max-width: 740px), (max-width: 1024px)');
   $('.biography').removeClass('show');
   $('.about h2').removeClass('show');
   $('.about .contact').removeClass('show');
@@ -254,6 +254,10 @@ function hideAbout() {
       $('.slide').addClass('hide');
       $('.navigation').addClass('animate');
     }
+
+    if(!$('.projects').hasClass('show')) {
+      $('.projects').addClass('show');
+    }
     if (mobile.matches) {
       $('.projects').addClass('show');
     }
@@ -274,7 +278,7 @@ function resetProject() {
 }
 
   function mobileFunction() {
-    if (window.matchMedia('(max-width: 740px)').matches) {
+    if (window.matchMedia('(max-width: 740px), (max-width: 1024px').matches) {
 
     $('.full .back').click(function() {
       $('.project').removeClass('current');
@@ -301,6 +305,11 @@ function resetProject() {
       }
   });
 
+  if($('.about').hasClass('show')) {
+    $('.projects').removeClass('show');
+    $('.full').removeClass('show');
+  }
+
   if($('.full').hasClass('show')) {
     $('.projects, .about').removeClass('show');
     $('.name').addClass('hide');
@@ -312,6 +321,8 @@ function resetProject() {
       $('.navigation').addClass('animate');
     },100);
    }
+  
+
   } else {
     resetProject();
     setTimeout(function(){
@@ -436,7 +447,7 @@ $(function(){
     // console.log('yo');
   }); 
 
-  let mobile = window.matchMedia('(max-width: 740px)');
+  let mobile = window.matchMedia('(max-width: 740px), (max-width: 1024px)');
   $('.next').click(function(e) {
     e.preventDefault();
     if (mobile.matches) {
