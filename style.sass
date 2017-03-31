@@ -210,13 +210,13 @@ $tablet-width: 1200px
 
 
 				.contact
-					+span-columns(4 of 12)
-					+shift(4)
+					+span-columns(8 of 12)
+					+shift(0)
 					margin-top: 5vh
 					margin-bottom: 4vh
 
-					.social, .email
-						+span-columns(2 of 4)
+					.social, .email, .resume
+						+span-columns(2 of 8)
 						height: auto
 
 						.heading
@@ -236,9 +236,21 @@ $tablet-width: 1200px
 							&:hover
 								text-decoration: underline
 								color: $red
+						
+						.mobile
+							display: none
+					.social
+						+shift(2) 
+
+					.resume
+						.media
+							margin-top: 1.5em
+							margin-bottom: 1em 
+
 					.email 
 						.description
 							margin-top: 0
+
 
 				.image
 					position: absolute
@@ -316,14 +328,14 @@ $tablet-width: 1200px
 								color: $red
 
 							&.name 
-								+shift(9)							
+								+shift(9)				
 
 						&.one, &.two, &.three, &.four, &.five, &.six 
 
 							.image
 								position: absolute
 								height: 100%
-								+span-columns(9 of 12)
+								+span-columns(8 of 12)
 								background-size: cover
 								background-position: 50%, 50%
 								background-repeat: no-repeat
@@ -354,7 +366,7 @@ $tablet-width: 1200px
 
 						&.six
 							.image
-								+background-image(url('together/bottom.png'))
+								+background-image(url('together/main.jpg'))
 
 						&.show 
 							.image 
@@ -432,8 +444,6 @@ $tablet-width: 1200px
 								+transform(rotate(0deg))
 								+transform-origin(center)
 								height: 100%
-
-
 
 							&.play
 								&::after
@@ -516,7 +526,7 @@ $tablet-width: 1200px
 								+shift(1)
 
 						.slider
-							+span-columns(9 of 12)
+							+span-columns(8 of 12)
 							// +shift(1)
 							height: 96%
 							position: absolute
@@ -561,7 +571,7 @@ $tablet-width: 1200px
 
 // ---------- Small Laptops ---------- //
 	
-@media(min-width: 1025px) and (max-width: 1400px)
+@media(min-width: 1025px) and (max-width: 1550px)
 
 	#container
 		p
@@ -600,27 +610,30 @@ $tablet-width: 1200px
 				&.about
 					&.show
 						+span-columns(12 of 12)
-						+shift(1)
+						+shift(0)
 					
 					.biography				
 						+span-columns(6 of 12)
-						+shift(2)
+						+shift(3)
 						margin-top: 6vh
 
 						p 
 							width: 100%
 
 					.contact
-						+span-columns(8 of 12)
-						+shift(2)
+						+span-columns(9 of 12)
+						+shift(0)
 						margin-top: 4vh
 
+						.resume
+							+span-columns(2 of 9)
+
 						.social
-							+span-columns(3 of 8)
+							+span-columns(3 of 9)
+							+shift(1)
 
 						.email
-							+span-columns(3 of 8)
-
+							+span-columns(3 of 9)
 
 						.social 
 							.media
@@ -773,8 +786,13 @@ $tablet-width: 1200px
 						+span-columns(5 of 12)
 						margin-top: 0
 						
-						.social, .email
+						.social, .email, .resume
 							+span-columns(5 of 5)
+							+shift(0)
+
+						.resume
+							.media
+								margin-top: 1em
 
 					&.show 
 						width: 100%
@@ -1015,6 +1033,14 @@ $tablet-width: 1200px
 						.social, .email
 							+span-columns(6 of 12)
 
+							.media
+								&.mobile 
+									display: block
+
+								&.default 
+									display: none
+
+
 					&.show 
 						width: 100%
 						display: block
@@ -1108,7 +1134,7 @@ $tablet-width: 1200px
 
 							&.next
 								+span-columns(5 of 12)
-								+shift(1)
+								+shift(3)
 
 							&.back
 								display: block

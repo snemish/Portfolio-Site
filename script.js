@@ -250,12 +250,15 @@ function hideAbout() {
   },500);
 
   setTimeout(function(){
+    
     if($('.full').hasClass('show')) {  
       $('.slide').addClass('hide');
     }
 
-    if(!$('.full').hasClass('show')){
-      $('.projects').addClass('show');
+    if(!$('.about').hasClass('show')) {
+      if(!$('.full').hasClass('show')) {
+        $('.projects').addClass('show');        
+      }
     }
     if (mobile.matches) {
       $('.projects').addClass('show');
@@ -316,6 +319,12 @@ function mobileFunction() {
     }
   }
 
+    if($('.about').hasClass('show')) {
+    if($('.projects').hasClass('show')) {
+      $('.projects').removeClass('show');
+    }
+  }
+
   if($('.full').hasClass('show')) {
     $('.projects').removeClass('show');
     $('.about').removeClass('show');
@@ -331,12 +340,16 @@ function mobileFunction() {
 
   } else {
     resetProject();
-    // $('.slide').addClass('hide');
-    
-    if($('full').hasClass('show')) {
-     if(!$('.about').hasClass('show')) {
-        $('.slide').removeClass('hide');
-      }
+
+    if($('.full').hasClass('show')) {
+      $('.slide').addClass('hide');
+      // console.log('remove it');
+    }
+
+    if($('.about').hasClass('show')) {     
+      $('.slide').removeClass('hide');
+      $('.projects').removeClass('show');
+      // console.log('keep it');
     }
   }
 }
@@ -435,7 +448,7 @@ $(function(){
     setTimeout(function() {
       setupProject();
     },1600);
-    console.log('yo');
+    // console.log('yo');
   }); 
 
   $(project).click(function(){
@@ -464,7 +477,7 @@ $(function(){
       nextMobile();
     } else {
       nextProject();
-      console.log('tappity tap');
+      // console.log('tappity tap');
     }
   });
 

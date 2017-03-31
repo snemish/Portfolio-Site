@@ -251,23 +251,23 @@ body {
           float: left;
           display: block;
           margin-right: 2.74614%;
-          width: 31.50258%;
-          margin-left: 34.24871%;
+          width: 65.75129%;
+          margin-left: 0%;
           margin-top: 5vh;
           margin-bottom: 4vh; }
           #container .wrapper .section.about .contact:last-child {
             margin-right: 0; }
-          #container .wrapper .section.about .contact .social, #container .wrapper .section.about .contact .email {
+          #container .wrapper .section.about .contact .social, #container .wrapper .section.about .contact .email, #container .wrapper .section.about .contact .resume {
             float: left;
             display: block;
-            margin-right: 8.71718%;
-            width: 45.64141%;
+            margin-right: 4.17655%;
+            width: 21.86759%;
             height: auto; }
-            #container .wrapper .section.about .contact .social:last-child, #container .wrapper .section.about .contact .email:last-child {
+            #container .wrapper .section.about .contact .social:last-child, #container .wrapper .section.about .contact .email:last-child, #container .wrapper .section.about .contact .resume:last-child {
               margin-right: 0; }
-            #container .wrapper .section.about .contact .social .heading, #container .wrapper .section.about .contact .email .heading {
+            #container .wrapper .section.about .contact .social .heading, #container .wrapper .section.about .contact .email .heading, #container .wrapper .section.about .contact .resume .heading {
               font-weight: 700; }
-            #container .wrapper .section.about .contact .social .media, #container .wrapper .section.about .contact .email .media {
+            #container .wrapper .section.about .contact .social .media, #container .wrapper .section.about .contact .email .media, #container .wrapper .section.about .contact .resume .media {
               color: #FFFFFF;
               position: relative;
               display: inline-block;
@@ -277,9 +277,16 @@ body {
               width: 100%;
               cursor: url("img/dot.png"), default;
               cursor: -webkit-image-set(url("img/dot.png") 2x, url("img/dot.png") 2x), auto; }
-              #container .wrapper .section.about .contact .social .media:hover, #container .wrapper .section.about .contact .email .media:hover {
+              #container .wrapper .section.about .contact .social .media:hover, #container .wrapper .section.about .contact .email .media:hover, #container .wrapper .section.about .contact .resume .media:hover {
                 text-decoration: underline;
                 color: #fc4245; }
+            #container .wrapper .section.about .contact .social .mobile, #container .wrapper .section.about .contact .email .mobile, #container .wrapper .section.about .contact .resume .mobile {
+              display: none; }
+          #container .wrapper .section.about .contact .social {
+            margin-left: 26.04414%; }
+          #container .wrapper .section.about .contact .resume .media {
+            margin-top: 1.5em;
+            margin-bottom: 1em; }
           #container .wrapper .section.about .contact .email .description {
             margin-top: 0; }
         #container .wrapper .section.about .image {
@@ -383,7 +390,7 @@ body {
               float: left;
               display: block;
               margin-right: 2.74614%;
-              width: 74.31347%;
+              width: 65.75129%;
               background-size: cover;
               background-position: 50%, 50%;
               background-repeat: no-repeat;
@@ -413,8 +420,8 @@ body {
               background-image: url("haunt/maori-history-main.png");
               background-image: url("haunt/maori-history-main.png"); }
             #container .wrapper .section.projects .menu .project.six .image {
-              background-image: url("together/bottom.png");
-              background-image: url("together/bottom.png"); }
+              background-image: url("together/main.jpg");
+              background-image: url("together/main.jpg"); }
             #container .wrapper .section.projects .menu .project.show .image {
               opacity: 1; }
             #container .wrapper .section.projects .menu .project.show .date {
@@ -608,7 +615,7 @@ body {
               float: left;
               display: block;
               margin-right: 2.74614%;
-              width: 74.31347%;
+              width: 65.75129%;
               height: 96%;
               position: absolute;
               opacity: 1;
@@ -651,7 +658,7 @@ body {
               #container .wrapper .section.full .single.one .image.show, #container .wrapper .section.full .single.two .image.show, #container .wrapper .section.full .single.three .image.show, #container .wrapper .section.full .single.four .image.show, #container .wrapper .section.full .single.five .image.show, #container .wrapper .section.full .single.six .image.show {
                 opacity: 1; }
 
-@media(min-width: 1025px) and (max-width: 1400px) {
+@media(min-width: 1025px) and (max-width: 1550px) {
   #container p {
     font-size: 15px; }
   #container .wrapper {
@@ -702,7 +709,7 @@ body {
         display: block;
         margin-right: 2.74614%;
         width: 100%;
-        margin-left: 8.56218%; }
+        margin-left: 0%; }
         #container .wrapper .section.about.show:last-child {
           margin-right: 0; }
       #container .wrapper .section.about .biography {
@@ -710,7 +717,7 @@ body {
         display: block;
         margin-right: 2.74614%;
         width: 48.62693%;
-        margin-left: 17.12436%;
+        margin-left: 25.68653%;
         margin-top: 6vh; }
         #container .wrapper .section.about .biography:last-child {
           margin-right: 0; }
@@ -720,23 +727,31 @@ body {
         float: left;
         display: block;
         margin-right: 2.74614%;
-        width: 65.75129%;
-        margin-left: 17.12436%;
+        width: 74.31347%;
+        margin-left: 0%;
         margin-top: 4vh; }
         #container .wrapper .section.about .contact:last-child {
           margin-right: 0; }
+        #container .wrapper .section.about .contact .resume {
+          float: left;
+          display: block;
+          margin-right: 3.69534%;
+          width: 19.34807%; }
+          #container .wrapper .section.about .contact .resume:last-child {
+            margin-right: 0; }
         #container .wrapper .section.about .contact .social {
           float: left;
           display: block;
-          margin-right: 4.17655%;
-          width: 34.88966%; }
+          margin-right: 3.69534%;
+          width: 30.86977%;
+          margin-left: 11.5217%; }
           #container .wrapper .section.about .contact .social:last-child {
             margin-right: 0; }
         #container .wrapper .section.about .contact .email {
           float: left;
           display: block;
-          margin-right: 4.17655%;
-          width: 34.88966%; }
+          margin-right: 3.69534%;
+          width: 30.86977%; }
           #container .wrapper .section.about .contact .email:last-child {
             margin-right: 0; }
         #container .wrapper .section.about .contact .social .media {
@@ -940,13 +955,16 @@ body {
             margin-top: 0; }
             #container .wrapper .section.about .contact:last-child {
               margin-right: 0; }
-            #container .wrapper .section.about .contact .social, #container .wrapper .section.about .contact .email {
+            #container .wrapper .section.about .contact .social, #container .wrapper .section.about .contact .email, #container .wrapper .section.about .contact .resume {
               float: left;
               display: block;
               margin-right: 6.85424%;
-              width: 100%; }
-              #container .wrapper .section.about .contact .social:last-child, #container .wrapper .section.about .contact .email:last-child {
+              width: 100%;
+              margin-left: 0%; }
+              #container .wrapper .section.about .contact .social:last-child, #container .wrapper .section.about .contact .email:last-child, #container .wrapper .section.about .contact .resume:last-child {
                 margin-right: 0; }
+            #container .wrapper .section.about .contact .resume .media {
+              margin-top: 1em; }
           #container .wrapper .section.about.show {
             width: 100%;
             display: block; }
@@ -1244,6 +1262,10 @@ body {
               width: 48.62693%; }
               #container .wrapper .section.about .contact .social:last-child, #container .wrapper .section.about .contact .email:last-child {
                 margin-right: 0; }
+              #container .wrapper .section.about .contact .social .media.mobile, #container .wrapper .section.about .contact .email .media.mobile {
+                display: block; }
+              #container .wrapper .section.about .contact .social .media.default, #container .wrapper .section.about .contact .email .media.default {
+                display: none; }
           #container .wrapper .section.about.show {
             width: 100%;
             display: block; }
@@ -1350,7 +1372,7 @@ body {
                 display: block;
                 margin-right: 2.74614%;
                 width: 40.06475%;
-                margin-left: 8.56218%; }
+                margin-left: 25.68653%; }
                 #container .wrapper .section.full .navigation .menu-item.next:last-child {
                   margin-right: 0; }
               #container .wrapper .section.full .navigation .menu-item.back {
