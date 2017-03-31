@@ -308,7 +308,6 @@ $tablet-width: 1200px
 						cursor: pointer
 						cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), pointer
 
-
 						.menu-item
 							+span-columns(2 of 12)
 							position: relative
@@ -392,11 +391,11 @@ $tablet-width: 1200px
 				.navigation
 					position: relative
 					width: inherit
-					height: 50px
+					height: auto
 					margin-top: 12vh
-					+span-columns(11 of 12)
-					+shift(1)
-					z-index: 9999 !important
+					+span-columns(2 of 12)
+					+shift(9)
+					z-index: 500 !important
 					+transform(translate3d(0, -10vh, 0))
 					+transition(all 0.5s ease)
 					opacity: 0
@@ -410,7 +409,7 @@ $tablet-width: 1200px
 
 					.menu-item
 						position: relative
-						+span-columns(2 of 12)
+						+span-columns(2 of 2)
 						+shift(9)
 						p
 							color: $blue
@@ -431,9 +430,8 @@ $tablet-width: 1200px
 								color: $red
 
 						&.details, &.back
-							margin-bottom: 4vh
+							margin-bottom: 5vh
 
-							
 							&::after
 								content: "\263A"
 								vertical-align: baseline
@@ -467,6 +465,28 @@ $tablet-width: 1200px
 
 						&.back
 							display: none
+
+					.slider-dots
+						position: relative
+						+span-columns(2 of 2)
+						margin-bottom: 5vh
+
+						p
+							color: $blue
+							font-size: 15px
+							line-height: 18px
+							font-weight: 700
+							display: inline
+							padding-right: 1vw
+
+						&::after
+							content: url('img/hands.png')
+							+transform(scale(.20))
+							display: inline-block
+							position: absolute
+							margin-top: -34px
+							margin-left: -24px
+							
 
 				.single
 					height: 100%
@@ -527,7 +547,6 @@ $tablet-width: 1200px
 
 						.slider
 							+span-columns(8 of 12)
-							// +shift(1)
 							height: 96%
 							position: absolute
 							opacity: 1
@@ -540,7 +559,7 @@ $tablet-width: 1200px
 								z-index: 600
 								position: absolute
 								cursor: pointer
-								cursor: -webkit-image-set(url('img/dot.png') 2x, url('img/dot.png') 2x), pointer
+								cursor: -webkit-image-set(url('img/hands.png') 2x, url('img/hsnds.png') 2x), pointer
 
 								&.hide 
 									pointer-events: none			
@@ -893,6 +912,9 @@ $tablet-width: 1200px
 								display: block
 								margin-bottom: 0
 								+span-columns(4 of 12)
+
+						.slider-dots
+							display: none
 
 					.single
 						position: relative

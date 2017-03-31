@@ -61,22 +61,25 @@ function showProject() {
 
 function slideshow() {
   if($('.slider').hasClass('active')) {
-    let currentImage = 0;  
+    let currentImage = 0;
+    let counter = $('.active .image.show').index() + 1;  
     let total = $('.active .image').length;
     let nextButton = $('.active .next-image');
-    let html = '';
     $(nextButton).click(function() {
         currentImage++;
         $('.active .image.show').removeClass('show').next('.image').addClass('show');
         if(currentImage >= total) {
-          currentImage = 1;
+          currentImage = 0;
             $('.active .image.show').removeClass('show');
             $('.active .image:first').addClass('show');
         }  
-        html += 'Gallery - <span>' + +currentImage + ' / ' + total + '</span>';
+        counter = $('.image.show').index() + 1;
+        $('.navigation .slider-dots p .counter').html(counter);
+        // console.log(currentImage);
     });
-        $('.navigation .slider-dots p').append(html);
         // console.log(total);
+      $('.navigation .slider-dots p .total').html(total);
+      $('.navigation .slider-dots p .counter').html(counter);
   }
 }
 
@@ -273,6 +276,10 @@ function resetProject() {
   $(current).find('.text').removeClass('show animate');
   $(current).find('.slider .image').removeClass('show');
   $(current).find('.slider .image:first').addClass('show');
+  
+  let counter = $('.active .image.show').index() + 1;  
+  $('.active .image.show').index() + 1;
+  $('.navigation .slider-dots p .counter').html(counter);
   $('.single').find('.text').removeClass('animate');
   if($('.active .next-image').length === 0) {
     $('<div class="slide"></div><div class="next-image"></div>').appendTo('.active');
