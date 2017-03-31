@@ -64,16 +64,18 @@ function slideshow() {
     let currentImage = 0;  
     let total = $('.active .image').length;
     let nextButton = $('.active .next-image');
+    let html = '';
     $(nextButton).click(function() {
         currentImage++;
         $('.active .image.show').removeClass('show').next('.image').addClass('show');
         if(currentImage >= total) {
-          currentImage = 0;
+          currentImage = 1;
             $('.active .image.show').removeClass('show');
             $('.active .image:first').addClass('show');
         }  
-        // console.log(currentImage);
+        html += 'Gallery - <span>' + +currentImage + ' / ' + total + '</span>';
     });
+        $('.navigation .slider-dots p').append(html);
         // console.log(total);
   }
 }
