@@ -289,7 +289,7 @@ function resetProject() {
 }
 
 function mobileFunction() {
-  if (window.matchMedia('(max-width: 740px), (max-width: 1024px').matches) {
+  if (window.matchMedia('(max-width: 740px), (max-width: 1024px)').matches) {
 
     $('.full .back').click(function() {
       $('.project').removeClass('current');
