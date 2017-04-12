@@ -15,19 +15,19 @@ function setupProject() {
     } else {
       showProject();
     }
-  $('.project').removeClass('current');
+  $('.project').removeClass('current show');
 }
 
 function showMobile() {
     $('.projects, .about').removeClass('show');
-    $('.name').addClass('hide');
+    $('.title').addClass('hide');
     $('.information').addClass('hide');
   if($('.single').hasClass('current')) {
     $('.current').find('.slider').addClass('active');
     if($('.active .next-image').length === 0) {
       $('<div class="slide"></div><div class="next-image"></div>').appendTo('.active');
     } else {
-     console.log('its here');
+     // console.log('its here');
     }
     setTimeout(function(){
       $('.active .image').addClass('show');
@@ -40,12 +40,13 @@ function showMobile() {
 
 function showProject() {
   if($('.single').hasClass('current')) {
+    $('.title').addClass('clickable');
     $('.current').find('.slider').addClass('active');
     $('.active .image.show').removeClass('show');
     if($('.active .next-image').length === 0) {
       $('<div class="slide"></div><div class="next-image"></div>').appendTo('.active');
     } else {
-     console.log('nah its here');
+     // console.log('nah its here');
     }
     setTimeout(function(){
       $('.active .image:first').addClass('show');
@@ -179,7 +180,7 @@ function showHomepage() {
   }, 1000);
 
   setTimeout(function(){
-    $('.name').addClass('animate');
+    $('.title').addClass('animate');
   }, 1300);
 
   setTimeout(function(){
@@ -197,6 +198,7 @@ function showAbout() {
   if($('.full').hasClass('show')) {
       $('.slide').removeClass('hide');
       $('.text').removeClass('animate');
+      $('.title').removeClass('clickable');
     
     setTimeout(function(){
       $('#container').addClass('blue');
@@ -217,11 +219,11 @@ function showAbout() {
       $('#container').addClass('blue');
       $('.line').addClass('blue');
       $('.background').removeClass('hide');
-      let mobile = window.matchMedia('(max-width: 740px), (max-width: 1024px)');
-      if (mobile.matches) {
-        $('.projects').removeClass('show');
-      } else {
-      }
+      $('.projects').removeClass('show');
+      // let mobile = window.matchMedia('(max-width: 740px), (max-width: 1024px)');
+      // if (mobile.matches) {
+      // } else {
+      // }
     },100);
     setTimeout(function(){
       $('.about').addClass('show');
@@ -258,6 +260,7 @@ function hideAbout() {
     
     if($('.full').hasClass('show')) {  
       $('.slide').addClass('hide');
+      $('.title').addClass('clickable');
     }
 
     if(!$('.about').hasClass('show')) {
@@ -284,7 +287,7 @@ function resetProject() {
   if($('.active .next-image').length === 0) {
     $('<div class="slide"></div><div class="next-image"></div>').appendTo('.active');
   } else {
-   console.log('nah its here');
+   // console.log('nah its here');
   }
 }
 
@@ -310,7 +313,7 @@ function mobileFunction() {
         },1200);
         setTimeout(function(){
           $('.projects').addClass('show');
-          $('.name').removeClass('hide');
+          $('.title').removeClass('hide');
           $('.information').removeClass('hide');
         },1400);
       }
@@ -324,7 +327,7 @@ function mobileFunction() {
       $('.projects').removeClass('show');
       $('.full').removeClass('show');
       $('.information').removeClass('hide');
-      $('.name').removeClass('hide');
+      $('.title').removeClass('hide');
     }
   }
 
@@ -337,7 +340,7 @@ function mobileFunction() {
   if($('.full').hasClass('show')) {
     $('.projects').removeClass('show');
     $('.about').removeClass('show');
-    $('.name').addClass('hide');
+    $('.title').addClass('hide');
     $('.information').addClass('hide');
     $('.navigation').removeClass('animate');
     setTimeout(function(){
@@ -392,7 +395,7 @@ $(function(){
     $('.details').toggleClass('play');
   });
   
-  $('.name').click(function(){
+  $('.title').click(function(){
     $('.project').removeClass('current');
     if($('.full').hasClass('show')){
       $('.slide').removeClass('hide');
@@ -412,6 +415,7 @@ $(function(){
       },500);
       setTimeout(function(){
         $('.background').addClass('hide'); 
+        $('.title').removeClass('clickable'); 
       },1200);
     }
   });
@@ -439,14 +443,14 @@ $(function(){
     $(this).parent(project).addClass('show');
   });
 
-  $(menu).mouseleave(function(){
-    $('.project').removeClass('show');
-  });
+  // $(menu).mouseleave(function(){
+  //   $('.project').removeClass('show');
+  // });
 
   $(menu).click(function(){
     $(this).parent(project).addClass('current');
     let match = $(this).parent(project).attr('class').split(' ')[1];
-    console.log(match);
+    // console.log(match);
     setTimeout(function(){
       $('.projects').removeClass('show');
       $('.background').removeClass('hide');
@@ -463,14 +467,14 @@ $(function(){
   $(project).click(function(){
     $(this).parent(project).addClass('current');
     let match = $(this).parent(project).attr('class').split(' ')[1];
-    console.log(match);
+    // console.log(match);
     setTimeout(function(){
       $('.projects').removeClass('show');
       $('.background').removeClass('hide');
     }, 200);
     setTimeout(function() {
       $('.background').addClass('hide');
-      $('.name').addClass('hide');
+      $('.title').addClass('hide');
       $('.information').addClass('hide');
     },1500);
     setTimeout(function() {

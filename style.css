@@ -54,7 +54,7 @@ body {
   #container.blue .wrapper {
     cursor: default;
     cursor: -webkit-image-set(url("img/white-got.png") 2x, url("img/white-got.png") 2x), default; }
-    #container.blue .wrapper .name .glitch {
+    #container.blue .wrapper .title .glitch {
       color: #FFFFFF; }
   #container p {
     font-family: "Inconsolata", monospace;
@@ -73,7 +73,7 @@ body {
     left: 50%;
     overflow: hidden;
     margin-left: -48vw; }
-    #container .wrapper .name {
+    #container .wrapper .title {
       float: left;
       display: block;
       margin-right: 2.74614%;
@@ -85,6 +85,7 @@ body {
       margin-bottom: 2vh;
       z-index: 500;
       opacity: 0;
+      pointer-events: none;
       -webkit-transform: translate3d(0, -10vh, 0);
       -moz-transform: translate3d(0, -10vh, 0);
       -ms-transform: translate3d(0, -10vh, 0);
@@ -93,9 +94,9 @@ body {
       -webkit-transition: all 0.5s ease;
       -moz-transition: all 0.5s ease;
       transition: all 0.5s ease; }
-      #container .wrapper .name:last-child {
+      #container .wrapper .title:last-child {
         margin-right: 0; }
-      #container .wrapper .name .glitch {
+      #container .wrapper .title .glitch {
         font-size: 28px;
         font-family: "Inconsolata", monospace;
         line-height: 54px;
@@ -103,13 +104,17 @@ body {
         margin: 0;
         color: #0057FF;
         position: absolute; }
-      #container .wrapper .name.animate {
+      #container .wrapper .title.animate {
         -webkit-transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
         -ms-transform: translate3d(0, 0, 0);
         -o-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         opacity: 1; }
+      #container .wrapper .title.clickable {
+        pointer-events: all; }
+        #container .wrapper .title.clickable:hover .glitch {
+          color: #fc4245; }
     #container .wrapper .information {
       position: relative;
       margin-left: 8.56218%;
@@ -174,6 +179,8 @@ body {
           position: relative; }
           #container .wrapper .information .hamburger .line.blue {
             background-color: #FFFFFF; }
+        #container .wrapper .information .hamburger:hover .line {
+          background-color: #fc4245; }
     #container .wrapper .section {
       position: absolute;
       float: left;
@@ -384,6 +391,26 @@ body {
                 color: #fc4245; }
               #container .wrapper .section.projects .menu .project .menu-item.name {
                 margin-left: 77.0596%; }
+            #container .wrapper .section.projects .menu .project .detail {
+              float: left;
+              display: block;
+              margin-right: 2.74614%;
+              width: 14.37822%;
+              margin-left: 77.0596%;
+              position: absolute;
+              z-index: 800 !important;
+              opacity: 0;
+              height: auto;
+              display: block;
+              bottom: 0;
+              pointer-events: none; }
+              #container .wrapper .section.projects .menu .project .detail:last-child {
+                margin-right: 0; }
+              #container .wrapper .section.projects .menu .project .detail p {
+                opacity: 1;
+                width: 100%;
+                margin-bottom: 0;
+                margin-top: 0; }
             #container .wrapper .section.projects .menu .project.one .image, #container .wrapper .section.projects .menu .project.two .image, #container .wrapper .section.projects .menu .project.three .image, #container .wrapper .section.projects .menu .project.four .image, #container .wrapper .section.projects .menu .project.five .image, #container .wrapper .section.projects .menu .project.six .image {
               position: absolute;
               height: 100%;
@@ -405,20 +432,20 @@ body {
             #container .wrapper .section.projects .menu .project.one {
               margin-top: 12vh; }
               #container .wrapper .section.projects .menu .project.one .image {
-                background-image: url("bm/dan-murphys.jpg");
-                background-image: url("bm/dan-murphys.jpg"); }
+                background-image: url("days/green.png");
+                background-image: url("days/green.png"); }
             #container .wrapper .section.projects .menu .project.two .image {
-              background-image: url("paper/second-thumbnail.png");
-              background-image: url("paper/second-thumbnail.png"); }
+              background-image: url("haunt/maori-history-main.png");
+              background-image: url("haunt/maori-history-main.png"); }
             #container .wrapper .section.projects .menu .project.three .image {
               background-image: url("layer/layer-5.jpg");
               background-image: url("layer/layer-5.jpg"); }
             #container .wrapper .section.projects .menu .project.four .image {
-              background-image: url("days/green.png");
-              background-image: url("days/green.png"); }
+              background-image: url("paper/second-thumbnail.png");
+              background-image: url("paper/second-thumbnail.png"); }
             #container .wrapper .section.projects .menu .project.five .image {
-              background-image: url("haunt/maori-history-main.png");
-              background-image: url("haunt/maori-history-main.png"); }
+              background-image: url("bm/dan-murphys.jpg");
+              background-image: url("bm/dan-murphys.jpg"); }
             #container .wrapper .section.projects .menu .project.six .image {
               background-image: url("together/main.jpg");
               background-image: url("together/main.jpg"); }
@@ -429,6 +456,8 @@ body {
             #container .wrapper .section.projects .menu .project.show .role {
               opacity: 1; }
             #container .wrapper .section.projects .menu .project.show .menu-item:after {
+              opacity: 1; }
+            #container .wrapper .section.projects .menu .project.show .detail {
               opacity: 1; }
       #container .wrapper .section.full {
         display: none;
@@ -691,15 +720,15 @@ body {
     width: 94vw;
     left: 50%;
     margin-left: -47vw; }
-    #container .wrapper .name {
+    #container .wrapper .title {
       margin-left: 0%;
       float: left;
       display: block;
       margin-right: 2.74614%;
       width: 31.50258%; }
-      #container .wrapper .name:last-child {
+      #container .wrapper .title:last-child {
         margin-right: 0; }
-      #container .wrapper .name .glitch {
+      #container .wrapper .title .glitch {
         font-size: 36px; }
     #container .wrapper .information {
       margin-left: 0%;
@@ -908,19 +937,19 @@ body {
       overflow: -moz-scrollbars-none; }
       #container .wrapper::-webkit-scrollbar {
         width: 0 !important; }
-      #container .wrapper .name {
+      #container .wrapper .title {
         float: left;
         display: block;
         margin-right: 2.74614%;
         width: 48.62693%;
         margin-left: 0%;
         height: 100px; }
-        #container .wrapper .name:last-child {
+        #container .wrapper .title:last-child {
           margin-right: 0; }
-        #container .wrapper .name .glitch {
+        #container .wrapper .title .glitch {
           font-size: 40px;
           line-height: 40px; }
-        #container .wrapper .name.hide {
+        #container .wrapper .title.hide {
           display: none; }
       #container .wrapper .information {
         float: left;
@@ -1033,7 +1062,10 @@ body {
                 #container .wrapper .section.projects .menu .project .menu-item:last-child {
                   margin-right: 0; }
                 #container .wrapper .section.projects .menu .project .menu-item.name {
-                  margin-left: 0%; }
+                  margin-left: 0%;
+                  margin-bottom: 2vh; }
+              #container .wrapper .section.projects .menu .project .detail {
+                display: none; }
               #container .wrapper .section.projects .menu .project.one.one, #container .wrapper .section.projects .menu .project.two.one, #container .wrapper .section.projects .menu .project.three.one, #container .wrapper .section.projects .menu .project.four.one, #container .wrapper .section.projects .menu .project.five.one, #container .wrapper .section.projects .menu .project.six.one {
                 margin-top: 6vh; }
               #container .wrapper .section.projects .menu .project.one .image, #container .wrapper .section.projects .menu .project.two .image, #container .wrapper .section.projects .menu .project.three .image, #container .wrapper .section.projects .menu .project.four .image, #container .wrapper .section.projects .menu .project.five .image, #container .wrapper .section.projects .menu .project.six .image {
@@ -1211,19 +1243,19 @@ body {
       overflow: -moz-scrollbars-none; }
       #container .wrapper::-webkit-scrollbar {
         width: 0 !important; }
-      #container .wrapper .name {
+      #container .wrapper .title {
         float: left;
         display: block;
         margin-right: 2.74614%;
         width: 48.62693%;
         margin-left: 0%;
         height: 100px; }
-        #container .wrapper .name:last-child {
+        #container .wrapper .title:last-child {
           margin-right: 0; }
-        #container .wrapper .name .glitch {
+        #container .wrapper .title .glitch {
           font-size: 34px;
           line-height: 36px; }
-        #container .wrapper .name.hide {
+        #container .wrapper .title.hide {
           display: none; }
       #container .wrapper .information {
         float: left;
