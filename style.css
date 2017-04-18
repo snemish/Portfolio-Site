@@ -540,8 +540,7 @@ body {
                 -moz-transform-origin: center;
                 -ms-transform-origin: center;
                 -o-transform-origin: center;
-                transform-origin: center;
-                height: 100%; }
+                transform-origin: center; }
               #container .wrapper .section.full .navigation .menu-item.details.play::after, #container .wrapper .section.full .navigation .menu-item.back.play::after {
                 content: "☺";
                 -webkit-transform: rotateZ(180deg);
@@ -621,8 +620,8 @@ body {
               float: left;
               display: block;
               margin-right: 2.74614%;
-              width: 57.18911%;
-              margin-left: 8.56218%; }
+              width: 48.62693%;
+              margin-left: 17.12436%; }
               #container .wrapper .section.full .single.one .text:last-child, #container .wrapper .section.full .single.two .text:last-child, #container .wrapper .section.full .single.three .text:last-child, #container .wrapper .section.full .single.four .text:last-child, #container .wrapper .section.full .single.five .text:last-child, #container .wrapper .section.full .single.six .text:last-child {
                 margin-right: 0; }
               #container .wrapper .section.full .single.one .text.animate, #container .wrapper .section.full .single.two .text.animate, #container .wrapper .section.full .single.three .text.animate, #container .wrapper .section.full .single.four .text.animate, #container .wrapper .section.full .single.five .text.animate, #container .wrapper .section.full .single.six .text.animate {
@@ -630,9 +629,8 @@ body {
               #container .wrapper .section.full .single.one .text h2, #container .wrapper .section.full .single.two .text h2, #container .wrapper .section.full .single.three .text h2, #container .wrapper .section.full .single.four .text h2, #container .wrapper .section.full .single.five .text h2, #container .wrapper .section.full .single.six .text h2 {
                 float: left;
                 display: block;
-                margin-right: 3.00328%;
-                width: 62.54426%;
-                margin-left: 9.36393%;
+                margin-right: 5.64736%;
+                width: 100%;
                 width: 100%;
                 font-family: "Inconsolata", monospace;
                 color: #FFFFFF;
@@ -644,9 +642,8 @@ body {
               #container .wrapper .section.full .single.one .text .menu-item, #container .wrapper .section.full .single.two .text .menu-item, #container .wrapper .section.full .single.three .text .menu-item, #container .wrapper .section.full .single.four .text .menu-item, #container .wrapper .section.full .single.five .text .menu-item, #container .wrapper .section.full .single.six .text .menu-item {
                 float: left;
                 display: block;
-                margin-right: 3.00328%;
-                width: 15.72459%;
-                margin-left: 9.36393%;
+                margin-right: 5.64736%;
+                width: 29.56843%;
                 color: #FFFFFF;
                 font-size: 15px;
                 line-height: 18px;
@@ -656,8 +653,8 @@ body {
                 #container .wrapper .section.full .single.one .text .menu-item.role, #container .wrapper .section.full .single.two .text .menu-item.role, #container .wrapper .section.full .single.three .text .menu-item.role, #container .wrapper .section.full .single.four .text .menu-item.role, #container .wrapper .section.full .single.five .text .menu-item.role, #container .wrapper .section.full .single.six .text .menu-item.role {
                   float: left;
                   display: block;
-                  margin-right: 3.00328%;
-                  width: 34.45246%;
+                  margin-right: 2.74614%;
+                  width: 31.50258%;
                   margin-left: 0%; }
                   #container .wrapper .section.full .single.one .text .menu-item.role:last-child, #container .wrapper .section.full .single.two .text .menu-item.role:last-child, #container .wrapper .section.full .single.three .text .menu-item.role:last-child, #container .wrapper .section.full .single.four .text .menu-item.role:last-child, #container .wrapper .section.full .single.five .text .menu-item.role:last-child, #container .wrapper .section.full .single.six .text .menu-item.role:last-child {
                     margin-right: 0; }
@@ -671,9 +668,8 @@ body {
                 position: relative;
                 float: left;
                 display: block;
-                margin-right: 3.00328%;
-                width: 34.45246%;
-                margin-left: 9.36393%; }
+                margin-right: 5.64736%;
+                width: 64.78421%; }
                 #container .wrapper .section.full .single.one .text .description:last-child, #container .wrapper .section.full .single.two .text .description:last-child, #container .wrapper .section.full .single.three .text .description:last-child, #container .wrapper .section.full .single.four .text .description:last-child, #container .wrapper .section.full .single.five .text .description:last-child, #container .wrapper .section.full .single.six .text .description:last-child {
                   margin-right: 0; }
             #container .wrapper .section.full .single.one .slider, #container .wrapper .section.full .single.two .slider, #container .wrapper .section.full .single.three .slider, #container .wrapper .section.full .single.four .slider, #container .wrapper .section.full .single.five .slider, #container .wrapper .section.full .single.six .slider {

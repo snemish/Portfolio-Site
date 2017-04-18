@@ -477,7 +477,7 @@ $tablet-width: 1200px
 								+transition(all 0.5s ease)
 								+transform(rotate(0deg))
 								+transform-origin(center)
-								height: 100%
+								// height: 100%
 
 							&.play
 								&::after
@@ -552,15 +552,14 @@ $tablet-width: 1200px
 							top: 4vh
 							opacity: 0
 							+transition(all 0.5s ease)
-							+span-columns(7 of 12)
-							+shift(1)
+							+span-columns(6 of 12)
+							+shift(2)
 
 							&.animate
 								opacity: 1
 				
 							h2	
-								+span-columns(7 of 11)
-								+shift(1)
+								+span-columns(6 of 6)
 								width: 100%
 								font-family: $font-stack
 								color: $white
@@ -569,15 +568,14 @@ $tablet-width: 1200px
 								margin-bottom: 0
 
 							.menu-item 
-								+span-columns(2 of 11)
-								+shift(1)
+								+span-columns(2 of 6)
 								color: $white
 								font-size: 15px
 								line-height: 18px
 								position: relative
 
 								&.role
-									+span-columns(4 of 11)
+									+span-columns(4 of 12)
 									+shift(0)
 							
 							.description	
@@ -588,8 +586,8 @@ $tablet-width: 1200px
 								line-height: 18px
 								opacity: 1
 								position: relative
-								+span-columns(4 of 11)
-								+shift(1)
+								+span-columns(4 of 6)
+							
 
 						.slider
 							+span-columns(8 of 12)
