@@ -425,7 +425,7 @@ $tablet-width: 1200px
 					position: relative
 					width: inherit
 					height: auto
-					margin-top: 12vh
+					margin-top: 10vh
 					+span-columns(2 of 12)
 					+shift(9)
 					z-index: 500 !important
@@ -461,8 +461,11 @@ $tablet-width: 1200px
 							&::after 
 								color: $red
 
+						&.details
+							height: 30px
+
 						&.details, &.back
-							margin-bottom: 5vh
+							margin-bottom: 0
 
 							&::after
 								content: "\263A"
@@ -501,9 +504,8 @@ $tablet-width: 1200px
 					.slider-dots
 						position: relative
 						+span-columns(2 of 2)
-						margin-bottom: 5vh
 
-						p
+						.hand
 							color: $blue
 							font-size: 15px
 							line-height: 18px
@@ -511,13 +513,24 @@ $tablet-width: 1200px
 							display: inline
 							padding-right: 1vw
 
-						&::after
-							content: url('img/hands.png')
-							+transform(scale(.20))
-							display: inline-block
-							position: absolute
-							margin-top: -34px
-							margin-left: -24px
+							&::after
+								content: url('img/hands.png')
+								+transform(scale(.20))
+								display: inline-block
+								position: absolute
+								margin-top: -34px
+								margin-left: -24px
+							
+						&:hover
+							.help-message
+								opacity: 0.5
+
+
+					.help-message
+						position: relative
+						margin-bottom: 13vh
+						opacity: 0
+						margin-top: 0
 							
 				.single
 					height: 100%
@@ -716,7 +729,7 @@ $tablet-width: 1200px
 					.navigation
 						+span-columns(3 of 12)
 						+shift(9)
-						top: 20vh
+						top: 10vh
 						margin-top: 0
 
 						.menu-item

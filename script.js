@@ -16,6 +16,7 @@ function setupProject() {
       showProject();
     }
   $('.project').removeClass('current show');
+  ga('send', 'event', 'link', 'click', number);  
 }
 
 function showMobile() {
@@ -76,6 +77,8 @@ function slideshow() {
         }  
         counter = $('.image.show').index() + 1;
         $('.navigation .slider-dots p .counter').html(counter);
+        ga('send', 'event', 'link', 'click', 'nextImage');  
+
         // console.log(currentImage);
     });
         // console.log(total);
@@ -433,6 +436,7 @@ $(function(){
     } else{
       showAbout();
     }
+    ga('send', 'event', 'link', 'click', 'aboutMe');  
   });
 
   let menu = $('.project a');

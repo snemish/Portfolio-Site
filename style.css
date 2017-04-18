@@ -468,7 +468,7 @@ body {
           position: relative;
           width: inherit;
           height: auto;
-          margin-top: 12vh;
+          margin-top: 10vh;
           float: left;
           display: block;
           margin-right: 2.74614%;
@@ -517,8 +517,10 @@ body {
               color: #fc4245; }
             #container .wrapper .section.full .navigation .menu-item:hover::after {
               color: #fc4245; }
+            #container .wrapper .section.full .navigation .menu-item.details {
+              height: 30px; }
             #container .wrapper .section.full .navigation .menu-item.details, #container .wrapper .section.full .navigation .menu-item.back {
-              margin-bottom: 5vh; }
+              margin-bottom: 0; }
               #container .wrapper .section.full .navigation .menu-item.details::after, #container .wrapper .section.full .navigation .menu-item.back::after {
                 content: "☺";
                 vertical-align: baseline;
@@ -564,28 +566,34 @@ body {
             float: left;
             display: block;
             margin-right: 19.09928%;
-            width: 100%;
-            margin-bottom: 5vh; }
+            width: 100%; }
             #container .wrapper .section.full .navigation .slider-dots:last-child {
               margin-right: 0; }
-            #container .wrapper .section.full .navigation .slider-dots p {
+            #container .wrapper .section.full .navigation .slider-dots .hand {
               color: #0057FF;
               font-size: 15px;
               line-height: 18px;
               font-weight: 700;
               display: inline;
               padding-right: 1vw; }
-            #container .wrapper .section.full .navigation .slider-dots::after {
-              content: url("img/hands.png");
-              -webkit-transform: scale(0.2);
-              -moz-transform: scale(0.2);
-              -ms-transform: scale(0.2);
-              -o-transform: scale(0.2);
-              transform: scale(0.2);
-              display: inline-block;
-              position: absolute;
-              margin-top: -34px;
-              margin-left: -24px; }
+              #container .wrapper .section.full .navigation .slider-dots .hand::after {
+                content: url("img/hands.png");
+                -webkit-transform: scale(0.2);
+                -moz-transform: scale(0.2);
+                -ms-transform: scale(0.2);
+                -o-transform: scale(0.2);
+                transform: scale(0.2);
+                display: inline-block;
+                position: absolute;
+                margin-top: -34px;
+                margin-left: -24px; }
+            #container .wrapper .section.full .navigation .slider-dots:hover .help-message {
+              opacity: 0.5; }
+          #container .wrapper .section.full .navigation .help-message {
+            position: relative;
+            margin-bottom: 13vh;
+            opacity: 0;
+            margin-top: 0; }
         #container .wrapper .section.full .single {
           height: 100%;
           position: absolute;
@@ -849,7 +857,7 @@ body {
           margin-right: 2.74614%;
           width: 22.9404%;
           margin-left: 77.0596%;
-          top: 20vh;
+          top: 10vh;
           margin-top: 0; }
           #container .wrapper .section.full .navigation:last-child {
             margin-right: 0; }

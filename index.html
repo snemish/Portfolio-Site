@@ -57,7 +57,7 @@
 					</div>
 					<div class="contact">
 						<div class="resume">
-							<a class="media" href="snehamishra-resume.pdf" target="_blank"">Download Resume</a>
+							<a onclick="ga('send', 'event', 'link', 'click', 'resume')"  class="media" href="snehamishra-resume.pdf" target="_blank"">Download Resume</a>
 						</div>
 						<div class="social">
 							<p class="heading">Stalk ?</p>
@@ -69,7 +69,7 @@
 						<div class="email">
 							<p class="heading">Talk ?</p>
 							<p class="description">Want to work together? Recommend me a vego burger? or just say hello? Drop me a line.</p>
-							<a href="mailto:snehamishra.design@gmail.com?Subject=Hey%20Sneha" target="_top" class="media default">snehamishra.design@gmail.com</a>
+							<a href="mailto:snehamishra.design@gmail.com?Subject=Hey%20Sneha" target="_top" class="media default" onclick="ga('send', 'event', 'link', 'click', 'contact')">snehamishra.design@gmail.com</a>
 							<a href="mailto:snehamishra.design@gmail.com?Subject=Hey%20Sneha" target="_top" class="media mobile">Send Email</a>
 						</div>
 					</div>
@@ -85,7 +85,7 @@
 							</div>
 						</div>
 						<div class="project two">
-							<a class="menu-item name">Maori History</a>
+							<a onclick="ga('send', 'event', 'link', 'click', 'history')" class="menu-item name">Maori History</a>
 							<div class="image"></div>
 							<div class="detail">
 								<p class="date">2015</p>
@@ -97,7 +97,7 @@
 							<div class="image"></div>
 							<div class="detail">
 								<p class="date">2015 - 2016</p>
-								<p class="role">Concept & Design</p>
+								<p class="role">UI & UX</p>
 							</div>
 						</div>
 						<div class="project four">
@@ -135,7 +135,8 @@
 							<p>Home</p>
 						</div>
 						<div class="slider-dots">
-							<p>Gallery - <span class="counter"></span>/<span class="total"></span></p>
+							<p class="hand">Gallery - <span class="counter"></span>/<span class="total"></span></p>
+							<p class="help-message">Click image to navigate through Gallery</p>
 						</div>
 						<div class="menu-item prev">
 							<p>Previous Project</p>
